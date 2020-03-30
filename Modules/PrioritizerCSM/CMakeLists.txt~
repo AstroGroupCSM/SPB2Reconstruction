@@ -1,0 +1,14 @@
+LIST (APPEND JEMEUSO_SOURCES
+  ${srcdir}/TriggerModule_SPB2.cc
+  ${srcdir}/TriggerModule_SPB2.h
+  )
+
+LIST (APPEND config_DATA
+  ${builddir}/TriggerModule_SPB2.xml
+  ${builddir}/TriggerModule_SPB2.xsd
+)
+
+JEMEUSO_CREATE_CONFIGURE_FILES (  
+${srcdir}/TriggerModule_SPB2.xml.in
+${srcdir}/TriggerModule_SPB2.xsd.in
+)

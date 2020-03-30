@@ -1,0 +1,60 @@
+#ifndef _NewSPB2Trigger_NewSPB2TriggerModuleCSM_h_
+#define _NewSPB2Trigger_NewSPB2TriggerModuleCSM_h_
+
+/**
+ * \file
+ * \author G. Filippatos
+ * \date 10 Feb 2020
+ */
+
+#include <fwk/VModule.h>
+#include <boost/utility.hpp>
+#include <utl/ErrorLogger.h>
+#include <utl/Trace.h>
+#include <evt/Event.h>
+#include <evt/Header.h>
+#include <fevt/FEvent.h>
+#include <fevt/Eye.h>
+#include <fevt/Telescope.h>
+#include <fdet/FDetector.h>
+#include <det/Detector.h>
+#include <fwk/CentralConfig.h>
+
+
+namespace NewSPB2Trigger {
+
+  class NewSPB2TriggerModuleCSM : 
+    public boost::noncopyable,
+    public fwk::VModule {
+  public:
+      NewSPB2TriggerModuleCSM();
+      ~NewSPB2TriggerModuleCSM();
+      VModule::ResultFlag Init();
+      VModule::ResultFlag Run(evt::Event& e);
+      VModule::ResultFlag Finish();
+  private:
+      void Input(evt::Event& event); //Reads event
+      void Clear();
+      int pmtMapperY(int pmt); //Function for mapping pmt number to Y Location
+      int irow;  //Used to save data in offline format
+      int icol;
+      int icell; // Place to keep cell number 
+      int fPDMid;
+      int nHot;
+      int nActive;
+      int triggerState;
+      int total;
+      double sCell;
+      int iphe[3][36][8][8][128]; //Photo-electron trace
+      int hotCells[3][36][16][128]; // Location of hot cells 
+      int hotCells1[3][36][16][128];
+      int valCells[3][36][16][128]; //pe trace for cells 
+      int sumCells[3][36][16]; //Integrated cell pe value 
+      int cellLoc[72][24][128]; //Location of hotcells in 3D form (x,y,t)
+      int cellLoc1[72][24][128];
+      int dummy[100];
+      REGISTER_MODULE("NewSPB2TriggerModuleCSM",NewSPB2TriggerModuleCSM);
+    };
+}
+
+#endif // _NewSPB2Trigger_NewSPB2TriggerModuleCSM_h_

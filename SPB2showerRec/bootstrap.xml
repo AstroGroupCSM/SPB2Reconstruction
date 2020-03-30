@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<!DOCTYPE bootstrap [
+  <!ENTITY standardFdIdealDetConfig SYSTEM '/home/gfil/offline/install/share/jemeuso-offline/config/standardFdIdealDetConfig.xml'>
+  <!ENTITY standardFdIdealDetConfig_SPB2 SYSTEM '/home/gfil/offline/install/share/jemeuso-offline/config/standardFdIdealDetConfig_SPB2.xml'>
+  <!ENTITY standardFdSimModuleConfig SYSTEM '/home/gfil/offline/install/share/jemeuso-offline/config/standardFdSimModuleConfig.xml'>
+  <!ENTITY standardFdRecModuleConfig SYSTEM '/home/gfil/offline/install/share/jemeuso-offline/config/standardFdRecModuleConfig.xml'>
+  <!ENTITY myConfigFiles './xml'>
+]>
+
+<bootstrap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/bootstrap.xsd'
+           xmlns:xlink="http://www.jemeuso.org/schema/types">
+
+  &standardFdIdealDetConfig;
+  &standardFdIdealDetConfig_SPB2;
+  &standardFdSimModuleConfig;
+  &standardFdRecModuleConfig;
+
+  <centralConfig>
+
+    <configLink
+      id         = "ModuleSequence"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
+    
+    <configLink
+      id         = "EventFileReader"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventFileReader.xml"/>
+    <configLink
+      id         = "EventGenerator"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
+    <configLink
+      id         = "DataWriter"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
+
+    <configLink
+      id         = "TriggerModule"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerModule.xml"/>
+
+     <configLink
+      id         = "NewSPB2TriggerModuleCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/NewSPB2TriggerModuleCSM.xml"/>
+
+     <configLink
+      id         = "BackgroundSubtractorCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/>
+     <configLink
+      id         = "PrioritizerCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/Prioritizer.xml"/>
+     <configLink
+      id         = "TelescopeSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/>
+     <configLink
+      id         = "ElectronicsSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
+     <configLink
+      id         = "SignalIdentifierCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
+
+
+
+
+  </centralConfig>
+
+  <!--
+      The parameterOverride section allows to modify the content of the
+      default configuration files.
+  -->
+
+
+  <parameterOverrides>
+
+    <!--configLink id="EventFileReader">
+         <EventFileReader>
+            <InputFilenames> 10000EventsBGOnly.root </InputFilenames>
+         </EventFileReader>
+      </configLink-->
+ <!--configLink id="BackgroundSubtractor">
+      <BackgroundSubtractor>
+	<N> 3 </N>
+	<S> 2.0 </S>
+      </BackgroundSubtractor>
+    </configLink-->
+   <!--change this to 0 0 for real random, leave this to always have the same random number-->
+    <configLink id="RandomEngineRegistry">
+       <RandomEngineRegistry>
+           <DetectorSeed> 0 </DetectorSeed>
+           <PhysicsSeed> 0 </PhysicsSeed>
+       </RandomEngineRegistry>
+    </configLink>
+
+
+
+  </parameterOverrides>
+
+</bootstrap>

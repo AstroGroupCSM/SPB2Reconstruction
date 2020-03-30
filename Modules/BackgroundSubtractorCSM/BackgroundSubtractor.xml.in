@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+
+<BackgroundSubtractorCSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:noNamespaceSchemaLocation='@XMLSCHEMALOCATION@/BackgroundSubtractor.xsd'>
+
+  <N> 5 </N> <!--Number of cellss that need to be active-->
+  <S>2.67 </S> <!--How much over threshold a cell needs to be-->
+  
+</BackgroundSubtractorCSM>

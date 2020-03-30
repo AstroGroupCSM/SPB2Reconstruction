@@ -1,0 +1,16 @@
+namespace NewSPB2Trigger {
+
+/**
+\class NewSPB2TriggerModule
+
+\brief Describe your module. In one sentence.
+
+Now here a longer description in doxygen. You may use HTML.
+
+
+\author G. Filippatos
+\date 10 Feb 2020
+\version 
+\ingroup fevt
+*/
+}

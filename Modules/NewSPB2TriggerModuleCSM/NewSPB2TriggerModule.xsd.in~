@@ -1,0 +1,11 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:jemeuso="http://www.jemeuso.org/schema/types">
+<xs:import namespace="http://www.jemeuso.org/schema/types" 
+           schemaLocation="@XMLSCHEMALOCATION@/JemEusoSchemaTypes.xsd"/>
+<!-- 
+Schema for checking NewSPB2TriggerModule configuration file.
+-->
+<xs:element name="NewSPB2TriggerModule">  
+<!-- Fill with the proper restrictions.-->
+</xs:element>
+</xs:schema>

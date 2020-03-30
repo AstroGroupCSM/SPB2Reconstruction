@@ -1,0 +1,16 @@
+namespace SignalIdentifier {
+
+/**
+\class SignalIdentifier
+
+\brief Describe your module. In one sentence.
+
+Now here a longer description in doxygen. You may use HTML.
+
+
+\author G. Filippatos
+\date 19 Feb 2020
+\version 
+\ingroup fevt
+*/
+}

@@ -1,0 +1,15 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:jemeuso="http://www.jemeuso.org/schema/types">
+<xs:import namespace="http://www.jemeuso.org/schema/types" 
+           schemaLocation="@XMLSCHEMALOCATION@/JemEusoSchemaTypes.xsd"/>
+<xs:element name="NewSPB2TriggerModuleCSM">
+<xs:complexType>
+    <xs:all>
+    <xs:element name ="M"	type="xs:int" minOccurs="0"/>
+    <xs:element name="N"	type="xs:int" minOccurs="0" />
+    <xs:element name="S"   	type="xs:float" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+</xs:element>
+</xs:schema>

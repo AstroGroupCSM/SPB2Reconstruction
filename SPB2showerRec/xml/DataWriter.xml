@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the  DataWriter module-->
+
+<DataWriter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/DataWriter.xsd'>
+
+
+<FileName> EusoDataFile.root </FileName>
+
+<!-- Write the trace for different photon types inside the FoV to the tsim tree
+     Default is turned off-->
+<WritePhotonTrace>   1	</WritePhotonTrace>
+<WritePeSignalTrace> 1	</WritePeSignalTrace>
+<PlotBSTraces>  0	</PlotBSTraces>
+<WriteBS>           0	</WriteBS>
+<SPB2ReSim> 0 </SPB2ReSim>
+
+<!-- Plot Photon in FoV vs. GTU, pe vs GTU and the integrated track. All are only for the shower itself NO background -->
+<PlotAll> 1 </PlotAll>
+
+
+</DataWriter>

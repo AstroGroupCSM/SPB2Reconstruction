@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module EventFileReader -->
+
+
+<EventFileReader
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/EventFileReader.xsd'>
+
+<!-- file type  JemEusoRoot
+                CORSIKA
+		CONEX
+                JemEuso -->
+
+<InputFileType> JemEusoRoot </InputFileType>
+
+<!-- the list of filenames (space delimited) -->
+
+<InputFilenames>
+
+/home/gfil/offline/install/share/jemeuso-offline/config/../doc/SampleShowers/SPB2RecoExample.root
+
+
+
+</InputFilenames>
+
+
+
+</EventFileReader>
+
+

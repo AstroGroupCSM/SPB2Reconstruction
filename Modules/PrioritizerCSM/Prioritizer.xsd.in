@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:jemeuso="http://www.jemeuso.org/schema/types">
+<xs:import namespace="http://www.jemeuso.org/schema/types" 
+           schemaLocation="@XMLSCHEMALOCATION@/JemEusoSchemaTypes.xsd"/>
+<!-- 
+Schema for checking Prioritizer configuration file.
+-->
+<xs:element name="PrioritizerCSM">
+<xs:complexType>
+    <xs:all>
+    <xs:element name="ReqTrig"	type="xs:int" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+</xs:element>
+</xs:schema>

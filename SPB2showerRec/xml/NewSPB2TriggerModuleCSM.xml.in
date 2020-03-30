@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module NewSPB2TriggerModule -->
+
+<NewSPB2TriggerModuleCSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/NewSPB2TriggerModuleCSM.xsd'>
+
+	<N> 5 </N> <!--Number of cellss that need to be active-->
+  	<S>2.67 </S> <!--How much over threshold a cell needs to be-->
+
+</NewSPB2TriggerModuleCSM>

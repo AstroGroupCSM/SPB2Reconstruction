@@ -1,0 +1,41 @@
+#ifndef _Prior_Prioritizer_h_
+#define _Prior_Prioritizer_h_
+
+/**
+ * \file
+ * \author G. Filippatos
+ * \date 12 Mar 2020
+ */
+
+#include <fwk/VModule.h>
+#include <boost/utility.hpp>
+#include <utl/ErrorLogger.h>
+#include <utl/Trace.h>
+#include <evt/Event.h>
+#include <evt/Header.h>
+#include <fevt/FEvent.h>
+#include <fevt/Eye.h>
+#include <fevt/Telescope.h>
+#include <fdet/FDetector.h>
+#include <det/Detector.h>
+#include <fwk/CentralConfig.h>
+
+
+namespace Prior {
+
+  class Prioritizer : 
+      public boost::noncopyable,
+      public fwk::VModule {
+  public:
+    Prioritizer();
+    ~Prioritizer();
+    VModule::ResultFlag Init();
+    VModule::ResultFlag Run(evt::Event& e);
+    VModule::ResultFlag Finish();
+  private:
+    void Input(evt::Event& event,int ibs[3][36][8][8][128]); //Reads event
+    REGISTER_MODULE("Prioritizer",Prioritizer);
+  };
+}
+
+#endif // _Prior_Prioritizer_h_

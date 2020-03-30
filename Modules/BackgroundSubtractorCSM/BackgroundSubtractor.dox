@@ -1,0 +1,16 @@
+namespace BGSub {
+
+/**
+\class BackgroundSubtractor
+
+\brief Describe your module. In one sentence.
+
+Now here a longer description in doxygen. You may use HTML.
+
+
+\author G. Filippatos
+\date 24 Jan 2020
+\version 
+\ingroup fdet
+*/
+}
