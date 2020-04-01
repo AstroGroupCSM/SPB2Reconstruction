@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the TelescopeSimulator module-->
+
+<TelescopeSimulatorJG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/TelescopeSimulatorJG.xsd'>
+
+
+<verbosityLevel> 0 </verbosityLevel>
+
+<!--debugHistos> 1 </debugHistos-->
+
+<options>
+
+<!-- Define here the optional Geant4 macro file -->
+<!-- (Note that if not running in standalone mode (see below) this -->
+<!-- file must not contain a "/run/beamOn" command) -->
+
+<!--     <G4MacroFile> /home/gfil/offline/install/share/jemeuso-offline/config/vis.mac </G4MacroFile>  -->
+
+     <G4MacroFile> xml/G4Run.mac </G4MacroFile>
+
+  <!-- Optics configuration files path -->
+
+     <OpticsFilePath> /home/gfil/offline/install/share/jemeuso-offline/config/Optics/ </OpticsFilePath>
+
+<!-- Set G4Standalone to "yes" to perform a Geant4 simulation as if in standalone  -->
+<!-- but being able to use the Offline modules "downstream" the TelescopeSimulator -->
+<!-- Can be used for example to simulate the FD response to muons.                 -->
+
+   <G4Standalone> no </G4Standalone>
+   <G4InjectParticles> no </G4InjectParticles>
+
+<!-- Define an ideal Focal Surface as Sensitive Detector (1) for debug purposes -->
+<!-- Set to 0 for complete detector simulation ! -->
+
+   <FS_SD> 0 </FS_SD>
+
+<!-- change to no if you don't want to use parametric, right now only works for SPB2 -->
+   <ParametricOptics> yes </ParametricOptics>
+
+
+</options>
+
+<OpticsParameters>
+    <!-- optics type can be 
+         - mirror (SPB2, K-EUSO, POEMMA, ...)
+         - lens (EUSO-Balloon, EUSO-TA, EUSO-SPB1, ...)
+    -->       
+    <OpticsType>      	    mirror </OpticsType>
+    <PSFdiameter unit="mm"> 5.	   </PSFdiameter>
+    <opticalEfficiency>	    0.68   </opticalEfficiency>
+    <!-- radius of FS: 860mm SPB2 -->
+    <radiusFS unit="mm">  860.     </radiusFS>
+    <Obstruction> 0.18 </Obstruction>
+
+</OpticsParameters>
+
+
+<!--  Sets visibility properties for detector components -->
+
+<visibility>
+
+  <renderer> Off </renderer>
+
+<!-- Mechanical Structure -->
+
+	<world> 0 </world>
+	<container> 0 </container>
+	<telmother> 0 </telmother>
+
+<!-- Detector -->
+
+	<camera> 0 </camera>
+	<pdm> 1 </pdm>
+	<ec> 1 </ec>
+	<pmt> 1 </pmt>
+	<pixel> 1 </pixel>
+	<photocatode> 1 </photocatode>
+
+<!-- Optical System -->
+
+	<opticalsystem> 0 </opticalsystem>
+	<frontlens> 0 </frontlens>
+	<rearlens> 0 </rearlens>
+
+</visibility>
+
+<ghostBuster use="no">
+    <fresnelReflection> on </fresnelReflection>  <!-- standard Fresnel equations -->
+    <totalInternalReflection> on </totalInternalReflection>
+
+    <!-- produced by 'unified' model in G4. This seems to cause problems when using the
+    diffractive lens. I don't know why, because it should not affect propagation in
+    dielectric-dielectric transitions. Somebody needs to look at the diffractive optics
+    code to see what is going on.-->
+    <unifiedModelReflection> off </unifiedModelReflection> <!-- produced by 'unified' model in G4 -->
+ </ghostBuster>
+
+
+<telescopeConfig>
+
+  <photocathode>
+
+<!-- The photocathode reflectivity can be defined in two ways, chosen from the keywords Reflectivity/RefractiveIndex in the field <mode> :
+     - Reflectivity: the reflectivity is defined by specifying an effective reflectivity vs wavelength
+     - RefractiveIndex: the reflectivity is computed from the complex refractive index (n*) as follows:
+       a) if "thickness" is also defined, the thin-film Fresnel equations are used;
+       b) otherwise the Geant4 default eqs are used, not taking into account the photocathode's thickness.
+-->
+
+<!--
+    <mode> Reflectivity </mode>
+    <wavelength unit="nanometer"> 200.0 700.0  </wavelength>
+    <reflectivity> 0.0 0.0 </reflectivity>
+-->
+    <mode> RefractiveIndex </mode>
+
+    <wavelength unit="nanometer"> 300 330 360 370
+                                  380 395 410 425 440 455 470 485
+                                  500.0 515.0 530.0 545.0 560.0 575.0 590.0
+                                  605.0 620.0 635.0 650.0 665.0 680.0
+                                  700.0
+    </wavelength>
+
+    <!-- Data for n* and thickness from GAP-XXX-2010 -->
+    <realRindex>  1.00 1.35 1.65 1.75
+                  1.92 2.18 2.38 2.61 2.70 2.87 3.00 3.00
+                  3.00 3.09 3.26 3.20 3.12 3.06 3.01
+                  2.98 2.96 2.95 2.95 2.95 2.96
+                  2.96
+    </realRindex>
+
+    <imaginaryRindex>  2.50 2.30 2.15 2.10
+                  1.69 1.69 1.71 1.53 1.50 1.44 1.34 1.11
+                  1.06 1.05 0.86 0.63 0.53 0.46 0.42
+                  0.38 0.37 0.35 0.34 0.34 0.33
+                  0.33
+    </imaginaryRindex>
+
+    <thickness unit="nanometer"> 20.0 </thickness>
+
+  </photocathode>
+
+</telescopeConfig>
+
+</TelescopeSimulatorJG>

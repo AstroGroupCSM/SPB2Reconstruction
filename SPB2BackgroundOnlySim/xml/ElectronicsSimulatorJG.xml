@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module ElectronicsSimulatorJG -->
+
+<ElectronicsSimulatorJG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/ElectronicsSimulatorJG.xsd'>
+
+  <numTraceBins> 128 </numTraceBins>
+  <traceBinWidth unit="nanosecond"> 1000 </traceBinWidth><!--might be 1000 for EUSO-SPB2 (and others?)-->
+
+  <!--read by TelescopeSimulator.cc to build FADCTraces, and ElectronicSimulator.cc to add dead time at the beginning of the GTU-->
+  <!--tracePileUpBinWidth unit="nanosecond"> 30 </tracePileUpBinWidth--><!--SPACIROC1 30 ns (EUSO-TA, EUSO-Balloon)-->
+  <!--deadTimeBeginningGTU unit="nanosecond"> 200 </deadTimeBeginningGTU--><!--SPACIROC1 200 ns (EUSO-TA, EUSO-Balloon)-->
+  <tracePileUpBinWidth unit="nanosecond"> 6 </tracePileUpBinWidth><!--SPACIROC3 6 ns (EUSO-SPB1, EUSO-SPB2, Mini-EUSO, JEM-EUSO)-->
+  <deadTimeBeginningGTU unit="nanosecond"> 50 </deadTimeBeginningGTU><!--SPACIROC3 50 ns (EUSO-SPB1, EUSO-SPB2, Mini-EUSO, JEM-EUSO)-->
+  
+ </ElectronicsSimulatorJG>

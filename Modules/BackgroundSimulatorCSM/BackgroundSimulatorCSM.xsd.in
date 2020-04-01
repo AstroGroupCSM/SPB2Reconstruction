@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+           xmlns:jemeuso="http://www.jemeuso.org/schema/types">
+
+  <xs:import namespace="http://www.jemeuso.org/schema/types"
+             schemaLocation="@XMLSCHEMALOCATION@/JemEusoSchemaTypes.xsd"/>
+
+
+<xs:element name="BackgroundSimulatorCSM">
+  <xs:complexType>
+
+    <xs:all>
+      <xs:element name="ReadFromFile"   type="jemeuso:bool" minOccurs="1" />
+       <xs:element name="BaseValue"     type="xs:double" minOccurs="0" />
+      <xs:element name="Path"           type="xs:string" minOccurs="0" />
+      <xs:element name="IsSPB1"         type="jemeuso:bool" minOccurs="1" />
+      <xs:element name="TiltDependent"  type="jemeuso:bool" minOccurs="0" />
+      <xs:element name="NonUniform"  type="jemeuso:bool" minOccurs="0" />
+      <xs:element name="MakeBlobs" type="xs:double" minOccurs="0" />
+      <xs:element name="AverageBlobSize" type="xs:double" minOccurs="0" />
+      <xs:element name="AverageBlobBrightness" type="xs:double" minOccurs="0" />
+      <xs:element name="LengthBloob" type="xs:int" minOccurs="0"/>
+      <xs:element name="VarriedBackground" type="jemeuso:bool" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
