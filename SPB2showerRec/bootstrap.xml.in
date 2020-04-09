@@ -44,9 +44,9 @@
       xlink:href = "&myConfigFiles;/TriggerModule.xml"/>
 
      <configLink
-      id         = "NewSPB2TriggerModuleCSM"
+      id         = "TriggerSPB2CSM"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/NewSPB2TriggerModuleCSM.xml"/>
+      xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
 
      <configLink
       id         = "BackgroundSubtractorCSM"
@@ -82,17 +82,19 @@
 
   <parameterOverrides>
 
-    <!--configLink id="EventFileReader">
+    <configLink id="EventFileReader">
          <EventFileReader>
-            <InputFilenames> 10000EventsBGOnly.root </InputFilenames>
+            <InputFilenames> ../SimulatedData/NoBG/XXXXXX.root </InputFilenames>
          </EventFileReader>
-      </configLink-->
- <!--configLink id="BackgroundSubtractor">
-      <BackgroundSubtractor>
-	<N> 3 </N>
-	<S> 2.0 </S>
-      </BackgroundSubtractor>
-    </configLink-->
+  </configLink>
+  <configLink id="DataWriter">
+    <DataWriter>
+      <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
+    </DataWriter>
+  </configLink>
+	
+     
+
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>

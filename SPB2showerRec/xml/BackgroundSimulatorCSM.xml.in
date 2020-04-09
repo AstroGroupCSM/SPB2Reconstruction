@@ -17,6 +17,9 @@
     <!-- TiltDependent will change background value depending on tilt angle of the pixel. BaseValue is the value when pointing straigh down, every angle other than this will have a larger background value. Tilt is the angle of tilt, defined as the same way it is in EventGenerator-->
     <NonUniform> 1 </NonUniform>
     <TiltDependent> 1 </TiltDependent>
-   <BaseValue> 1.0 </BaseValue>
+    <BaseValue> 1.0 </BaseValue>
+    <MakeBlobs> 1.0 </MakeBlobs>
+    <VarriedBackground> 1 </VarriedBackground>
+
 
 </BackgroundSimulatorCSM>

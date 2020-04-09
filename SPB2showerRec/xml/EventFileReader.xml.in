@@ -18,7 +18,7 @@
 
 <InputFilenames>
 
-@SCHEMALOCATION@/../doc/SampleShowers/SPB2RecoExample.root
+../SimulatedData/temp/150.root
 
 
 

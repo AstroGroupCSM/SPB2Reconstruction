@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="unbounded" pushEventToStack="yes">
+    <loop numTimes="1" pushEventToStack="yes">
 
 	<module> EventFileReaderOG           </module>
         <module> EventGeneratorOG </module>
@@ -16,9 +16,9 @@
 	<module> ElectronicsSimulatorJG      </module>
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
-	<module> NewSPB2TriggerModuleCSM </module>
+	<module> TriggerCSM </module>
 	<module> BackgroundSubtractorCSM        </module>
-	<module> PrioritizerCSM                 </module>
+	<!--module> PrioritizerCSM                 </module-->
 	<module> DataWriter </module>
 
 
