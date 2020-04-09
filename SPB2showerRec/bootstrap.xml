@@ -39,9 +39,9 @@
       xlink:href = "&myConfigFiles;/DataWriter.xml"/>
 
     <configLink
-      id         = "TriggerModule"
+      id         = "TriggerTG"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/TriggerModule.xml"/>
+      xlink:href = "&myConfigFiles;/TriggerTG.xml"/>
 
      <configLink
       id         = "TriggerSPB2CSM"

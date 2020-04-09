@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="1" pushEventToStack="yes">
+    <loop numTimes="10" pushEventToStack="yes">
 
 	<module> EventFileReaderOG           </module>
         <module> EventGeneratorOG </module>
