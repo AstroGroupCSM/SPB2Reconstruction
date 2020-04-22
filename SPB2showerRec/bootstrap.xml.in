@@ -47,6 +47,10 @@
       id         = "TriggerSPB2CSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+<configLink
+      id         = "TriggerSPB2cells3x3TG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
      <configLink
       id         = "BackgroundSubtractorCSM"
