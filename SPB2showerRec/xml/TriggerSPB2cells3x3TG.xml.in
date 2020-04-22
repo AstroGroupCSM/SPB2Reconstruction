@@ -3,7 +3,7 @@
 <!-- Configuration of the trigger module for EUSO-SPB2 -->
 
 <TriggerSPB2cells3x3TG  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:noNamespaceSchemaLocation='@XMLSCHEMALOCATION@/TriggerSPB2cells3x3TG.xsd'>
+		xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2cells3x3TG.xsd'>
   
   <nSigma> 2.5 </nSigma> <!-- number of sigma above background (in the hypothesis of Poissonian distributed background) required in order to consider a pixel active -->
   <nPixelInCell> 4 </nPixelInCell> <!-- number of pixels over threshold in a 3x3 pixels cell, in order to consider that cell active -->
