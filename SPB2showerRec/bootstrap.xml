@@ -52,10 +52,10 @@
       id         = "BackgroundSubtractorCSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/>
-     <configLink
+     <!--configLink
       id         = "PrioritizerCSM"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/Prioritizer.xml"/>
+      xlink:href = "&myConfigFiles;/Prioritizer.xml"/-->
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
