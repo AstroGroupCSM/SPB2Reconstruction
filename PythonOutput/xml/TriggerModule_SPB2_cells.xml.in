@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the TriggerModule module for EUSO-SPB2-->
+
+<TriggerModule_SPB2_cells  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerModule_SPB2_cells.xsd'>
+  
+<!--number of active pixels on the same PMT needed to generate a trigger-->
+  <nPixel> 2 </nPixel>
+  <!-- number of consecutive GTUs in which "nPixel" pixels have to be above threshold to have a trigger -->
+  <nGTU> 3 </nGTU>  <!--2 for laser, 3 for shower-->
+
+  <nSigma> 3 </nSigma>  <!--2 for laser, 3 for shower-->
+
+  <verbosityLevel> 0 </verbosityLevel> <!--0 less info, 1 info on number of counts per pixel -->
+
+</TriggerModule_SPB2_cells>
