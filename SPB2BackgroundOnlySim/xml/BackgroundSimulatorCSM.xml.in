@@ -19,8 +19,7 @@
     <TiltDependent> 1 </TiltDependent>
     <BaseValue> 1.0 </BaseValue>
     <MakeBlobs> 1.0 </MakeBlobs>
-    <AverageBlobBrightness> 20.0 </AverageBlobBrightness>
-    <LengthBloob> 3 </LengthBloob>
     <VarriedBackground> 1 </VarriedBackground>
+
 
 </BackgroundSimulatorCSM>

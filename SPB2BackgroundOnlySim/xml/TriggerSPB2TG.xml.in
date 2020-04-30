@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the trigger module for EUSO-SPB2 -->
+
+<TriggerSPB2TG  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation='@XMLSCHEMALOCATION@/TriggerSPB2TG.xsd'>
+  
+  <nSigma> 4.0 </nSigma> <!-- number of sigma above background (in the hypothesis of Poissonian distributed background) required in order to consider a pixel active -->
+  <nPixel> 2 </nPixel> <!-- number of active pixels on the same PMT needed to generate a trigger -->
+  <nGTUpersistence> 3 </nGTUpersistence> <!-- number of consecutive GTUs in which "nPixel" pixels have to be above threshold to have a trigger, 2 for laser, 3 for shower-->
+  
+  <verbosityLevel> 0 </verbosityLevel> <!-- 0 less info, 1 info on number of counts per pixel -->
+  <signalOnly> 0 </signalOnly> <!-- bool, 1 causes the trigger to only trigger on pixels with signal present-->
+  <wantTriggerOutput> 0 </wantTriggerOutput> <!-- bool, 1 if you want to get a text file containing satisfied trigger condition and triggering PMT/EC/PDM -->
+
+</TriggerSPB2TG>

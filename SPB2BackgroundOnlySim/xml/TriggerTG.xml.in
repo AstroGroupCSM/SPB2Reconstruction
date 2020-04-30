@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
-<!-- Configuration of the  TriggerModule module-->
+<!-- Configuration of the TriggerTG module-->
 
-<TriggerModule  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerModule.xsd'>
+<TriggerTG  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerTG.xsd'>
 
 <!-- Path to the threshold file you want to use
      1GTU: thresh-bckg_pers1GTU.dat
@@ -15,6 +15,7 @@
 <!-- Create root file with the triggered track in PDM  [bool: 0=false, 1=true] -->
 <PrintTrigger> 0 </PrintTrigger>
 
-<ContinueWithoutTrigger> 1 </ContinueWithoutTrigger>
+<!-- Set if event should be continued to be processed even if not triggered  [bool: 0=false, 1=true] -->
+<ContinueWithoutTrigger> 0 </ContinueWithoutTrigger>
 
-</TriggerModule>
+</TriggerTG>

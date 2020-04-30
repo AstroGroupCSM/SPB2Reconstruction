@@ -39,11 +39,27 @@
       xlink:href = "&myConfigFiles;/DataWriter.xml"/>
 
     <configLink
-      id         = "TriggerModule"
+      id         = "TriggerTG"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/TriggerModule.xml"/>
+      xlink:href = "&myConfigFiles;/TriggerTG.xml"/>
 
+     <configLink
+      id         = "TriggerSPB2CSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+<configLink
+      id         = "TriggerSPB2cells3x3TG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
+     <!--configLink
+      id         = "BackgroundSubtractorCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/-->
+     <!--configLink
+      id         = "PrioritizerCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/Prioritizer.xml"/-->
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
@@ -52,11 +68,12 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-     
- <configLink
-      id         = "BackgroundSimulatorCSM"
+     <configLink
+      id         = "SignalIdentifierCSM"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
+      xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
+
+
 
 
   </centralConfig>
@@ -71,15 +88,17 @@
 
     <!--configLink id="EventFileReader">
          <EventFileReader>
-            <InputFilenames> 10000EventsBGOnly.root </InputFilenames>
+            <InputFilenames> ../SimulatedData/NoBG/XXXXXX.root </InputFilenames>
          </EventFileReader>
-      </configLink-->
- <!--configLink id="BackgroundSubtractor">
-      <BackgroundSubtractor>
-	<N> 3 </N>
-	<S> 2.0 </S>
-      </BackgroundSubtractor>
-    </configLink-->
+  </configLink>
+  <configLink id="DataWriter">
+    <DataWriter>
+      <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
+    </DataWriter>
+  </configLink-->
+	
+     
+
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>
