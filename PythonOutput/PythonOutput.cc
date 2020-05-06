@@ -29,7 +29,7 @@ PythonOutput::Run(evt::Event& event)
   eventNumber++;
   ofstream myfile;
   for (int igtu=0;igtu<128;igtu++){
-    myfile.open("txts/example-"+to_string(igtu)+".txt");
+    myfile.open("example-"+to_string(igtu)+".txt");
     for (int iy=0;iy<48;iy++){
       for (int ix=0;ix<144;ix++){
 	myfile<<iphe[igtu][ix][iy]<<' ';
@@ -42,7 +42,7 @@ PythonOutput::Run(evt::Event& event)
 
 
   
-  string s="python dummy.py "+to_string(nSigPE)+" "+to_string(eventNumber);
+  string s="python PythonOutput.py "+to_string(nSigPE)+" "+to_string(eventNumber);
   system(s.c_str());
   return eSuccess;
 }

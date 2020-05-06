@@ -72,6 +72,10 @@
       id         = "SignalIdentifierCSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
+ <configLink
+	       id         = "BackgroundSimulatorCSM"
+	             type       = "XML"
+		           xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
 
 
 
