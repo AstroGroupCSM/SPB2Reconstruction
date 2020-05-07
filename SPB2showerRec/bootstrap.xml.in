@@ -92,7 +92,7 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-            <InputFilenames> ../SimulatedData/NoBG/XXXXXX.root </InputFilenames>
+            <InputFilenames> ../SimulatedData/NoBG/100.root </InputFilenames>
          </EventFileReader>
   </configLink>
   <configLink id="DataWriter">
