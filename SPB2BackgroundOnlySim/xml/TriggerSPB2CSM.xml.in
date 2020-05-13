@@ -4,9 +4,10 @@
 
 <TriggerSPB2CSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
+  <nActive> 5</nActive>
+  <nHot> 3 </nHot>
+  <nSigma>4.0 </nSigma>
+  <signalOnly> 0</signalOnly>
+  <Verbosity> 1</Verbosity>
 
-	<!--N> 1 </N>
-  	<S>1 </S> 
-	<Verbosity> 0</Verbosity-->
-	<signalOnly> 0</signalOnly>
 </TriggerSPB2CSM>

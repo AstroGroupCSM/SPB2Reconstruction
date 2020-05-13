@@ -106,6 +106,12 @@
            <PhysicsSeed> 0 </PhysicsSeed>
        </RandomEngineRegistry>
     </configLink>
+    <configLink id="TriggerSPB2CSM">
+      <TriggerSPB2CSM>
+	<nActive>5</nActive>
+	<nSigma>2.0</nSigma>
+      </TriggerSPB2CSM>
+    </configLink>
 
 
 

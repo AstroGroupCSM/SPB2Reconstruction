@@ -52,10 +52,10 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
-     <configLink
+     <!--configLink
       id         = "BackgroundSubtractorCSM"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/>
+      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/-->
      <!--configLink
       id         = "PrioritizerCSM"
       type       = "XML"
@@ -72,10 +72,6 @@
       id         = "SignalIdentifierCSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
- <configLink
-	       id         = "BackgroundSimulatorCSM"
-	             type       = "XML"
-		           xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
 
 
 
@@ -90,16 +86,16 @@
 
   <parameterOverrides>
 
-    <configLink id="EventFileReader">
+    <!--configLink id="EventFileReader">
          <EventFileReader>
-            <InputFilenames>18_0-0-output.root </InputFilenames>
+            <InputFilenames> ../SimulatedData/NoBG/XXXXXX.root </InputFilenames>
          </EventFileReader>
   </configLink>
   <configLink id="DataWriter">
     <DataWriter>
       <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
     </DataWriter>
-  </configLink>
+  </configLink-->
 	
      
 
@@ -109,6 +105,12 @@
            <DetectorSeed> 0 </DetectorSeed>
            <PhysicsSeed> 0 </PhysicsSeed>
        </RandomEngineRegistry>
+    </configLink>
+    <configLink id="TriggerSPB2CSM">
+      <TriggerSPB2CSM>
+	<nActive>5</nActive>
+	<nSigma>XXXXXX</nSigma>
+      </TriggerSPB2CSM>
     </configLink>
 
 

@@ -18,10 +18,11 @@
 #include <fevt/Telescope.h>
 #include <fdet/FDetector.h>
 #include <det/Detector.h>
-
+#include <evt/ShowerSimData.h>
 #include <fwk/CentralConfig.h>
-
-
+#include <fdet/FDetector.h>
+#include <fdet/Eye.h>
+#include <fdet/Telescope.h>
 
 namespace Trigger {
 

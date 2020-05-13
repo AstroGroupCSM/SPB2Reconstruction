@@ -36,15 +36,15 @@ TriggerCSM::Run(evt::Event& event)
     fCorePos[i]=-1.;
   if (event.HasSimShower()) {
     evt::ShowerSimData& SimShower = event.GetSimShower();
-    CoordinateSystemPtr showerCS = SimShower.GetShowerCoordinateSystem();
-     const fdet::FDetector& detFD = Detector::GetInstance().GetFDetector();
+    const fdet::FDetector& detFD = Detector::GetInstance().GetFDetector();
     CoordinateSystemPtr telCS = detFD.GetEye(1).GetTelescope(1).GetTelescopeCoordinateSystem();
-     Point showerCore(0, 0, 0, showerCS);
-     fCorePos[0] = showerCore.GetX(telCS);
-     fCorePos[1] = showerCore.GetY(telCS);
-     fCorePos[2] = showerCore.GetZ(telCS);
-     fZenith = SimShower.GetZenith();
-     fAzimuth= SimShower.GetAzimuth();
+    CoordinateSystemPtr showerCS = SimShower.GetShowerCoordinateSystem();
+    Point showerCore(0, 0, 0, showerCS);
+    fCorePos[0] = showerCore.GetX(telCS);
+    fCorePos[1] = showerCore.GetY(telCS);
+    fCorePos[2] = showerCore.GetZ(telCS);
+    fZenith = SimShower.GetZenith();
+    fAzimuth= SimShower.GetAzimuth();
   }
   event.SetTriggerState(0);
   VModule* m1= VModuleFactory::Create("TriggerSPB2CSM");
