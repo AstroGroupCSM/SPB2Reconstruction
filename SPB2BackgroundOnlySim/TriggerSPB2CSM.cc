@@ -51,7 +51,6 @@ TriggerSPB2CSM::Init()
   if (topBranch.GetChild("signalOnly")){
     topBranch.GetChild("signalOnly").GetData(fSignalOnly);
   }
-  nSigma=(nSigma-4.0)*0.25 + 4.0;
   return eSuccess;
 }
 
@@ -80,12 +79,8 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	    sigTotal+= ipheSig[ipdm][ipmt][ipixx][ipixy][igtu];
 	    sumCells[ipdm][ipmt][icell] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
 	    if ((fSignalOnly && ipheSig[ipdm][ipmt][ipixx][ipixy][igtu]>0)||!(fSignalOnly)){
-	      //if(ipheSig[ipdm][ipmt][ipixx][ipixy][igtu]>0)
 	      valCells[ipdm][ipmt][icell][igtu] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
 	    }
-	    //else{
-	    //valCells[ipdm][ipmt][icell][igtu] += iphe[ipdm][ipmt][ipixx][ipixy][igtu];
-	      //}
 	  }
 	}
       }
@@ -115,32 +110,34 @@ TriggerSPB2CSM::Run(evt::Event& event)
     }
     
     //Trigger Logic 
-    total=0;
-    int gtuMin=128,gtuMax=0;
-    for (int igtu=1;igtu<127;igtu++){ //Look through the event skipping first and last frames
-      for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
-	for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
-	  for (int ix=-1;ix<2;ix++){ //Look at the MacroPixels to  left and right 
-	    for(int iy=-1;iy<2;iy++){// And look at the MacroPixels above and below 
-	      for (int it=-1;it<2;it++){ //Look at the GTU before and after 
-		if(HotOrNot[iLocX+ix][iLocY+iy][igtu+it] !=0) { // Check if the adjacent MacroPixel is "hot"
-		  HotNeighborsCount[iLocX][iLocY][igtu]++;//Count the hot neighbors 
+    for (int frame=1;frame<127;frame++){ //Look through the event skipping first and last frames
+      total=0;
+      for(int igtu=frame;(igtu<128)&& (igtu<frame+10);igtu++){
+	int gtuMin=128,gtuMax=0;
+	for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
+	  for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
+	    for (int ix=-1;ix<2;ix++){ //Look at the MacroPixels to  left and right 
+	      for(int iy=-1;iy<2;iy++){// And look at the MacroPixels above and below 
+		for (int it=-1;it<2;it++){ //Look at the GTU before and after 
+		  if(HotOrNot[iLocX+ix][iLocY+iy][igtu+it] !=0) { // Check if the adjacent MacroPixel is "hot"
+		    HotNeighborsCount[iLocX][iLocY][igtu]++;//Count the hot neighbors 
+		  }
 		}
 	      }
+	    } 
+	    if  (HotNeighborsCount[iLocX][iLocY][igtu]>=nHot){ //Count how many active MacroPixels
+	      total++;
+	      if(igtu<gtuMin)
+		gtuMin=igtu;
+	      if(igtu>gtuMax)
+		gtuMax=igtu;
 	    }
-	  } 
-	  if  (HotNeighborsCount[iLocX][iLocY][igtu]>=nHot){ //Count how many active MacroPixels
-	    total++;
-	    if(igtu<gtuMin)
-	      gtuMin=igtu;
-	    if(igtu>gtuMax)
-	      gtuMax=igtu;
 	  }
 	}
-      }
-    }    
-    if (total >=nActive && (gtuMax-gtuMin)>=nPersist)
-      triggerState=1;
+      }    
+      if (total >=nActive && (gtuMax-gtuMin)>=nPersist)
+	triggerState=1;
+    }
   }
   if (triggerState==1){
       if (fVerbosityLevel>0)
