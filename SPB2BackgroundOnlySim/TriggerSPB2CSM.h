@@ -56,6 +56,7 @@ namespace TriggerSPB2CSM {
       int sumCells[3][36][16]; //Integrated cell pe value 
       int HotOrNot[24][24][128]; //Location of hotcells in 3D form (x,y,t)
       int HotNeighborsCount[24][24][128];
+      int triggerCounts[20];
       int dummy[100];
       REGISTER_MODULE("TriggerSPB2CSM",TriggerSPB2CSM);
     };
