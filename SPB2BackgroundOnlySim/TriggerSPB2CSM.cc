@@ -112,7 +112,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
     //Trigger Logic 
     for (int frame=1;frame<127;frame++){ //Look through the event skipping first and last frames
       total=0;
-      for(int igtu=frame;(igtu<128)&& (igtu<frame+10);igtu++){
+      for(int igtu=frame;(igtu<127)&& (igtu<frame+10);igtu++){
 	int gtuMin=128,gtuMax=0;
 	for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
 	  for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
