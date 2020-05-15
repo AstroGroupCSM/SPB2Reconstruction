@@ -134,9 +134,9 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	    }
 	  }
 	}
-      }    
-      if (total >=nActive && (gtuMax-gtuMin)>=nPersist)
-	triggerState=1;
+	if (total >=nActive && (gtuMax-gtuMin)>=nPersist)
+	  triggerState=1;
+      }
     }
   }
   if (triggerState==1){
