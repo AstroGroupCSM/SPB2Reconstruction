@@ -6,7 +6,7 @@
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
   <nActive> 5</nActive>
   <nHot> 3 </nHot>
-  <nSigma>4.0 </nSigma>
+  <nSigma>5.0 </nSigma>
   <signalOnly> 0</signalOnly>
   <Verbosity> 1</Verbosity>
 

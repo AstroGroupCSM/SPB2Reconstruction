@@ -75,7 +75,7 @@ VModule::ResultFlag
 TriggerCSM::Finish() 
 {
   VModule* m1= VModuleFactory::Create("TriggerSPB2CSM");
-  m1->Finish(event);
+  m1->Finish();
   return eSuccess;
 }
 

@@ -87,11 +87,18 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	}
       }
     }
-    for (int iSig=0;iSig<20;iSig++){
-    //Decide which cells are hot 
-    for (int ipmt=0; ipmt<36; ipmt++){
-      for (icell=0;icell<16;icell++){
-	int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+float(iSig)*0.2)*sqrt(sumCells[ipdm][ipmt][icell]/128.0));
+    for (int iSig=0;iSig<20;iSig++){ 
+      for (int ipmt=0; ipmt<36; ipmt++){
+	for (icell=0;icell<16;icell++){
+	  for (int igtu=0;igtu<128;igtu++){
+	    hotCells[ipdm][ipmt][icell][igtu] =0;
+	  }
+	}
+      }
+      //Decide which cells are hot 
+      for (int ipmt=0; ipmt<36; ipmt++){
+	for (icell=0;icell<16;icell++){
+	int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.1))*sqrt(sumCells[ipdm][ipmt][icell]/128.0));
 	for (int igtu=0;igtu<128;igtu++){
 	  if(valCells[ipdm][ipmt][icell][igtu]>=thresh){
 	    hotCells[ipdm][ipmt][icell][igtu] =1;
@@ -113,11 +120,14 @@ TriggerSPB2CSM::Run(evt::Event& event)
     
     //Trigger Logic 
     for (int frame=1;frame<127;frame++){ //Look through the event skipping first and last frames
-      total=0;
+     
+	 total=0;
+      int gtuMin=128;
+      int gtuMax=0;
       for(int igtu=frame;(igtu<127)&& (igtu<frame+10);igtu++){
-	int gtuMin=128,gtuMax=0;
 	for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
 	  for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
+	    HotNeighborsCount[iLocX][iLocY][igtu]=0;
 	    for (int ix=-1;ix<2;ix++){ //Look at the MacroPixels to  left and right 
 	      for(int iy=-1;iy<2;iy++){// And look at the MacroPixels above and below 
 		for (int it=-1;it<2;it++){ //Look at the GTU before and after 
@@ -126,13 +136,15 @@ TriggerSPB2CSM::Run(evt::Event& event)
 		  }
 		}
 	      }
-	    } 
+	    }
 	    if  (HotNeighborsCount[iLocX][iLocY][igtu]>=nHot){ //Count how many active MacroPixels
 	      total++;
-	      if(igtu<gtuMin)
+	      if(igtu<gtuMin){
 		gtuMin=igtu;
-	      if(igtu>gtuMax)
+	      }
+	      if(igtu>gtuMax){
 		gtuMax=igtu;
+	      }
 	    }
 	  }
 	}
@@ -153,7 +165,11 @@ TriggerSPB2CSM::Run(evt::Event& event)
       INFO("CSM_TRIGGER:\t0");
     event.SetTriggerState(0);
   }
-  cout <<sigTotal<<endl;
+  cout<<"TRIGGERS_test\t";
+  for (int iSig=0;iSig<20;iSig++)
+    cout<<triggerCounts[iSig]<<"\t";
+  cout <<endl;
+
   return eSuccess;
 }
 
@@ -163,7 +179,8 @@ TriggerSPB2CSM::Finish()
   INFO("TriggerSPB2CSM");
   cout<<"TRIGGERS\t";
   for (int iSig=0;iSig<20;iSig++)
-    cout<<triggerCounts[iSig]<<"\t"<<endl;
+    cout<<triggerCounts[iSig]<<"\t";
+  cout <<endl;
   return eSuccess;
 }
 void TriggerSPB2CSM::Clear(){
