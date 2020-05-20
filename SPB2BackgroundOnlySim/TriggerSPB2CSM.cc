@@ -87,7 +87,8 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	}
       }
     }
-    for (int iSig=0;iSig<20;iSig++){ 
+    for (int iSig=0;iSig<20;iSig++){
+      triggerState=0;
       for (int ipmt=0; ipmt<36; ipmt++){
 	for (icell=0;icell<16;icell++){
 	  for (int igtu=0;igtu<128;igtu++){
@@ -148,7 +149,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	    }
 	  }
 	}
-	if (total >=nActive && (gtuMax-gtuMin)>=nPersist){
+	if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0){
 	  triggerState=1;
 	  triggerCounts[iSig]++;
 	}
