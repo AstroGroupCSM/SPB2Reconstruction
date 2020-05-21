@@ -33,10 +33,6 @@
       id         = "EventGenerator"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
-    <configLink
-      id         = "DataWriter"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
 
 
      <configLink
@@ -51,6 +47,10 @@
       id         = "SignalIdentifierCSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
+      <configLink
+      id         = "PythonOutput"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/PythonOutput.xml"/>
 
 
 

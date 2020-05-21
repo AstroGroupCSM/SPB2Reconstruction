@@ -6,21 +6,17 @@
 
    <moduleControl>
 
-    <loop numTimes="1" pushEventToStack="yes">
+    <loop numTimes="2" pushEventToStack="yes">
 
-	<module> EventFileReaderOG           </module>
-        <module> EventGeneratorOG </module>
-	<module> FdSimEventCheckerOG </module>
-	<module> SignalIdentifierCSM </module>
-	<module> TelescopeSimulatorJG        </module>
-	<module> ElectronicsSimulatorJG      </module>
-	<module> BackgroundSimulatorCSM      </module>
-	<module> EventBuilderJG              </module>
-	<!--module> TriggerCSM </module-->
-	<module> PythonOutput </module>
-	<!--module> BackgroundSubtractorCSM        </module>
-	<module> PrioritizerCSM                 </module>
-	<module> DataWriter </module-->
+      <module> EventFileReaderOG           </module>
+      <module> EventGeneratorOG </module>
+      <module> FdSimEventCheckerOG </module>
+      <module> SignalIdentifierCSM </module>
+      <module> TelescopeSimulatorJG        </module>
+      <module> ElectronicsSimulatorJG      </module>
+      <module> BackgroundSimulatorCSM      </module>
+      <module> EventBuilderJG              </module>
+      <module> PythonOutput </module>
 
 
     </loop>
