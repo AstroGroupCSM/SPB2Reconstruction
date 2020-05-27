@@ -1,0 +1,568 @@
+[INFO] Main/JemEusoOfflineMain.cc:144: main: 
+          ___________________ 
+          __       _      _     /   ,
+        /    )   /  `   /  `   /        __    _
+       /    /  _/__   _/__    /   /   /   ) /___)
+      /    /   /      /      /   /   /   / (___
+     (____/   /      /      __________________
+
+ JemEuso Offline Framework v0r1p0-git_src
+ reference: Nucl. Instr. and Meth. A 580 (2007) 1485.
+ GIT revision number : v0.1.0-250-ga258c43a
+ bug reports to : http://westeros.cgca.uwm.edu/trac/jem-euso
+ ____________________________________________________
+
+[WARN] Utilities/Reader/Reader.cc:179: Parse: No schema (.xsd) document is available for file "/home/gfil/offline/install/share/jemeuso-offline/config/FModelConfig_SPB2.xml". It will not be validated!
+[WARN] Utilities/Reader/Reader.cc:179: Parse: No schema (.xsd) document is available for file "/home/gfil/offline/install/share/jemeuso-offline/config/PrimaryGenerator.xml". It will not be validated!
+[WARN] Utilities/Reader/Reader.cc:179: Parse: No schema (.xsd) document is available for file "/home/gfil/offline/install/share/jemeuso-offline/config/GeometryGenerator.xml". It will not be validated!
+[WARN] Utilities/Reader/Reader.cc:179: Parse: No schema (.xsd) document is available for file "./xml/EventGenerator_shower.xml". It will not be validated!
+[INFO] Framework/CentralConfig/CentralConfig.cc:415: FillMap: The following configuration files have been overridden. Files sorted from original to newest override:
+  - Id: 'ElectronicsSimulatorJG', files:
+      (original   ) '/home/gfil/offline/install/share/jemeuso-offline/config/ElectronicsSimulatorJG.xml'
+      (replaced by) './xml/ElectronicsSimulatorJG.xml'
+  - Id: 'TelescopeSimulatorJG', files:
+      (original   ) '/home/gfil/offline/install/share/jemeuso-offline/config/TelescopeSimulatorJG.xml'
+      (replaced by) './xml/TelescopeSimulatorJG.xml'
+
+[WARN] Framework/CentralConfig/CentralConfig.cc:693: CheckFingerprints: More than one configuration-time md5 fingerprint found corresponding to each of the following configuration files. If at least one matching fingerprint is found, I will continue execution. But you have been warned.
+  - LaserLightSimulator
+
+[ERROR] Framework/CentralConfig/CentralConfig.cc:706: CheckFingerprints: Incorrect MD5 fingerprints were found for the following configuration files. This implies this configuration file has been altered.
+  - ElectronicsSimulatorJG
+  - PythonOutput
+  - SignalIdentifier
+  - TelescopeSimulatorJG
+
+[INFO] Framework/FDetector/FdAlwaysUpManager.cc:39: Init: FdAlwaysUpManager initialized
+
+[WARN] Framework/Manager/VManager.cc:31: FindConfig: Attempt to initialize an already initialized manager: FdAlwaysUpManager
+looping on model diaphragm
+looping on model filter
+looping on model mirror
+looping on model camera
+looping on model pixel
+looping on model electronics
+[INFO] Framework/FDetector/FFixCalibManager.cc:62: Init: fixed calibration constant is 5 ph/ADC
+[ERROR] Framework/Atmosphere/Atmosphere.cc:64: CreateAndInit: Could not find branch CloudModel. This model will not be available
+[INFO] Framework/Earth/Earth.cc:124: Init:  Parameters:
+  atmosphere geometry: CURVED
+ Ground Height(WGS84): 0 m
+      ReflectanceType: 1
+          Specularity: 1
+          Gauss Blur: 0.1
+           AlbedoType: 6
+               Albedo: 0.05UVA
+                       0.07UVB
+
+[INFO] Framework/Random/RandomEngineRegistry.cc:110: Init: Seeds of random streams: eDetector = 1996549472, ePhysics = 1367487666.
+[INFO] Framework/Detector/Detector.cc:139: Update: to time 2020-05-27T16:06:04.070989000Z (UTC), 1274630782:7.0989e+07 (GPS)
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:79: Init: Electronics simulation
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:20: Init: EventBuilder
+[INFO] Framework/Detector/Detector.cc:139: Update: to time 2020-01-01T04:33:12.500000000Z (UTC), 1261888410:5e+08 (GPS)
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:281: Init:  -- eye centric core randomization -- 
+               eye Id: 1
+         telescope Id: 1
+            delta phi: 0deg
+         min distance: 5km
+         max distance: 5km
+             altitude: 0m
+
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:158: Init: Geant4 telescope ray-tracing
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:174: Init: Electronics for building traces
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:252: Init: Parametric optics type = mirror with properties: 
+PSF diameter = 5 mm optical efficiency: 0.68
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:312: Init: Reading Geant4 macro file.
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:314: Init: Initializing FDsimG4
+
+*************************************************************
+ Geant4 version Name: geant4-10-02-patch-03    (27-January-2017)
+                      Copyright : Geant4 Collaboration
+                      Reference : NIM A 506 (2003), 250-303
+                            WWW : http://cern.ch/geant4
+*************************************************************
+
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Current available graphics systems are:
+ASCIITree (ATree)
+DAWNFILE (DAWNFILE)
+RayTracer (RayTracer)
+VRML1FILE (VRML1FILE)
+VRML2FILE (VRML2FILE)
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByCharge
+  drawByParticleID
+  drawByOriginVolume
+  drawByAttribute
+
+Registered filter factories:
+  chargeFilter
+  particleFilter
+  originVolumeFilter
+  attributeFilter
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+Available colours:
+  black, blue, brown, cyan, gray, green, grey, magenta, red, white, yellow
+
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4Materials.cc:78: ConstructTableOfMaterials: Using Wavelength range 2.8e-07 - 4.24e-07
+Lens material file for CYTOP /home/gfil/offline/install/share/jemeuso-offline/config/Optics/CYTOPv2.dat
+Error in <TCling::RegisterModule>: cannot find dictionary module EventDictionary_rdict.pcm
+Lens material file for PMMA /home/gfil/offline/install/share/jemeuso-offline/config/Optics/Mitsubishi_000v4c.dat
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/MaterialParameters.cc:100: setRealRI: Generated RINDEX  with limits: 200 nm - 700 nm and step: 0.01 eV
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/MaterialParameters.cc:269: setTrans: Converted transmittivity to ABSLENGTH with limits: 200.259 nm, 700 nm.
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4DetectorConstruction.cc:112: Construct: telescope name SPB2
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4DetectorConstruction.cc:314: Construct: Building EUSO-SPB2
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4Camera_SPB2.cc:67: FDsimG4Camera_SPB2: Building Full Focal Surface  
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:443: BuildDetectorTree: *** Building PhCat
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:446: BuildDetectorTree: *** Building Pixel
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:449: BuildDetectorTree: *** Building PMT
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:452: BuildDetectorTree: *** Building Filters
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:455: BuildDetectorTree: *** Building LPMT
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:458: BuildDetectorTree: *** Building EC
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:461: BuildDetectorTree: *** Building PDM
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PDMSPB2.cc:465: BuildDetectorTree:  define  pixel as sensitive detector
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4OpBoundaryProcess.cc:169: FDsimG4OpBoundaryProcess: 
+Frenel reflection : yes
+total internal reflection : yes
+unified model reflection : yes
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4OpEUSODiffraction.cc:23: FDsimG4OpEUSODiffraction: FDsimG4OpEUSODiffraction is created
+DOE file: /home/gfil/offline/install/share/jemeuso-offline/config/Optics/DOE_Balloon_120311_AZM_FS2505_imp6deg.dat
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/FDsimG4PhysicsList.cc:297: ConstructOp:  Adding DiscreteProcesses to OpticalPhoton 
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:402: Init: Unifrom responds will be simulated
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 1, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 2, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 3, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 4, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 5, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 6, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 7, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 8, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 9, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 10, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 11, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 12, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 13, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 14, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 15, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 16, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 17, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 18, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 19, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 20, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 21, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 22, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 23, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 24, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 25, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 26, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 27, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 28, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 29, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 30, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 31, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 32, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 33, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 34, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 35, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 36, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 37, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 38, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 39, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 40, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 41, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 42, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 43, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 44, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 45, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 46, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder
+[WARN] Framework/Detector/Detector.cc:133: Update: Already at the requested time.
+[INFO] Modules/General/EventGeneratorOG/EventGenerator.cc:422: Run: generated event 'run 1, event 47, northing = 4352136.2, easting = 340333.01
+[WARN] Modules/FdSimulation/FdSimEventCheckerOG/FdSimEventChecker.cc:110: Run: There is no up time information. Might be added in the future!
+[INFO] Modules/FdReconstruction/SignalIdentifierCSM/SignalIdentifier.cc:37: Run: IDENTIFYING SIGNAL
+[INFO] Modules/FdSimulation/G4TelescopeSimulatorJG/TelescopeSimulator.cc:557: Run: =======================>> Running In Offline Mode
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:97: Run: ElectronicsSimulator
+[INFO] Modules/FdSimulation/ElectronicsSimulatorJG/ElectronicsSimulator.cc:117: Run: You are using double pulse resolution 6 ns and dead time 50 ns (SPACIROC-3)
+[INFO] Modules/FdSimulation/BackgroundSimulatorCSM/BackgroundSimulator.cc:158: Run: Running BackgroundSimulatorCSM ...
+[INFO] Modules/FdSimulation/EventBuilder/EventBuilder.cc:30: Run: EventBuilder

@@ -6,9 +6,9 @@
 
    <moduleControl>
 
-    <loop numTimes="unbounded" pushEventToStack="yes">
+    <loop numTimes="10000" pushEventToStack="yes">
 
-      <module> EventFileReaderOG           </module>
+      <!--module> EventFileReaderOG           </module-->
       <module> EventGeneratorOG </module>
       <module> FdSimEventCheckerOG </module>
       <module> SignalIdentifierCSM </module>

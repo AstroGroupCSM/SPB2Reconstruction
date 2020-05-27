@@ -5,8 +5,8 @@
 <PythonOutput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/PythonOutput.xsd'>
 
-  <metaData> 1</metaData>
+  <metaData> 0</metaData>
   <minSignal> 0 </minSignal>
-  <outputDir> /DataDrive/EUSO-SPB2/SimulatedData/PythonFiles/ </outputDir>
+  <outputDir> /DataDrive/EUSO-SPB2/SimulatedData/PythonFilesNoise/ </outputDir>
 
 </PythonOutput>
