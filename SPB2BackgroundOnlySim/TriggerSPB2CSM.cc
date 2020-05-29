@@ -51,8 +51,11 @@ TriggerSPB2CSM::Init()
   if (topBranch.GetChild("signalOnly")){
     topBranch.GetChild("signalOnly").GetData(fSignalOnly);
   }
-  for (int i=0;i<20;i++)
-    triggerCounts[i]=0;
+  for (int i=0;i<20;i++){
+    for (int j=35;j>0;j--){
+      triggerCounts[i][j]=0;
+    }
+  }
   return eSuccess;
 }
 
@@ -68,10 +71,18 @@ TriggerSPB2CSM::Run(evt::Event& event)
   //Read event in 
   Input(event);
   
+  vector<int> xLocs;
+  vector<int> yLocs;
   triggerState=0;
   int sigTotal=0;
-  for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
-    Clear2();
+  for (int iSig=0;iSig<10;iSig++){
+    for (int Radius=35;Radius >0;Radius-=5){
+      triggerState=0;
+
+      
+    LOOP:for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
+    Clear();
+    Input(event);
     //Sums value in each cell
     for (int ipmt=0; ipmt<36; ipmt++){
       for (int ipixx=0; ipixx<8; ipixx++){
@@ -87,8 +98,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	}
       }
     }
-    for (int iSig=0;iSig<20;iSig++){
-      triggerState=0;
+    
       for (int ipmt=0; ipmt<36; ipmt++){
 	for (icell=0;icell<16;icell++){
 	  for (int igtu=0;igtu<128;igtu++){
@@ -122,9 +132,12 @@ TriggerSPB2CSM::Run(evt::Event& event)
     //Trigger Logic 
     for (int frame=1;frame<127;frame++){ //Look through the event skipping first and last frames
      
-	 total=0;
+      total=0;
+      xLocs.clear();
+      yLocs.clear();
       int gtuMin=128;
       int gtuMax=0;
+      float radiusMin=50.;
       for(int igtu=frame;(igtu<127)&& (igtu<frame+10);igtu++){
 	for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
 	  for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
@@ -146,16 +159,27 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	      if(igtu>gtuMax){
 		gtuMax=igtu;
 	      }
+	      for (int iV=0;iV<xLocs.size();iV++){
+		float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
+		if (radiusCurrent<radiusMin&&radiusCurrent>2)
+		  radiusMin=radiusCurrent;
+	      }
+	      xLocs.push_back(iLocX);
+	      yLocs.push_back(iLocY);
 	    }
+	    HotNeighborsCount[iLocX][iLocY][igtu]=0;
 	  }
 	}
-	if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0){
+      }
+      if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0&& int(radiusMin)<=Radius){
+	  triggerCounts[iSig][Radius]++;
 	  triggerState=1;
-	  triggerCounts[iSig]++;
-	}
+	  goto LOOP;
       }
     }
-    }}
+  }
+    }
+  }
   if (triggerState==1){
       if (fVerbosityLevel>0)
 	INFO("CSM_TRIGGER:\t1");
@@ -166,10 +190,6 @@ TriggerSPB2CSM::Run(evt::Event& event)
       INFO("CSM_TRIGGER:\t0");
     event.SetTriggerState(0);
   }
-  cout<<"TRIGGERS_test\t";
-  for (int iSig=0;iSig<20;iSig++)
-    cout<<triggerCounts[iSig]<<"\t";
-  cout <<endl;
 
   return eSuccess;
 }
@@ -178,10 +198,13 @@ VModule::ResultFlag
 TriggerSPB2CSM::Finish() 
 {
   INFO("TriggerSPB2CSM");
-  cout<<"TRIGGERS\t";
-  for (int iSig=0;iSig<20;iSig++)
-    cout<<triggerCounts[iSig]<<"\t";
-  cout <<endl;
+  for (int iSig=0;iSig<10;iSig++){
+    cout<<"QWERTY\t";
+    for (int Radius=35;Radius >0;Radius-=5){
+      cout<<triggerCounts[iSig][Radius]<<"\t";
+    }
+    cout <<endl;
+  }
   return eSuccess;
 }
 void TriggerSPB2CSM::Clear(){

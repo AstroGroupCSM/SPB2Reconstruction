@@ -109,7 +109,7 @@
     <configLink id="TriggerSPB2CSM">
       <TriggerSPB2CSM>
 	<nActive>5</nActive>
-	<nSigma>3.0</nSigma>
+	<!--nSigma>3.0</nSigma-->
       </TriggerSPB2CSM>
     </configLink>
 
