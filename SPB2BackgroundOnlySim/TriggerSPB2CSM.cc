@@ -136,7 +136,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       xLocs.clear();
       yLocs.clear();
       int gtuMin=128;
-      int gtuMax=0;
+      int gtuMax=0; 
       for(int igtu=frame;(igtu<127)&& (igtu<frame+10);igtu++){
 	for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping 
 	  for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
@@ -165,13 +165,19 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	  }
 	}
       }
-      for (int iV=0;iV<xLocs.size();iV++){
-	for(int iV2=0;iV2<xLocs.size();iV2++){
-	  float radiusCurrent=sqrt((float(xLocs[iV2]-xLocs[iV])*float(xLocs[iV2]-xLocs[iV]))+(float(yLocs[iV2]-yLocs[iV])*float(yLocs[iV2]-yLocs[iV])));
-	  if (radiusCurrent<Radius && iV2!=iV)
-	    total++;
-	}
+      for (int iLocX=1;iLocX<23;iLocX++){
+	  for (int iLocY=1;iLocY<23;iLocY++){
+	    int total2=0;
+	    for (int iV=0;iV<xLocs.size();iV++){
+	      float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
+	      if (radiusCurrent<Radius);
+	      total2++;
+	    }
+	    if (total2> total)
+	      total=total2;
+	  }
       }
+
       if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0){
 	  triggerCounts[iSig][Radius]++;
 	  triggerState=1;
