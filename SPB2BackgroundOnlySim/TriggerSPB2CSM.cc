@@ -170,8 +170,8 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	    int total2=0;
 	    for (int iV=0;iV<xLocs.size();iV++){
 	      float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
-	      if (radiusCurrent<Radius);
-	      total2++;
+	      if (radiusCurrent<Radius)
+		total2++;
 	    }
 	    if (total2> total)
 	      total=total2;
