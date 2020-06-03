@@ -80,7 +80,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       triggerState=0;
 
       
-    LOOP:for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
+    for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
     Clear();
     Input(event);
     //Sums value in each cell
@@ -109,7 +109,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       //Decide which cells are hot 
       for (int ipmt=0; ipmt<36; ipmt++){
 	for (icell=0;icell<16;icell++){
-	int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.1))*sqrt(sumCells[ipdm][ipmt][icell]/128.0));
+	  int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.1))*sqrt(float(sumCells[ipdm][ipmt][icell])/128.0));
 	for (int igtu=0;igtu<128;igtu++){
 	  if(valCells[ipdm][ipmt][icell][igtu]>=thresh){
 	    hotCells[ipdm][ipmt][icell][igtu] =1;
@@ -168,9 +168,9 @@ TriggerSPB2CSM::Run(evt::Event& event)
       for (int iLocX=1;iLocX<23;iLocX++){
 	  for (int iLocY=1;iLocY<23;iLocY++){
 	    int total2=0;
-	    for (int iV=0;iV<xLocs.size();iV++){
+	    for (int iV=0;iV<(int)xLocs.size();iV++){
 	      float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
-	      if (radiusCurrent<float(Radius)&& radiusCurrent>2.)
+	      if (radiusCurrent<float(Radius)&& radiusCurrent>1.)
 		total2++;
 	    }
 	    if (total2> total)
@@ -181,7 +181,6 @@ TriggerSPB2CSM::Run(evt::Event& event)
       if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0){
 	  triggerCounts[iSig][Radius]++;
 	  triggerState=1;
-	  goto LOOP;
       }
     }
   }
