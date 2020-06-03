@@ -15,6 +15,8 @@
 #include <evt/Header.h>
 #include <fevt/FEvent.h>
 #include <fevt/Eye.h>
+#include <fdet/Eye.h>
+#include <fdet/Telescope.h>
 #include <fevt/Telescope.h>
 #include <fdet/FDetector.h>
 #include <det/Detector.h>

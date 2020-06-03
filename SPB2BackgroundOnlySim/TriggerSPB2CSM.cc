@@ -76,7 +76,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
   triggerState=0;
   int sigTotal=0;
   for (int iSig=0;iSig<10;iSig++){
-    for (int Radius=15;Radius >0;Radius-=3){
+    for (int Radius=10;Radius >0;Radius-=2){
       triggerState=0;
 
       
@@ -170,7 +170,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	    int total2=0;
 	    for (int iV=0;iV<xLocs.size();iV++){
 	      float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
-	      if (radiusCurrent<float(Radius))
+	      if (radiusCurrent<float(Radius)&& radiusCurrent>2.)
 		total2++;
 	    }
 	    if (total2> total)
@@ -207,7 +207,7 @@ TriggerSPB2CSM::Finish()
   INFO("TriggerSPB2CSM");
   for (int iSig=0;iSig<10;iSig++){
     cout<<"QWERTY\t";
-    for (int Radius=15;Radius >0;Radius-=3){
+    for (int Radius=10;Radius >0;Radius-=2){
       cout<<triggerCounts[iSig][Radius]<<"\t";
     }
     cout <<endl;

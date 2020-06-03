@@ -338,16 +338,18 @@ TriggerSPB2CSM.o: TriggerSPB2CSM.cc TriggerSPB2CSM.h \
  /home/gfil/offline/install/include/fevt/CLK.h \
  /home/gfil/offline/install/include/fdet/Camera.h \
  /home/gfil/offline/install/include/fevt/EyeHeader.h \
- /home/gfil/offline/install/include/fdet/FDetector.h \
- /home/gfil/offline/install/include/fdet/FDetComponentSelector.h \
+ /home/gfil/offline/install/include/fdet/Eye.h \
  /home/gfil/offline/install/include/det/ValidityStamp.h \
  /home/gfil/offline/install/include/utl/TimeRange.h \
- /home/gfil/offline/install/include/det/Detector.h \
- /home/gfil/offline/install/include/det/VManager.h \
+ /home/gfil/offline/install/include/fdet/Telescope.h \
  /home/gfil/offline/install/include/utl/TabulatedFunction.h \
  /home/gfil/offline/install/include/utl/TabulatedFunctionIterators.h \
  /home/gfil/offline/install/include/utl/Pair.h \
  /home/gfil/offline/install/include/utl/PairErr.h \
+ /home/gfil/offline/install/include/fdet/FDetector.h \
+ /home/gfil/offline/install/include/fdet/FDetComponentSelector.h \
+ /home/gfil/offline/install/include/det/Detector.h \
+ /home/gfil/offline/install/include/det/VManager.h \
  /home/gfil/offline/install/include/utl/TabulatedFunctionComplexLgAmpPhase.h \
  /home/gfil/offline/install/include/utl/ComplexLgAmpPhase.h \
  /home/gfil/offline/install/include/utl/TabulatedFunctionComplexLgAmpPhaseIterators.h \
