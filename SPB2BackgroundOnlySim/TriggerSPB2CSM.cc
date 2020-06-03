@@ -109,7 +109,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       //Decide which cells are hot 
       for (int ipmt=0; ipmt<36; ipmt++){
 	for (icell=0;icell<16;icell++){
-	  int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.1))*sqrt(float(sumCells[ipdm][ipmt][icell])/128.0));
+	  int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.01))*sqrt(float(sumCells[ipdm][ipmt][icell])/128.0));
 	for (int igtu=0;igtu<128;igtu++){
 	  if(valCells[ipdm][ipmt][icell][igtu]>=thresh){
 	    hotCells[ipdm][ipmt][icell][igtu] =1;
