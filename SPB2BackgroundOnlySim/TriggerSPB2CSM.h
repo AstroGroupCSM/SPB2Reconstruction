@@ -55,9 +55,11 @@ namespace TriggerSPB2CSM {
       int ipheSig[3][36][8][8][128]; //Photo-electron trace
       int hotCells[3][36][16][128]; // Location of hot cells 
       int valCells[3][36][16][128]; //pe trace for cells 
-      int sumCells[3][36][16]; //Integrated cell pe value 
+      int sumCells2[3][36][16]; //Integrated cell pe value
+      float sumCells[3][36][16];
       int HotOrNot[24][24][128]; //Location of hotcells in 3D form (x,y,t)
       int HotNeighborsCount[24][24][128];
+      int thresh[6912];
       int triggerCounts[20][35];
       int dummy[100];
       REGISTER_MODULE("TriggerSPB2CSM",TriggerSPB2CSM);

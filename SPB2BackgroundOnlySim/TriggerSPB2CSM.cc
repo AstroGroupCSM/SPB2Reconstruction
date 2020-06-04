@@ -45,11 +45,32 @@ TriggerSPB2CSM::Init()
   if (topBranch.GetChild("Verbosity")){
     topBranch.GetChild("Verbosity").GetData(fVerbosityLevel);
   }
-
-  if (!topBranch.GetChild("S") && !topBranch.GetChild("N"))
-    INFO("Using Default values for TriggerSPB2CSM");
   if (topBranch.GetChild("signalOnly")){
     topBranch.GetChild("signalOnly").GetData(fSignalOnly);
+  }
+
+  
+  ifstream threshFile;
+  threshFile.open("Thresholds_1.txt");
+  for (int i=0;i<6192;i++)
+    threshFile>>thresh[i];
+  for (int ipdm=0;ipdm<3;ipdm++){
+    for(int ipmt=0; ipmt<36; ipmt++){
+      for (int ipixx=0; ipixx<8; ipixx++){
+	for (int ipixy=0; ipixy<8; ipixy++){
+	  icell = (ipixx/2) + 4*(ipixy/2);
+	  int pixNumber=(ipdm*2304)+(pmtMapperY(ipmt)*8)+ ipixy + (48*ipixx) + (48*((ipmt/12)*16+(((ipmt%12)/2)%2)*8));
+	  sumCells2[ipdm][ipmt][icell] +=thresh[pixNumber];
+	}
+      }
+    }
+  }
+  for (int ipdm=0;ipdm<3;ipdm++){
+    for(int ipmt=0; ipmt<36; ipmt++){
+      for (icell=0;icell<16;icell++){
+	sumCells[ipdm][ipmt][icell]=float(sumCells2[ipdm][ipmt][icell])/16384.0;
+      }
+    }
   }
   for (int i=0;i<20;i++){
     for (int j=35;j>0;j--){
@@ -80,7 +101,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       triggerState=0;
 
       
-    for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
+    LOOP:for (int ipdm=0; ipdm<3; ipdm++){ //Do everythin on a per-PDM basis
     Clear();
     Input(event);
     //Sums value in each cell
@@ -90,7 +111,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	  icell = (ipixx/2) + 4*(ipixy/2);
 	  for (int igtu=0;igtu<128;igtu++){
 	    sigTotal+= ipheSig[ipdm][ipmt][ipixx][ipixy][igtu];
-	    sumCells[ipdm][ipmt][icell] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
+	    //sumCells[ipdm][ipmt][icell] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
 	    if ((fSignalOnly && ipheSig[ipdm][ipmt][ipixx][ipixy][igtu]>0)||!(fSignalOnly)){
 	      valCells[ipdm][ipmt][icell][igtu] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
 	    }
@@ -109,7 +130,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
       //Decide which cells are hot 
       for (int ipmt=0; ipmt<36; ipmt++){
 	for (icell=0;icell<16;icell++){
-	  int thresh =int(float(sumCells[ipdm][ipmt][icell])/128.0+ (nSigma+(float(iSig)*0.01))*sqrt(float(sumCells[ipdm][ipmt][icell])/128.0));
+	  int thresh =int(sumCells[ipdm][ipmt][icell]+ (nSigma+(float(iSig)*0.1))*sqrt(sumCells[ipdm][ipmt][icell]));
 	for (int igtu=0;igtu<128;igtu++){
 	  if(valCells[ipdm][ipmt][icell][igtu]>=thresh){
 	    hotCells[ipdm][ipmt][icell][igtu] =1;
@@ -131,7 +152,6 @@ TriggerSPB2CSM::Run(evt::Event& event)
     
     //Trigger Logic 
     for (int frame=1;frame<127;frame++){ //Look through the event skipping first and last frames
-     
       total=0;
       xLocs.clear();
       yLocs.clear();
@@ -166,24 +186,25 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	}
       }
       for (int iLocX=1;iLocX<23;iLocX++){
-	  for (int iLocY=1;iLocY<23;iLocY++){
-	    int total2=0;
-	    for (int iV=0;iV<(int)xLocs.size();iV++){
-	      float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
-	      if (radiusCurrent<float(Radius)&& radiusCurrent>1.)
-		total2++;
-	    }
-	    if (total2> total)
-	      total=total2;
+	for (int iLocY=1;iLocY<23;iLocY++){
+	  int total2=0;
+	  for (int iV=0;iV<(int)xLocs.size();iV++){
+	    float radiusCurrent=sqrt((float(iLocX-xLocs[iV])*float(iLocX-xLocs[iV]))+(float(iLocY-yLocs[iV])*float(iLocY-yLocs[iV])));
+	    if (radiusCurrent<float(Radius)&& radiusCurrent>1.)
+	      total2++;
 	  }
+	  if (total2> total)
+	    total=total2;
+	}
       }
 
       if (total >=nActive && (gtuMax-gtuMin)>=nPersist&&triggerState==0){
 	  triggerCounts[iSig][Radius]++;
 	  triggerState=1;
+	  goto LOOP;
       }
     }
-  }
+    }
     }
   }
   if (triggerState==1){
@@ -216,7 +237,7 @@ TriggerSPB2CSM::Finish()
 void TriggerSPB2CSM::Clear(){
   fill(&iphe[0][0][0][0][0], &iphe[0][0][0][0][0] + (3*36*8*8*128), 0);
   fill(&ipheSig[0][0][0][0][0], &ipheSig[0][0][0][0][0] + (3*36*8*8*128), 0);
-  fill(&sumCells[0][0][0], &sumCells[0][0][0] + (3*36*16), 0);
+  //fill(&sumCells[0][0][0], &sumCells[0][0][0] + (3*36*16), 0);
   fill(&valCells[0][0][0][0], &valCells[0][0][0][0] + (3*36*16*128), 0);
   fill(&hotCells[0][0][0][0], &hotCells[0][0][0][0] + (3*36*16*128), 0);
   fill(&HotOrNot[0][0][0], &HotOrNot[0][0][0] + (24*24*128), 0);
