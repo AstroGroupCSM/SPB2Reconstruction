@@ -52,14 +52,19 @@ TriggerSPB2CSM::Init()
   
   ifstream threshFile;
   threshFile.open("Thresholds_1.txt");
-  for (int i=0;i<6192;i++)
-    threshFile>>thresh[i];
+  char output[100];
+  int count = 0;
+  while (threshFile >> output && !threshFile.eof()){
+    thresh[count]=atoi(output);
+    count++;
+  }
+  threshFile.close();
   for (int ipdm=0;ipdm<3;ipdm++){
     for(int ipmt=0; ipmt<36; ipmt++){
       for (int ipixx=0; ipixx<8; ipixx++){
 	for (int ipixy=0; ipixy<8; ipixy++){
 	  icell = (ipixx/2) + 4*(ipixy/2);
-	  int pixNumber=(ipdm*2304)+(pmtMapperY(ipmt)*8)+ ipixy + (48*ipixx) + (48*((ipmt/12)*16+(((ipmt%12)/2)%2)*8));
+	  int pixNumber=(ipdm*2304) + (pmtMapperY(ipmt%12)*8)+ ipixy + (48*ipixx) + (48*((ipmt/12)*16+(((ipmt%12)/2)%2)*8));
 	  sumCells2[ipdm][ipmt][icell] +=thresh[pixNumber];
 	}
       }
@@ -72,6 +77,7 @@ TriggerSPB2CSM::Init()
       }
     }
   }
+  
   for (int i=0;i<20;i++){
     for (int j=35;j>0;j--){
       triggerCounts[i][j]=0;
