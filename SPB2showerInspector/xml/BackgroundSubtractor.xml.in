@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module BackgroundSubtractor -->
+
+<BackgroundSubtractorCSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/BackgroundSubtractor.xsd'>
+
+  <N> 2 </N> <!--Number of cellss that need to be active-->
+  <S> 3.5 </S> <!--How much over threshold a cell needs to be-->
+ 
+  
+</BackgroundSubtractorCSM>
