@@ -387,7 +387,7 @@ void TriggerSPB2cells3x3::Input(evt::Event& event){
 		if(pix->HasSimData()){
 		  const PixelSimData& ps = pix->GetSimData();
 
-		  for (PixelRecData::ConstFADCTraceIterator trIts = ps.FADCTracesBegin(); trIts != ps.FADCTracesEnd(); ++trIts) {
+		  for (PixelSimData::ConstFADCTraceIterator trIts = ps.FADCTracesBegin(); trIts != ps.FADCTracesEnd(); ++trIts) {
 
 		    if (static_cast<FdConstants::LightSource>(trIts->GetLabel()) == FdConstants::eSignalPE ){
 
