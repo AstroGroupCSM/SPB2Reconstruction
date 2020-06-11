@@ -15,7 +15,7 @@
 	<module> ElectronicsSimulatorJG      </module>
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
-	<module> TriggerCSM </module>
+	<module> TriggerSPB2cells3x3TG </module>
 	<!--module> DataWriter </module-->
 
 
