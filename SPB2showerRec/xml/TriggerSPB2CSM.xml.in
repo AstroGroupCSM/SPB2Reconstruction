@@ -5,8 +5,8 @@
 <TriggerSPB2CSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
 
-	<!--N> 5 </N>
-  	<S>2.67 </S> 
-	<Verbosity> 1</Verbosity-->
+	<N> 3 </N> <!--Number of cellss that need to be active-->
+  	<S>3.75 </S> <!--How much over threshold a cell needs to be-->
+	<signalOnly>1 </signalOnly>
 
 </TriggerSPB2CSM>

@@ -17,9 +17,6 @@
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
 	<module> TriggerCSM </module>
-	<module> BackgroundSubtractorCSM        </module>
-	<!--module> PrioritizerCSM                 </module-->
-	<module> DataWriter </module>
 
 
     </loop>
