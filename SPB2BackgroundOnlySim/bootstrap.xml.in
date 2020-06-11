@@ -26,10 +26,6 @@
       xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
     
     <configLink
-      id         = "EventFileReader"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/EventFileReader.xml"/>
-    <configLink
       id         = "EventGenerator"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
