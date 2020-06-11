@@ -305,7 +305,7 @@ void TriggerSPB2cells3x3::AnalyzeBooleanActiveCell (int boolean_active_cell[][nP
 	
         if (fWantTriggerOutput){
           outString.open (outFile.c_str(), ios::app); 
-          /*outString*/cout <<"QWERTYevent " <<event <<": trigger at gtu " <<gtu <<", gtu_abs=" <<event*nGTU+gtu <<", pdm " <<ipdm <<", pmt " <<ipmt <<", active cells=" <<sum_cell[ipdm][ipmt] <<" GTUMin "<<gtuMin<<" GTUMax "<<gtuMax<<" " <<pdmCounts[0]<<" " <<pdmCounts[1]<<" "<<pdmCounts[2]<<endl;
+          /*outString*/cout <<"QWERTYevent " <<event <<": trigger at gtu " <<gtu <<", gtu_abs=" <<event*nGTU+gtu <<", pdm " <<ipdm <<", pmt " <<ipmt <<", active cells= " <<sum_cell[ipdm][ipmt] <<" GTUMin "<<gtuMin<<" GTUMax "<<gtuMax<<" " <<pdmCounts[0]<<" " <<pdmCounts[1]<<" "<<pdmCounts[2]<<endl;
           outString.close();
         }
       }
