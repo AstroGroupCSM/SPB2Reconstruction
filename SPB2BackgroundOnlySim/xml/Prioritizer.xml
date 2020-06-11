@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<!-- Configuration of Module Prioritizer -->
-
-<PrioritizerCSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                         xsi:noNamespaceSchemaLocation='/home/gfil/offline/install/share/jemeuso-offline/config/Prioritizer.xsd'>
-  <!-- Fill with your configuration.-->
-  <ReqTrig> 0 </ReqTrig>
-</PrioritizerCSM>

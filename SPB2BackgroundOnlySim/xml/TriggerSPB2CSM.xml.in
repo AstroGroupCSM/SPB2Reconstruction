@@ -3,11 +3,9 @@
 <!-- Configuration of Module NewSPB2TriggerModule -->
 
 <TriggerSPB2CSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                         xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
-  <nActive> 3</nActive>
-  <nHot> 5 </nHot>
-  <nSigma>2.5 </nSigma>
-  <signalOnly> 0</signalOnly>
-  <Verbosity> 1</Verbosity>
+                         xsi:noNamespaceSchemaLocation='@XMLSCHEMALOCATION@/TriggerSPB2CSM.xsd'>
+
+	<N> 3 </N> <!--Number of cellss that need to be active-->
+  	<S>3.75 </S> <!--How much over threshold a cell needs to be-->
 
 </TriggerSPB2CSM>

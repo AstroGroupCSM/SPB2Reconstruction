@@ -33,15 +33,7 @@
       id         = "EventGenerator"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
-    <configLink
-      id         = "DataWriter"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
 
-    <configLink
-      id         = "TriggerTG"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/TriggerTG.xml"/>
 
      <configLink
       id         = "TriggerSPB2CSM"
@@ -52,14 +44,7 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
-     <!--configLink
-      id         = "BackgroundSubtractorCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/-->
-     <!--configLink
-      id         = "PrioritizerCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/Prioritizer.xml"/-->
+
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
@@ -68,10 +53,6 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-     <configLink
-      id         = "SignalIdentifierCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
 
 
 
@@ -84,21 +65,7 @@
   -->
 
 
-  <parameterOverrides>
-
-    <!--configLink id="EventFileReader">
-         <EventFileReader>
-            <InputFilenames> ../SimulatedData/NoBG/XXXXXX.root </InputFilenames>
-         </EventFileReader>
-  </configLink>
-  <configLink id="DataWriter">
-    <DataWriter>
-      <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
-    </DataWriter>
-  </configLink-->
-	
-     
-
+  <parameterOverrides>  
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>
