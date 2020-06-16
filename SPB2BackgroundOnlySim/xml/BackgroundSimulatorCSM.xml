@@ -18,7 +18,7 @@
     <NonUniform> 1 </NonUniform>
     <TiltDependent> 1 </TiltDependent>
     <BaseValue> 1.0 </BaseValue>
-    <MakeBlobs> 0.0 </MakeBlobs>
+    <MakeBlobs> 1.0 </MakeBlobs>
     <VarriedBackground> 1 </VarriedBackground>
 
 
