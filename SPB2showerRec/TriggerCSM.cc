@@ -24,6 +24,7 @@ TriggerCSM::Init()
 VModule::ResultFlag 
 TriggerCSM::Run(evt::Event& event)
 {
+  Input(event);
   double fZenith =-1.;
   double fAzimuth=-1.;
   double fCorePos[3];
@@ -63,7 +64,7 @@ TriggerCSM::Finish()
 }
 
     void TriggerCSM::Input(evt::Event& event){
-  
+      nSigPE=0;
     FEvent& fdEvent = event.GetFEvent();
   
     for (fevt::FEvent::ConstEyeIterator eye = fdEvent.EyesBegin(ComponentSelector::eUnknown);
