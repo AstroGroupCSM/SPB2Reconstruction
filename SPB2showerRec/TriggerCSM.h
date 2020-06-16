@@ -31,12 +31,16 @@ namespace Trigger {
       public fwk::VModule {
   public:
     TriggerCSM();
-    ~TriggerCSM();
+   ~TriggerCSM();
     VModule::ResultFlag Init();
+    
     VModule::ResultFlag Run(evt::Event& e);
     VModule::ResultFlag Finish();
   private:
     REGISTER_MODULE("TriggerCSM",TriggerCSM);
+    void Input(evt::Event& event); //Reads event
+    int fPDMid;
+    int nSigPE;
   };
 }
 
