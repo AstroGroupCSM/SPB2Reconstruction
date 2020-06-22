@@ -49,7 +49,11 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-
+     
+ <configLink
+      id         = "BackgroundSimulatorCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
 
 
 
@@ -75,6 +79,12 @@
 	<!--nSigma>3.0</nSigma-->
       </TriggerSPB2CSM>
     </configLink>
+    <configLink id="BackgroundSimulatorCSM">
+      <BackgroundSimulatorCSM>
+	<BaseValue>1.XXXXXX</BaseValue>
+      </BackgroundSimulatorCSM>
+    </configLink>
+      
 
 
 

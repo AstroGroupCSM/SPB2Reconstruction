@@ -1,0 +1,1 @@
+TRIGGERS	TriggerSPB2CSM	1	TriggerSPB2cells3x3TG	0	Zenith	0	Azimuth	0	Location	-4913.05	778.135	33001.9
