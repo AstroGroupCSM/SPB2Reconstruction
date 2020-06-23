@@ -19,7 +19,7 @@
     <TiltDependent> 1 </TiltDependent>
     <BaseValue> 1.0 </BaseValue>
     <MakeBlobs> 0.0 </MakeBlobs>
-    <VarriedBackground> 1 </VarriedBackground>
+    <VarriedBackground> 0 </VarriedBackground>
 
 
 </BackgroundSimulatorCSM>

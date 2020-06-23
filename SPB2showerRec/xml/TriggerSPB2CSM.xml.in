@@ -8,5 +8,5 @@
   <nHot> 3 </nHot> <!--Number of cellss that need to be active-->
   <nActive> 3 </nActive>
   <sCell>4.0 </sCell> <!--How much over threshold a cell needs to be-->
-
+  <signalOnly> 1 </signalOnly>
 </TriggerSPB2CSM>
