@@ -81,7 +81,7 @@
     </configLink>
     <configLink id="BackgroundSimulatorCSM">
       <BackgroundSimulatorCSM>
-	<BaseValue>1.XXXXXX</BaseValue>
+	<BaseValue>0.XXXXXX</BaseValue>
       </BackgroundSimulatorCSM>
     </configLink>
       
