@@ -37,16 +37,16 @@
    <FS_SD> 0 </FS_SD>
 
 <!-- change to no if you don't want to use parametric, right now only works for SPB2 -->
-   <ParametricOptics> yes </ParametricOptics>
+   <ParametricOptics> no </ParametricOptics>
 
 
 </options>
 
 <OpticsParameters>
-    <!-- optics type can be 
+    <!-- optics type can be
          - mirror (SPB2, K-EUSO, POEMMA, ...)
          - lens (EUSO-Balloon, EUSO-TA, EUSO-SPB1, ...)
-    -->       
+    -->
     <OpticsType>      	    mirror </OpticsType>
     <PSFdiameter unit="mm"> 5.	   </PSFdiameter>
     <opticalEfficiency>	    0.68   </opticalEfficiency>
@@ -54,6 +54,11 @@
     <radiusFS unit="mm">  860.     </radiusFS>
     <Obstruction> 0.18 </Obstruction>
 
+    <BiFocalUse> yes </BiFocalUse>
+    <BiFocalParameter>
+      <SplitDirection> horizontal </SplitDirection>
+      <SplitDist unit="mm"> 12.5  </SplitDist>
+    </BiFocalParameter>
 </OpticsParameters>
 
 
