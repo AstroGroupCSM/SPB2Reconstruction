@@ -11,10 +11,10 @@
   <nGTUpersistence> 3 </nGTUpersistence> <!-- number of consecutive GTUs in which the number of active cells in a MAPMT are counted, for TriggerSPB2cells it was 2 for laser, 3 for shower -->
 
   <verbosityLevel> 0 </verbosityLevel> <!-- 0 less info, 1 info on number of counts per pixel -->
-  <signalOnly> 0 </signalOnly> <!-- bool, 1 causes the trigger to only trigger on pixels with signal present -->
-  <wantTriggerOutput> 1 </wantTriggerOutput> <!-- bool, 1 if you want to get a text file containing satisfied trigger condition and triggering MAPMT/EC/PDM -->
+  <signalOnly> 1 </signalOnly> <!-- bool, 1 causes the trigger to only trigger on pixels with signal present -->
+  <wantTriggerOutput> 0 </wantTriggerOutput> <!-- bool, 1 if you want to get a text file containing satisfied trigger condition and triggering MAPMT/EC/PDM -->
 
-	<ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
+	<ReadThresholdsFromFile> 0 </ReadThresholdsFromFile>
   <ThresholdFile>@SCHEMALOCATION@/ThresholdFiles/SPB2ThresholdFile.dat  </ThresholdFile>
   <LengthThreshold> 16384 </LengthThreshold>
 </TriggerSPB2cells3x3TG>
