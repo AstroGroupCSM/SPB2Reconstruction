@@ -13,7 +13,7 @@
   <Verbosity> 1 </Verbosity>
   <SignalOnly> 1 </SignalOnly>
   <ReadThresholdsFromFile> 0 </ReadThresholdsFromFile>
-  <ThresholdFile>@SCHEMALOCATION@/ThresholdFiles/SPB2ThresholdFile.dat  </ThresholdFile>
+  <ThresholdFile>longPoisson.dat  </ThresholdFile>
   <LengthThreshold> 16384 </LengthThreshold>
 
 </TriggerSPB2CSM>
