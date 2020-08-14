@@ -78,13 +78,7 @@
 	<!--nActive>3</nActive-->
 	<!--nSigma>3.0</nSigma-->
       </TriggerSPB2CSM>
-    </configLink>
-    <configLink id="BackgroundSimulatorCSM">
-      <BackgroundSimulatorCSM>
-	<BaseValue>1.XXXXXX</BaseValue>
-      </BackgroundSimulatorCSM>
-    </configLink>
-      
+    </configLink>    
 
 
 
