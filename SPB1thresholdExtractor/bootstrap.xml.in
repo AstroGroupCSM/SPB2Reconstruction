@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<!DOCTYPE bootstrap [
+  <!ENTITY standardFdIdealDetConfig SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig.xml'>
+  <!ENTITY standardFdIdealDetConfig_SPB SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig_SPB_3lens.xml'>
+  <!ENTITY standardFdSimModuleConfig SYSTEM '@CONFIGDIR@/standardFdSimModuleConfig.xml'>
+  <!ENTITY myConfigFiles './xml'>
+]>
+
+<bootstrap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/bootstrap.xsd'
+           xmlns:xlink="http://www.jemeuso.org/schema/types">
+
+  &standardFdIdealDetConfig;
+  &standardFdIdealDetConfig_SPB;
+  &standardFdSimModuleConfig;
+
+  <centralConfig>
+
+    <configLink
+      id         = "ModuleSequence"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
+
+    <configLink
+      id         = "EventFileReader"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventFileReader.xml"/>
+
+
+
+
+  </centralConfig>
+
+  <!--
+      The parameterOverride section allows to modify the content of the
+      default configuration files.
+  -->
+
+
+  <parameterOverrides>
+
+    <configLink id="EventFileReader">
+         <EventFileReader>
+		 <InputFilenames>../SimulatedData/spb1Reg.root </InputFilenames>
+         </EventFileReader>
+  </configLink>
+
+
+
+   <!--change this to 0 0 for real random, leave this to always have the same random number-->
+    <configLink id="RandomEngineRegistry">
+       <RandomEngineRegistry>
+           <DetectorSeed> 0 </DetectorSeed>
+           <PhysicsSeed> 0 </PhysicsSeed>
+       </RandomEngineRegistry>
+    </configLink>
+
+
+
+  </parameterOverrides>
+
+</bootstrap>
