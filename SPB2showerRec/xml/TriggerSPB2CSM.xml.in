@@ -6,13 +6,13 @@
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
 
   <nHot> 3 </nHot> <!--Number of cellss that need to be hot-->
-  <nActive> 3 </nActive><!--Number of cellss that need to be active-->
-  <sCell>4.0 </sCell> <!--How much over threshold a cell needs to be-->
+  <nActive> 5 </nActive><!--Number of cellss that need to be active-->
+  <nSigma>5.5 </nSigma> <!--How much over threshold a cell needs to be-->
 
   <!--More technical parameters-->
   <Verbosity> 1 </Verbosity>
   <SignalOnly> 1 </SignalOnly>
-  <ReadThresholdsFromFile> 0 </ReadThresholdsFromFile>
+  <ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
   <ThresholdFile>longPoisson.dat  </ThresholdFile>
   <LengthThreshold> 16384 </LengthThreshold>
 
