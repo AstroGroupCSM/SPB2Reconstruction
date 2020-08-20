@@ -6,9 +6,12 @@
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
 
   <nHot> 3 </nHot> <!--Number of cellss that need to be active-->
-  <nActive> 3 </nActive>
-  <sCell>4.0 </sCell> <!--How much over threshold a cell needs to be-->
-  <SignalOnly> 0 </SignalOnly> 
+  <nActive>5 </nActive>
+  <nSigma>5.0 </nSigma> <!--How much over threshold a cell needs to be-->
+  <SignalOnly> 0 </SignalOnly>
+  <ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
+  <ThresholdFile>@SCHEMALOCATION@/ThresholdFiles/SPB2ThresholdFile.dat  </ThresholdFile>
+  <LengthThreshold> 16384 </LengthThreshold>
 
 
 </TriggerSPB2CSM>

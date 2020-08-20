@@ -24,7 +24,7 @@
       id         = "ModuleSequence"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
-    
+
     <configLink
       id         = "EventGenerator"
       type       = "XML"
@@ -49,7 +49,7 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-     
+
  <configLink
       id         = "BackgroundSimulatorCSM"
       type       = "XML"
@@ -65,7 +65,7 @@
   -->
 
 
-  <parameterOverrides>  
+  <parameterOverrides>
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>
@@ -73,13 +73,16 @@
            <PhysicsSeed> 0 </PhysicsSeed>
        </RandomEngineRegistry>
     </configLink>
-    <configLink id="TriggerSPB2CSM">
+    <!--configLink id="TriggerSPB2CSM">
       <TriggerSPB2CSM>
-	<!--nActive>3</nActive-->
-	<!--nSigma>3.0</nSigma-->
+	<sCell>4.XXXXXX</sCell>
       </TriggerSPB2CSM>
-    </configLink>    
-
+    </configLink>
+    <configLink id="TriggerSPB2cells3x3TG">
+      <TriggerSPB2cells3x3TG>
+    <nSigma>2.XXXXXX</nSigma>
+  </TriggerSPB2cells3x3TG>
+    </configLink-->
 
 
   </parameterOverrides>
