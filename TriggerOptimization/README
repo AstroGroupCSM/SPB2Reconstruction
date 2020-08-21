@@ -1,0 +1,5 @@
+runs using offline:master
+
+source run.sh (if you have 8 cores to spare)
+
+ 

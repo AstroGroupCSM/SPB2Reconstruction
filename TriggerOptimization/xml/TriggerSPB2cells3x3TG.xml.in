@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the trigger module for EUSO-SPB2 -->
+
+<TriggerSPB2cells3x3TG  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2cells3x3TG.xsd'>
+
+  <nSigma> 2.5 </nSigma> <!-- number of sigma above background (in the hypothesis of Poissonian distributed background) required in order to consider a pixel active -->
+  <nPixelInCell> 4 </nPixelInCell> <!-- number of pixels over threshold in a 3x3 pixels cell, in order to consider that cell active -->
+  <nCellInPMT> 8 </nCellInPMT> <!-- number of active cells required in a MAPMT over nGTUpersistence consecutive GTUs, in order to consider the MAPMT active -->
+  <nGTUpersistence> 5 </nGTUpersistence> <!-- number of consecutive GTUs in which the number of active cells in a MAPMT are counted, for TriggerSPB2cells it was 2 for laser, 3 for shower -->
+
+  <verbosityLevel> 0 </verbosityLevel> <!-- 0 less info, 1 info on number of counts per pixel -->
+  <signalOnly> 1 </signalOnly> <!-- bool, 1 causes the trigger to only trigger on pixels with signal present -->
+  <wantTriggerOutput> 0 </wantTriggerOutput> <!-- bool, 1 if you want to get a text file containing satisfied trigger condition and triggering MAPMT/EC/PDM -->
+
+	<ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
+  <ThresholdFile> longPoisson.dat </ThresholdFile>
+  <LengthThreshold> 16384 </LengthThreshold>
+</TriggerSPB2cells3x3TG>
