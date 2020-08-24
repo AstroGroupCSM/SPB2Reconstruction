@@ -21,7 +21,8 @@ TriggerSPB2CSM::Init()
 
   CentralConfig* cc = CentralConfig::GetInstance();
   Branch topBranch = cc->GetTopBranch("TriggerSPB2CSM");
-
+  Branch topBranch2 = cc->GetTopBranch("DataWriter");
+  topBranch2.GetChild("FileName").GetData(fOutputPath);
   //Default Values
   nSigma=5.5;
   nHot=3;
@@ -70,6 +71,16 @@ TriggerSPB2CSM::Init()
       cout<<"Using threshold from file:"<<fPath<<" with length:"<<lenThreshold<<endl;
       ReadThresholds();
     }
+
+    for (int iActive=0;iActive<6;iActive++){
+      for (int iHot=0;iHot<8;iHot++){
+        for(int iSigma=0;iSigma<10;iSigma++){
+          for(int iLength=0;iLength<4;iLength++){
+            triggerOptimization[iActive][iHot][iSigma][iLength]=0;
+          }
+        }
+      }
+    }
   }
 
   //cout<<"CSM trigger parameters:\t nSigma: "<<nSigma<<"\tnHot: " <<nHot<<"\tnActive: "
@@ -86,38 +97,60 @@ TriggerSPB2CSM::Run(evt::Event& event)
 
   INFO("Running TriggerSPB2CSM");
   //Initialize arrays to zero
-  Clear();
+
   //Read event in
+  Clear();
+
   Input(event);
 
+  for (int ipdm=0; ipdm<3; ipdm++){
+  for (int ipmt=0; ipmt<36; ipmt++){
+    for (int ipixx=0; ipixx<8; ipixx++){
+       for (int ipixy=0; ipixy<8; ipixy++){
+          icell = (ipixx/2) + 4*(ipixy/2);
+          if(fReadFromFile){ //if thresholds are read from file
+             sumCells[ipdm][ipmt][icell] +=sumPixels[ipdm][ipmt][ipixx][ipixy];
+           }
+           else{
+             for (int igtu=0;igtu<128;igtu++){
+               sumCells[ipdm][ipmt][icell] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
+             }
+           }
+            for (int igtu=0;igtu<128;igtu++){
+               if (fSignalOnly){
+                  if(ipheSig[ipdm][ipmt][icell][igtu]>0)
+                    valCells[ipdm][ipmt][icell][igtu] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
+               }
+               else{
+                    valCells[ipdm][ipmt][icell][igtu] += iphe[ipdm][ipmt][ipixx][ipixy][igtu];
+              }
+           }
+        }
+     }
+  }
+}
   //Everything is done PDM indepednent
+int t1 = 1, t2 = 2, nextTerm = 0;
+  for (int iActive=0;iActive<6;iActive++){
+    nextTerm = t1 + t2;
+    t1 = t2;
+    t2 = nextTerm;
+    nActive=nextTerm;
+    for (int iHot=0;iHot<8;iHot++){
+      nHot=iHot+2;
+      for(int iSigma=0;iSigma<10;iSigma++){
+        nSigma = 2.0 +(float(iSigma)/2.0);
+        for(int iLength=0;iLength<4;iLength++){
+          fLengthTrigger=5+5*iLength;
+
+
+          fill(&HotOrNot[0][0][0], &HotOrNot[0][0][0] + (24*24*128), 0);
+          fill(&triggerData[0][0],&triggerData[0][0] +(3*128),0);
+  triggerState=0;
   for (int ipdm=0; ipdm<3; ipdm++){
 
     //Sums value in each pixel and cell
-    for (int ipmt=0; ipmt<36; ipmt++){
-      for (int ipixx=0; ipixx<8; ipixx++){
-	       for (int ipixy=0; ipixy<8; ipixy++){
-	          icell = (ipixx/2) + 4*(ipixy/2);
-            if(fReadFromFile){ //if thresholds are read from file
-	             sumCells[ipdm][ipmt][icell] +=sumPixels[ipdm][ipmt][ipixx][ipixy];
-             }
-             else{
-               for (int igtu=0;igtu<128;igtu++){
-                 sumCells[ipdm][ipmt][icell] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
-               }
-             }
-	            for (int igtu=0;igtu<128;igtu++){
-      	         if (fSignalOnly){
-      	            if(ipheSig[ipdm][ipmt][icell][igtu]>0)
-      		            valCells[ipdm][ipmt][icell][igtu] +=iphe[ipdm][ipmt][ipixx][ipixy][igtu];
-      	         }
-      	         else{
-                      valCells[ipdm][ipmt][icell][igtu] += iphe[ipdm][ipmt][ipixx][ipixy][igtu];
-                }
-      	     }
-	        }
-       }
-    }
+
 
     for (int ipmt=0; ipmt<36; ipmt++){
       for(icell=0;icell<16;icell++){
@@ -175,7 +208,11 @@ TriggerSPB2CSM::Run(evt::Event& event)
     if (fVerbosityLevel>0) cout <<"CSM_TRIGGER:\t1"<<endl;
      event.SetTriggerState(1);
      event.SetTriggerTime(triggerGTU);
-  }
+     triggerOptimization[iActive][iHot][iSigma][iLength]++;
+  }}}}}
+
+
+
   if (triggerState==0){
     if (fVerbosityLevel >0) cout <<"CSM_TRIGGER:\t0\t"<<endl;
     event.SetTriggerState(0);
@@ -188,6 +225,27 @@ VModule::ResultFlag
 TriggerSPB2CSM::Finish()
 {
   INFO("TriggerSPB2CSM");
+
+  ofstream myfile;
+  myfile.open(fOutputPath.c_str());
+  int t1 = 1, t2 = 2, nextTerm = 0;
+    for (int iActive=0;iActive<6;iActive++){
+      nextTerm = t1 + t2;
+      t1 = t2;
+      t2 = nextTerm;
+      nActive=nextTerm;
+      for (int iHot=0;iHot<8;iHot++){
+        nHot=iHot+2;
+        for(int iSigma=0;iSigma<10;iSigma++){
+          nSigma = 2.0 +(float(iSigma)/2.0);
+          for(int iLength=0;iLength<4;iLength++){
+            fLengthTrigger=5+5*iLength;
+            myfile<<nActive<<'\t'<<nHot<<'\t'<<nSigma<<'\t'<<fLengthTrigger<<'\t'<< triggerOptimization[iActive][iHot][iSigma][iLength]<<endl;
+          }
+        }
+      }
+    }
+    myfile.close();
   return eSuccess;
 }
 void TriggerSPB2CSM::Clear(){

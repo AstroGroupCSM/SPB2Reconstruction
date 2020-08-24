@@ -24,7 +24,7 @@
       id         = "ModuleSequence"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
-    
+
     <configLink
       id         = "EventFileReader"
       type       = "XML"
@@ -97,11 +97,11 @@
   </configLink>
   <configLink id="DataWriter">
     <DataWriter>
-      <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
+      <FileName> TriggerOutputs/XXXXXX.txt </FileName>
     </DataWriter>
   </configLink>
-	
-     
+
+
 
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">

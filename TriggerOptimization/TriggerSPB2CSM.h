@@ -55,6 +55,7 @@ namespace TriggerSPB2CSM {
       int nPersist=0;
       double nSigma;
       std::string fPath;
+      std::string fOutputPath;
       int iphe[3][36][8][8][128]; //Photo-electron trace
       int ipheSig[3][36][16][128]; //Photo-electron trace
       int valCells[3][36][16][128]; //pe trace for cells
@@ -62,6 +63,7 @@ namespace TriggerSPB2CSM {
       int sumPixels[3][36][8][8];
       int HotOrNot[24][24][128];
       int triggerData[3][128];
+      int triggerOptimization[6][8][10][4];
       int dummy[100];
       REGISTER_MODULE("TriggerSPB2CSM",TriggerSPB2CSM);
     };

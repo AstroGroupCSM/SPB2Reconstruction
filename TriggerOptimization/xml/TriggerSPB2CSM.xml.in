@@ -9,9 +9,9 @@
   <nActive> 5 </nActive><!--Number of cellss that need to be active-->
   <nSigma>5.5 </nSigma> <!--How much over threshold a cell needs to be-->
   <LengthTrigger> 10 </LengthTrigger>
-  
+
     <!--More technical parameters-->
-  <Verbosity> 1 </Verbosity>
+  <Verbosity> 0 </Verbosity>
   <SignalOnly> 1 </SignalOnly>
   <ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
   <ThresholdFile>@SCHEMALOCATION@/ThresholdFiles/SPB2ThresholdFile.dat  </ThresholdFile>
