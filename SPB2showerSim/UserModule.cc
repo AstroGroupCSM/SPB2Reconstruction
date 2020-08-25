@@ -69,7 +69,7 @@ UserModule::~UserModule()
 
 VModule::ResultFlag
 UserModule::Init()
-{  
+{
    string filename;
    CentralConfig* cc = CentralConfig::GetInstance();
    Branch topBranch = cc->GetTopBranch("DataWriter");
@@ -81,9 +81,12 @@ UserModule::Init()
   fTree->Branch("nPhoton", &fNPhotons, "nPhoton/i");
   fTree->Branch("theta", fTheta, "theta[nPhoton]/D");
   fTree->Branch("phi", fPhi, "phi[nPhoton]/D");
+  fTree->Branch("theta_shower", fTheta_shower, "theta_shower[nPhoton]/D");
+  fTree->Branch("phi_shower", fPhi_shower, "phi_shower[nPhoton]/D");
   fTree->Branch("type", fType, "type[nPhoton]/I");
   fTree->Branch("weight", fWeight, "weight[nPhoton]/D");
   fTree->Branch("time", fTime, "time[nPhoton]/D");
+  fTree->Branch("wavelength", wavelength, "wavelength[nPhoton]/D");
 
   //Branches with general shower info
   fTree->Branch("energy",&fEnergy,"energy/D");
@@ -118,8 +121,8 @@ UserModule::Run(evt::Event& event)
   INFO(" UserModule->Passing on shower info: ENERGY, ZENITH, AZIMUTH, CORE LOCATION");
   evt::ShowerSimData& SimDat = event.GetSimShower();
   fEnergy = log10(SimDat.GetEnergy());
-  fAzimuth = SimDat.GetAzimuth();
-  fZenith = SimDat.GetZenith();
+  fAzimuth = SimDat.GetAzimuth() / degree;
+  fZenith = SimDat.GetZenith() / degree;
 
 
   //From the fDetector class setup a coordinate system (CS) at Eye-center
@@ -150,6 +153,7 @@ UserModule::Run(evt::Event& event)
 
       const fdet::Telescope& detTel = detFD.GetTelescope(*iTel);
       const CoordinateSystemPtr telCS = detTel.GetTelescopeCoordinateSystem();
+      const CoordinateSystemPtr showerCS = SimDat.GetShowerCoordinateSystem();;
 
       const TelescopeSimData& telSim = iTel->GetSimData();
 
@@ -159,9 +163,12 @@ UserModule::Run(evt::Event& event)
           const Vector& direction = iPhoton->GetDirection();
           fTheta[currPhoton] = direction.GetTheta(telCS) / degree;
           fPhi[currPhoton] = direction.GetPhi(telCS) / degree;
+          fTheta_shower[currPhoton] = direction.GetTheta(showerCS) / degree;
+          fPhi_shower[currPhoton] = direction.GetPhi(showerCS) / degree;
           fType[currPhoton] = iPhoton->GetSource();
           fWeight[currPhoton] = iPhoton->GetWeight();
           fTime[currPhoton] = iPhoton->GetTime().GetNanoSecond();
+          wavelength[currPhoton] = iPhoton->GetWavelength();
           ++currPhoton;
         }
         else {

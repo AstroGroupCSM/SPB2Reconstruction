@@ -10,21 +10,14 @@
     <sdIdFormat> 2 2 </sdIdFormat>
   </eventIdentifier>
 
-<!-- If you know the position of your telescope 
+<!-- If you know the position of your telescope
      you can simulate the shower at a fixed position-->
-  <coreRandomization>
+  <!--coreRandomization>
 
     <centerOfTile>
-      <!--northing unit="meter"> 4351462 </northing>
-	  <easting unit="meter">   335405 </easting-->
-      <!--northing unit="meter"> 4350302 </northing>
-      <easting unit="meter">   325005 </easting--><!--attempt to have core in PDM 0-->
-      <!--northing unit="meter"> 4350302 </northing>
-      <easting unit="meter">   328472 </easting>
-      <altitude unit="meter">    1390 </altitude-->
-      <northing unit="meter"> 4346462 </northing>
-      <easting unit="meter">   334000 </easting>
-      <altitude unit="meter">    1390 </altitude>
+      <northing unit="meter"> 4351462 </northing>
+      <easting unit="meter"> 335405 </easting>
+      <altitude unit="meter"> 0 </altitude>
       <zone> 12 </zone>
       <band> N </band>
     </centerOfTile>
@@ -33,33 +26,20 @@
       <deltaNorthing unit="meter*(3^0.5)/2"> 0. </deltaNorthing>
       <deltaEasting unit="1.5*meter"> 0. </deltaEasting>
     </sizeOfTile>
-  </coreRandomization>
+  </coreRandomization-->
 
 <!-- In case you are not certain use the eye centric approach -->
-  <!--coreRandomization>
+  <coreRandomization>
     <eye> 1 </eye>
     <telescope> 1 </telescope>
     <maxdist unit="kilometer"> 5 </maxdist>
     <mindist unit="kilometer"> 5 </mindist>
     <rMaxEnergyDependent> 0 </rMaxEnergyDependent>
-    <deltaphi unit="deg"> 0 </deltaphi>
+    <deltaphi unit="deg"> 360 </deltaphi>
     <altitude unit="meter"> 0 </altitude>
-  </coreRandomization-->
+  </coreRandomization>
 
 
-  <!-- Time stamp of the core impact on ground -->
-  
-  <!--there was this instead of eventTime...-->
-  
-  <timeInterval>   
-    <timeOrdered>
-      <nEvents> 25 </nEvents>
-      <timeRandomized> yes </timeRandomized>
-    </timeOrdered>
-    <startTime> 2015-09-19T05:30:00.000004 </startTime>
-    <endTime>   2015-09-19T05:30:30.000001 </endTime>
-  </timeInterval>
-  <!--eventTime> 2013-04-01T04:33:12.5 </eventTime-->
-  <!--eventTime> 2020-01-01T04:33:12.5 </eventTime-->
+  <eventTime> 2020-01-01T04:33:12.5 </eventTime>
 
 </EventGenerator>

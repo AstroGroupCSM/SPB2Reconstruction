@@ -18,12 +18,7 @@
        <module> UserModule                  </module>
        <module> TelescopeSimulatorJG        </module>
        <module> ElectronicsSimulatorJG      </module>
-       <module> BackgroundSimulatorCSM      </module>
        <module> EventBuilderJG              </module>
-       <!--module> TriggerTG                </module-->
-       <!--module> TriggerSPB2TG            </module--><!--1st version-->
-       <!--module> TriggerSPB2cellsTG       </module--><!--2nd version-->
-       <module> TriggerSPB2CSM    </module><!--3rd version-->
        <module> DataWriter	            </module>
 
 

@@ -18,25 +18,10 @@
 <!-- the list of filenames (space delimited) -->
 
 <InputFilenames>
-conex_qgsjet01_p_e18.00_z30_a53.5_01.root
-conex_qgsjet01_p_e18.25_z30_a70_2sh.root
-conex_qgsjet01_p_e18.25_z45_a70_2sh.root
-conex_qgsjet01_p_e18.25_z60_a70_2sh.root
-conex_qgsjet01_p_e18.50_z30_a70_2sh.root
-conex_qgsjet01_p_e18.50_z45_a70_2sh.root
-conex_qgsjet01_p_e18.50_z60_a70_2sh.root
-conex_qgsjet01_p_e18.75_z30_a70_2sh.root
-conex_qgsjet01_p_e18.75_z45_a70_2sh.root
-conex_qgsjet01_p_e18.75_z60_a70_2sh.root
-conex_qgsjet01_p_e19.00_z30_a70_2sh.root
-conex_qgsjet01_p_e19.00_z45_a70_2sh.root
-conex_qgsjet01_p_e19.00_z60_a70_2sh.root
-
+../SimulatedData/n10000E1975zrand.root
 
 </InputFilenames>
 
 
 
 </EventFileReader>
-
-

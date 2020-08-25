@@ -25,11 +25,14 @@ private :
 
   static const unsigned int fMaxPhoton = 1000000;
   unsigned int fNPhotons;
-  double fTime[fMaxPhoton];
-  double fTheta[fMaxPhoton];
-  double fPhi[fMaxPhoton];
-  double fWeight[fMaxPhoton];
-  int fType[fMaxPhoton];
+  double fTime[fMaxPhoton] = {0};
+  double fTheta[fMaxPhoton] = {0};
+  double fPhi[fMaxPhoton] = {0};
+  double fTheta_shower[fMaxPhoton] = {0};
+  double fPhi_shower[fMaxPhoton] = {0};
+  double fWeight[fMaxPhoton] = {0};
+  int fType[fMaxPhoton] = {0};
+  double wavelength[fMaxPhoton] = {0};
 ///new declarations
   double fEnergy;
   double fZenith, fAzimuth;

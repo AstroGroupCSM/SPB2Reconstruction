@@ -24,7 +24,7 @@
       id         = "ModuleSequence"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
-    
+
     <configLink
       id         = "EventFileReader"
       type       = "XML"
@@ -40,14 +40,7 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
 
-    <configLink
-      id         = "BackgroundSimulatorCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
-    <configLink
-      id         = "TriggerSPB2CSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+
     <configLink
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
@@ -59,9 +52,14 @@
       The parameterOverride section allows to modify the content of the
       default configuration files.
   -->
-
-
   <parameterOverrides>
+       <configLink id="DataWriter">
+           <DataWriter>
+              <FileName> test.root </FileName>
+           </DataWriter>
+        </configLink>
+
+
 
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
@@ -105,8 +103,8 @@
                 </pointing>
              </pointings>
            </telescope>
-         </telescopes>    
-         </eye>        
+         </telescopes>
+         </eye>
       </telescopeList>
      </configLink>
 
