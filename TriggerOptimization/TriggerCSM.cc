@@ -10,7 +10,7 @@ TriggerCSM::TriggerCSM() {}
 
 TriggerCSM::~TriggerCSM(){}
 
-VModule::ResultFlag 
+VModule::ResultFlag
 TriggerCSM::Init()
 {
   VModule* m1= VModuleFactory::Create("TriggerSPB2CSM");
@@ -21,7 +21,7 @@ TriggerCSM::Init()
   return eSuccess;
 }
 
-VModule::ResultFlag 
+VModule::ResultFlag
 TriggerCSM::Run(evt::Event& event)
 {
   Input(event);
@@ -55,8 +55,8 @@ TriggerCSM::Run(evt::Event& event)
   return eSuccess;
 }
 
-VModule::ResultFlag 
-TriggerCSM::Finish() 
+VModule::ResultFlag
+TriggerCSM::Finish()
 {
   VModule* m1= VModuleFactory::Create("TriggerSPB2CSM");
   m1->Finish();
@@ -66,28 +66,28 @@ TriggerCSM::Finish()
     void TriggerCSM::Input(evt::Event& event){
       nSigPE=0;
     FEvent& fdEvent = event.GetFEvent();
-  
+
     for (fevt::FEvent::ConstEyeIterator eye = fdEvent.EyesBegin(ComponentSelector::eUnknown);
 	 eye != fdEvent.EyesEnd(ComponentSelector::eUnknown); ++eye) {
       for (fevt::Eye::ConstTelescopeIterator tel = eye->TelescopesBegin(ComponentSelector::eUnknown);
 	   tel != eye->TelescopesEnd(ComponentSelector::eUnknown); ++tel) {
-      
+
 	for (fevt::Telescope::ConstCCBIterator ccb = tel->CCBsBegin(ComponentSelector::eUnknown);
 	     ccb != tel->CCBsEnd(ComponentSelector::eUnknown); ++ccb) {
-	
+
 	  for (fevt::CCB::ConstPDMIterator pdm = ccb->PDMsBegin(ComponentSelector::eUnknown);
 	       pdm != ccb->PDMsEnd(ComponentSelector::eUnknown); ++pdm) {
 	    int ipdm = pdm->GetId();
 	    if (fPDMid < ipdm) fPDMid = ipdm;
-	  
+
 	    for (fevt::PDM::ConstECIterator ec = pdm->ECsBegin(ComponentSelector::eUnknown);
 		 ec != pdm->ECsEnd(ComponentSelector::eUnknown); ++ec) {
 
-	    
+
 	      for (fevt::EC::ConstPMTIterator pmt = ec->PMTsBegin(ComponentSelector::eUnknown);
 		   pmt != ec->PMTsEnd(ComponentSelector::eUnknown); ++pmt) {
 
-	      
+
 		for (fevt::PMT::ConstPixelIterator pix = pmt->PixelsBegin(ComponentSelector::eUnknown);
 		     pix != pmt->PixelsEnd(ComponentSelector::eUnknown); ++pix) {
 
@@ -97,7 +97,7 @@ TriggerCSM::Finish()
 		    for (PixelRecData::ConstFADCTraceIterator trIts = ps.FADCTracesBegin(); trIts != ps.FADCTracesEnd(); ++trIts) {
 
 		      if (static_cast<FdConstants::LightSource>(trIts->GetLabel()) == FdConstants::eSignalPE ){
-		      
+
 			const TraceI& tracePE = pix->GetSimData().GetFADCTrace(FdConstants::eSignalPE);
 			for(int igtu=0;igtu<128; igtu++){
 			  nSigPE += tracePE[igtu];
