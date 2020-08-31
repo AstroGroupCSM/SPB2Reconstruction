@@ -1,0 +1,19 @@
+<!-- A sequence for an FD simulation -->
+<sequenceFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/ModuleSequence.xsd'>
+
+   <enableTiming/>
+
+   <moduleControl>
+
+    <loop numTimes="unbounded" pushEventToStack="yes">
+    <module> EventFileReaderOG           </module>
+  	<module> EventBuilderJG              </module>
+    <module> TriggerSPB2CSM </module>
+
+
+    </loop>
+
+   </moduleControl>
+
+</sequenceFile>
