@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="8" pushEventToStack="yes">
+    <loop numTimes="100" pushEventToStack="yes">
 
   <module> EventGeneratorOG </module>
 	<module> FdSimEventCheckerOG </module>
