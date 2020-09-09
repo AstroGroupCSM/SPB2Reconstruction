@@ -73,10 +73,9 @@ UserModule::Init()
    string filename;
    CentralConfig* cc = CentralConfig::GetInstance();
    Branch topBranch = cc->GetTopBranch("DataWriter");
-   topBranch.GetChild("FileName").GetData(filename);
-  string test = "fSim" + filename;
+   topBranch.GetChild("FileName2").GetData(filename);
 
-  fOutFile = new TFile(test.c_str(), "RECREATE");
+  fOutFile = new TFile(filename.c_str(), "RECREATE");
   fTree = new TTree("Photons","");
   fTree->Branch("nPhoton", &fNPhotons, "nPhoton/i");
   fTree->Branch("theta", fTheta, "theta[nPhoton]/D");
@@ -194,4 +193,3 @@ UserModule::Finish()
   return eSuccess;
 
 }
-

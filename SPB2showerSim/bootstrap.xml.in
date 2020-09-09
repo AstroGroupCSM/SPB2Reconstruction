@@ -55,17 +55,23 @@
   <parameterOverrides>
        <configLink id="DataWriter">
            <DataWriter>
-              <FileName> test.root </FileName>
+              <FileName> XXXXXX.root </FileName>
+              <FileName2>YYYYYY.root </FileName2>
            </DataWriter>
         </configLink>
+        <configLink id="EventFileReader">
+          <EventFileReader>
+          <InputFilenames>ZZZZZZ.root </InputFilenames>
+        </EventFileReader>
+      </configLink>
 
 
 
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>
-           <DetectorSeed> 12 </DetectorSeed>
-           <PhysicsSeed> 13 </PhysicsSeed>
+           <DetectorSeed> 0 </DetectorSeed>
+           <PhysicsSeed> 0 </PhysicsSeed>
        </RandomEngineRegistry>
     </configLink>
 

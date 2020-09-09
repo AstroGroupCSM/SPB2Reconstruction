@@ -5,11 +5,11 @@
 <TriggerSPB2CSM xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                          xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerSPB2CSM.xsd'>
 
-  <nHot> 3 </nHot> <!--Number of cellss that need to be hot-->
-  <nActive> 5 </nActive><!--Number of cellss that need to be active-->
-  <nSigma>5.5 </nSigma> <!--How much over threshold a cell needs to be-->
+  <nHot> 2 </nHot> <!--Number of cellss that need to be hot-->
+  <nActive> 34</nActive><!--Number of cellss that need to be active-->
+  <nSigma>5.0 </nSigma> <!--How much over threshold a cell needs to be-->
   <LengthTrigger> 10 </LengthTrigger>
-  
+
     <!--More technical parameters-->
   <Verbosity> 1 </Verbosity>
   <SignalOnly> 1 </SignalOnly>

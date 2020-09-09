@@ -32,8 +32,8 @@
   <coreRandomization>
     <eye> 1 </eye>
     <telescope> 1 </telescope>
-    <maxdist unit="kilometer"> 5 </maxdist>
-    <mindist unit="kilometer"> 5 </mindist>
+    <maxdist unit="kilometer"> 100 </maxdist>
+    <mindist unit="kilometer"> 0 </mindist>
     <rMaxEnergyDependent> 0 </rMaxEnergyDependent>
     <deltaphi unit="deg"> 360 </deltaphi>
     <altitude unit="meter"> 0 </altitude>

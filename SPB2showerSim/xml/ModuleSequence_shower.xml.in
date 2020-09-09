@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="25" pushEventToStack="yes">
+    <loop numTimes="2" pushEventToStack="yes">
 
        <module> EventFileReaderOG           </module>
        <module> EventGeneratorOG            </module>
@@ -14,7 +14,7 @@
        <module> ShowerLightSimulatorKG      </module>
        <module> LightAtDiaphragmSimulatorKG </module>
        <module> ShowerPhotonGeneratorOG     </module>
-       <module> GroundReflectionSimulatorJG </module>
+       <!--module> GroundReflectionSimulatorJG </module-->
        <module> UserModule                  </module>
        <module> TelescopeSimulatorJG        </module>
        <module> ElectronicsSimulatorJG      </module>
