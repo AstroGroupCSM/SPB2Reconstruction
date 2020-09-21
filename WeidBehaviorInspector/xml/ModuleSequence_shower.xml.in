@@ -15,14 +15,14 @@
        <module> LightAtDiaphragmSimulatorKG </module>
        <module> ShowerPhotonGeneratorOG     </module>
        <!--module> GroundReflectionSimulatorJG </module-->
-       <!--module> UserModule                  </module-->
+       <module> UserModule                  </module>
        <module> TelescopeSimulatorJG        </module>
        <module> ElectronicsSimulatorJG      </module>
        <module> EventBuilderJG              </module>
        <module> BackgroundSimulatorCSM </module>
        <!--module> TriggerCSM </module-->
        <module> PythonOutput </module>
-       <!--module> DataWriter	            </module-->
+       <module> DataWriter	            </module>
 
 
     </loop>
