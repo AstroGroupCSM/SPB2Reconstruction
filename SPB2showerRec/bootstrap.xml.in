@@ -92,7 +92,7 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-		 <InputFilenames>../SimulatedData/newCori/fullXXXXXX.root </InputFilenames>
+		 <InputFilenames>../SimulatedData/UpdatedQE/fullXXXXXX.root </InputFilenames>
          </EventFileReader>
   </configLink>
   <configLink id="DataWriter">
