@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<!DOCTYPE bootstrap [
+  <!ENTITY standardFdIdealDetConfig SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig.xml'>
+  <!ENTITY standardFdIdealDetConfig_SPB2 SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig_SPB2.xml'>
+  <!ENTITY standardFdSimModuleConfig SYSTEM '@CONFIGDIR@/standardFdSimModuleConfig.xml'>
+  <!ENTITY standardFdRecModuleConfig SYSTEM '@CONFIGDIR@/standardFdRecModuleConfig.xml'>
+  <!ENTITY myConfigFiles './xml'>
+]>
+
+<bootstrap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/bootstrap.xsd'
+           xmlns:xlink="http://www.jemeuso.org/schema/types">
+
+  &standardFdIdealDetConfig;
+  &standardFdIdealDetConfig_SPB2;
+  &standardFdSimModuleConfig;
+  &standardFdRecModuleConfig;
+
+  <centralConfig>
+
+    <configLink
+      id         = "ModuleSequence"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
+
+    <configLink
+      id         = "EventFileReader"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventFileReader.xml"/>
+
+    <configLink
+      id         = "TelescopeSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/>
+
+    <configLink
+      id         = "EventGenerator"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
+
+      <!--configLink
+        id         = "TriggerSPB2CSM"
+        type       = "XML"
+        xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/-->
+        <configLink
+          id         = "PythonOutput"
+          type       = "XML"
+          xlink:href = "&myConfigFiles;/PythonOutput.xml"/>
+    <configLink
+      id         = "ElectronicsSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
+
+   </centralConfig>
+
+  <!--
+      The parameterOverride section allows to modify the content of the
+      default configuration files.
+  -->
+  <parameterOverrides>
+       <!--configLink id="DataWriter">
+           <DataWriter>
+              <FileName> XXXXXX.root </FileName>
+              <FileName2>YYYYYY.root </FileName2>
+           </DataWriter>
+        </configLink-->
+        <!--configLink id="EventFileReader">
+          <EventFileReader>
+          <InputFilenames>shower.root </InputFilenames>
+        </EventFileReader>
+      </configLink-->
+
+
+
+   <!--change this to 0 0 for real random, leave this to always have the same random number-->
+    <configLink id="RandomEngineRegistry">
+       <RandomEngineRegistry>
+           <DetectorSeed> 13 </DetectorSeed>
+           <PhysicsSeed> 14 </PhysicsSeed>
+       </RandomEngineRegistry>
+    </configLink>
+
+<!-- Override config appropriate for light from shower with config for light from laser -->
+    <configLink id="LightAtDiaphragmSimulatorKG">
+      <LightAtDiaphragmSimulatorJG>
+
+        <fluorDirect> 1 </fluorDirect>
+        <fluorMieScattered> 1 </fluorMieScattered>
+        <fluorRayleighScattered> 1 </fluorRayleighScattered>
+
+        <cherDirect> 1 </cherDirect>
+        <cherMieScattered> 1 </cherMieScattered>
+        <cherRayleighScattered> 1 </cherRayleighScattered>
+
+        <laserMieScattered> 0 </laserMieScattered>
+        <laserRayleighScattered> 0 </laserRayleighScattered>
+        <binning> 200 </binning>
+      </LightAtDiaphragmSimulatorJG>
+    </configLink>
+
+<!--setting hight of Detector-->
+    <configLink id="FTelescopeListXMLManager">
+      <telescopeList>
+         <eye id="1">
+         <altitude unit="kilometer"> 33 </altitude>
+         <telescopes>
+           <telescope id="1">
+              <altitude unit="kilometer"> 33 </altitude>
+              <defaultPointing> tilted </defaultPointing> <!-- change this to tilted to use the pointing direction specified below (-90) downwards -->
+              <pointings>
+                <pointing id="tilted">
+                  <opticalAxisPhi unit="degree"> 90. </opticalAxisPhi>
+                  <opticalAxisElevation unit="degree"> -90. </opticalAxisElevation>
+                </pointing>
+             </pointings>
+           </telescope>
+         </telescopes>
+         </eye>
+      </telescopeList>
+     </configLink>
+
+  </parameterOverrides>
+
+</bootstrap>

@@ -46,7 +46,7 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-		 <InputFilenames>miniEUSO.root </InputFilenames>
+		 <InputFilenames>SPB1.root </InputFilenames>
          </EventFileReader>
   </configLink>
 

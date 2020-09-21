@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<EventGenerator>
+
+  <mode> FD </mode>
+
+  <eventIdentifier>
+    <libraryIdentifier> Test </libraryIdentifier>
+    <format> Library_%1%:Run_%2%:Shower_%3%:Use_%4% </format>
+    <sdIdFormat> 2 2 </sdIdFormat>
+  </eventIdentifier>
+
+<!-- If you know the position of your telescope
+     you can simulate the shower at a fixed position-->
+  <!--coreRandomization>
+
+    <centerOfTile>
+      <northing unit="meter"> 4351462 </northing>
+      <easting unit="meter"> 335405 </easting>
+      <altitude unit="meter"> 0 </altitude>
+      <zone> 12 </zone>
+      <band> N </band>
+    </centerOfTile>
+
+    <sizeOfTile>
+      <deltaNorthing unit="meter*(3^0.5)/2"> 0. </deltaNorthing>
+      <deltaEasting unit="1.5*meter"> 0. </deltaEasting>
+    </sizeOfTile>
+  </coreRandomization-->
+
+<!-- In case you are not certain use the eye centric approach -->
+  <coreRandomization>
+    <eye> 1 </eye>
+    <telescope> 1 </telescope>
+    <specific>1 </specific>
+    <Radius unit="meter">9000 </Radius>
+    <Angle unit="deg"> 185.0</Angle> 
+  </coreRandomization>
+
+
+  <eventTime> 2020-01-01T04:33:12.5 </eventTime>
+
+</EventGenerator>

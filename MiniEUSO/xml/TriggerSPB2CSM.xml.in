@@ -15,7 +15,7 @@
   <Verbosity> 1 </Verbosity>
   <SignalOnly> 0 </SignalOnly>
   <ReadThresholdsFromFile> 0 </ReadThresholdsFromFile>
-  <ThresholdFile>@SCHEMALOCATION@/ThresholdFiles/SPB2ThresholdFile.dat  </ThresholdFile>
+  <ThresholdFile>thresh2.0.dat  </ThresholdFile>
   <LengthThreshold> 16384 </LengthThreshold>
 
 </TriggerSPB2CSM>

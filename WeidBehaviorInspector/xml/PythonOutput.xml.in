@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module NewSPB2TriggerModule -->
+
+<PythonOutput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/PythonOutput.xsd'>
+
+  <metaData> 1</metaData>
+  <minSignal> 0 </minSignal>
+  <outputDir> "./" </outputDir>
+
+</PythonOutput>
