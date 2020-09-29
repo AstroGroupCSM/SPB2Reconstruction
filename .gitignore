@@ -5,3 +5,5 @@
 JemEusoOffline
 *.DAWN*
 Make-Depend
+*.txt
+*.npy
