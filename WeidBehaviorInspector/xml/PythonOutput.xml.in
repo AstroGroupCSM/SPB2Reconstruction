@@ -8,5 +8,6 @@
   <metaData> 1</metaData>
   <minSignal> 0 </minSignal>
   <outputDir> "./" </outputDir>
+  <SPB2ReSim> 0</SPB2ReSim>
 
 </PythonOutput>
