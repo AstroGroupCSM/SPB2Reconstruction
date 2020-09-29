@@ -252,5 +252,12 @@ TriggerCSM.o: TriggerCSM.cc TriggerCSM.h \
  /home/gfil/offline/install/include/evt/VGaisserHillasParameter.h \
  /home/gfil/offline/install/include/evt/AtmosphereParameters.h \
  /home/gfil/offline/install/include/fwk/CentralConfig.h \
+ /home/gfil/offline/install/include/fevt/TelescopeRecData.h \
+ /home/gfil/offline/install/include/utl/AxialVector.h \
+ /home/gfil/offline/install/include/utl/OperationsAV.h \
+ /home/gfil/offline/install/include/utl/MultiTabulatedFunctionErrors.h \
+ /home/gfil/offline/install/include/utl/TabulatedFunctionErrors.h \
+ /home/gfil/offline/install/include/fevt/CoordinatesRecData.h \
+ /home/gfil/offline/install/include/fevt/CoordinateData.h \
  /home/gfil/offline/install/include/fdet/Eye.h \
  /home/gfil/offline/install/include/fdet/Telescope.h

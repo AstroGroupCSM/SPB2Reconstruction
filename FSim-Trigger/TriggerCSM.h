@@ -20,20 +20,22 @@
 #include <det/Detector.h>
 #include <evt/ShowerSimData.h>
 #include <fwk/CentralConfig.h>
+
+#include <fevt/TelescopeRecData.h>
 #include <fdet/FDetector.h>
 #include <fdet/Eye.h>
 #include <fdet/Telescope.h>
 
 namespace Trigger {
 
-  class TriggerCSM : 
+  class TriggerCSM :
       public boost::noncopyable,
       public fwk::VModule {
   public:
     TriggerCSM();
    ~TriggerCSM();
     VModule::ResultFlag Init();
-    
+
     VModule::ResultFlag Run(evt::Event& e);
     VModule::ResultFlag Finish();
   private:

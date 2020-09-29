@@ -33,33 +33,28 @@
       id         = "EventGenerator"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
-    <configLink
+    <!--configLink
       id         = "DataWriter"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
+      xlink:href = "&myConfigFiles;/DataWriter.xml"/-->
 
-    <configLink
-      id         = "TriggerTG"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/TriggerTG.xml"/>
 
      <configLink
       id         = "TriggerSPB2CSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+
+      <configLink
+       id         = "DataWriter"
+       type       = "XML"
+       xlink:href = "&myConfigFiles;/DataWriter.xml"/>
+
 <configLink
       id         = "TriggerSPB2cells3x3TG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
-     <configLink
-      id         = "BackgroundSubtractorCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/>
-     <!--configLink
-      id         = "PrioritizerCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/Prioritizer.xml"/-->
+
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
@@ -68,14 +63,24 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-     <configLink
-      id         = "SignalIdentifierCSM"
-      type       = "XML"
-      xlink:href = "&myConfigFiles;/SignalIdentifier.xml"/>
+
  <configLink
 	       id         = "BackgroundSimulatorCSM"
 	             type       = "XML"
 		           xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
+
+  <configLink
+        id         = "AxisFinderJG"
+       type       = "XML"
+     xlink:href = "&myConfigFiles;/AxisFinderJG.xml"/>
+     <configLink
+           id         = "SelectEventsJG"
+          type       = "XML"
+        xlink:href = "&myConfigFiles;/SelectEventsJG.xml"/>
+        <configLink
+              id         = "SelectTracksJG"
+             type       = "XML"
+           xlink:href = "&myConfigFiles;/SelectTracksJG.xml"/>
 
 
 
@@ -92,14 +97,14 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-		 <InputFilenames>../SimulatedData/UpdatedQE/fullXXXXXX.root </InputFilenames>
+		 <InputFilenames>../SimulatedData/fSimOutputs/XXXXXX-full.root </InputFilenames>
          </EventFileReader>
   </configLink>
-  <configLink id="DataWriter">
+  <!--configLink id="DataWriter">
     <DataWriter>
       <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
     </DataWriter>
-  </configLink>
+  </configLink-->
 
 
 

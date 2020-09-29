@@ -7,7 +7,7 @@
 
 
 <FileName> EusoDataFile.root </FileName>
-
+<FileName2> fSimFile.root </FileName2>
 <!-- Write the trace for different photon types inside the FoV to the tsim tree
      Default is turned off-->
 <WritePhotonTrace>   1	</WritePhotonTrace>

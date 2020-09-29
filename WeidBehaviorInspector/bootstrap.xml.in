@@ -40,10 +40,10 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
 
-      <!--configLink
-        id         = "TriggerSPB2CSM"
+      <configLink
+        id         = "DataWriter"
         type       = "XML"
-        xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/-->
+	      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
         <configLink
           id         = "PythonOutput"
           type       = "XML"

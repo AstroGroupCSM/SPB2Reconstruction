@@ -12,13 +12,13 @@
 		CONEX
                 JemEuso -->
 
-<InputFileType> JemEusoRoot </InputFileType>
+<InputFileType> AperturePhotons </InputFileType>
 
 <!-- the list of filenames (space delimited) -->
 
 <InputFilenames>
 
-../SimulatedData/temp/150.root
+fSimFile.root
 
 
 
@@ -27,5 +27,3 @@
 
 
 </EventFileReader>
-
-
