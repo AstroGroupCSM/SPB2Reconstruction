@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<SelectTracks   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/SelectTracksJG.xsd'>
+
+
+    <MappingFileName> @SCHEMALOCATION@/EBalloon_mapping.txt </MappingFileName>
+
+     <SelectorAlgorithm>    LinearTimeFit        </SelectorAlgorithm>
+<!-- <SelectorAlgorithm>    NearestNeighbors     </SelectorAlgorithm>  -->
+
+    <TimesSigmaThreshold>  1 </TimesSigmaThreshold>
+    <MinNumberOfPixelsInTrack>    3   </MinNumberOfPixelsInTrack>
+    <MaxPixelSpreading>   3   </MaxPixelSpreading>
+    <RejectLocalizedTrack>   0   </RejectLocalizedTrack>
+
+
+   <CleanSpots>
+        <CleaningRadius>       2    </CleaningRadius>
+        <MinNumberOfPixels>    1      </MinNumberOfPixels>
+   </CleanSpots>
+
+
+
+   <CleanIntegratedTrack>
+        <CleaningRadius>       7      </CleaningRadius>
+        <MinNumberOfPixels>    2      </MinNumberOfPixels>
+   </CleanIntegratedTrack>
+
+
+</SelectTracks>

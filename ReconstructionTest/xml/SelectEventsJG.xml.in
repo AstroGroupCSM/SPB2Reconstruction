@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<SelectEvents   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/SelectEventsJG.xsd'>
+
+    <MappingFileName> @XMLSCHEMALOCATION@/EBalloon_mapping.txt </MappingFileName>
+
+    <TimesSigmaThreshold>  1 </TimesSigmaThreshold>
+
+    <MinNumberOfPixelsInTrack>     3   </MinNumberOfPixelsInTrack>
+
+
+</SelectEvents>
