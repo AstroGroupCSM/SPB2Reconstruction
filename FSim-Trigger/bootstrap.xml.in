@@ -43,6 +43,10 @@
       id         = "TriggerSPB2CSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+      <configLink
+       id         = "PythonOutput"
+       type       = "XML"
+       xlink:href = "&myConfigFiles;/PythonOutput.xml"/>
 
       <configLink
        id         = "DataWriter"
@@ -100,11 +104,11 @@
 		 <InputFilenames>../SimulatedData/fSimOutputs/XXXXXX-full.root </InputFilenames>
          </EventFileReader>
   </configLink>
-  <!--configLink id="DataWriter">
-    <DataWriter>
-      <FileName> ../SimulatedData/WithBG/XXXXXX.root </FileName>
-    </DataWriter>
-  </configLink-->
+  <configLink id="PythonOutput">
+    <PythonOutput>
+      <outputDir> ./XXXXXX/ </outputDir>
+    </PythonOutput>
+  </configLink>
 
 
 

@@ -15,13 +15,14 @@
 	<module> ElectronicsSimulatorJG      </module>
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
- 	<module> SelectEventsJG </module>
+  <module> PythonOutput </module>
+ 	<!--module> SelectEventsJG </module>
         <module> PixelCalibratorJG </module>
         <module> SelectTracksJG </module>
    	<module> SDPFinderJG </module>
         <module> AddCoordinatesJG </module>
    	<module> AxisFinderJG </module>
-  <module> TriggerCSM </module>
+  <module> TriggerCSM </module-->
 
 
 
