@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the PixelCalibrator module-->
+
+<PixelCalibrator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/PixelCalibratorJG.xsd'>
+
+  <UsePixelCalib> 1 </UsePixelCalib>
+  <PixelCalibFileName> SPB2_PerfectUniform_PixelCal.dat</PixelCalibFileName>
+
+</PixelCalibrator>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the SimRecPlotter module-->
+
+<SimRecPlotter  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/SimRecPlotterJG.xsd'>
+  <!--Number of PDMs to display -->
+  <nPDM> 3 </nPDM>
+
+  <!--root file name for reconstruction value -->
+  <RecoName> fRec.root </RecoName>
+  <!--Filename for root plots -->
+  <PlotsName> Reconstruction.root </PlotsName>
+  <!--text file name for reconstruction values -->
+  <TextFileOutput> SDP.out </TextFileOutput>
+
+  <!--Make animations of track 1=yes, 0=no -->
+  <MakeAnimationOfFADCData> 0 </MakeAnimationOfFADCData>
+  <MakeAnimationOfRecTrack> 0 </MakeAnimationOfRecTrack>
+  <MakeAnimationOfTriggerTrack> 0 </MakeAnimationOfTriggerTrack>
+
+  <AnimationsSlowingDownRate>  0 </AnimationsSlowingDownRate>
+
+</SimRecPlotter>

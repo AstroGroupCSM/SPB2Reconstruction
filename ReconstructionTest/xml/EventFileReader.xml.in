@@ -12,13 +12,13 @@
 		CONEX
                 JemEuso -->
 
-<InputFileType> AperturePhotons </InputFileType>
+<InputFileType> CONEX </InputFileType>
 
 <!-- the list of filenames (space delimited) -->
 
 <InputFilenames>
 
-StartingPhotons.root
+shower.root
 
 
 </InputFilenames>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+
+<!DOCTYPE bootstrap [
+  <!ENTITY standardFdIdealDetConfig SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig.xml'>
+  <!ENTITY standardFdIdealDetConfig_SPB2 SYSTEM '@CONFIGDIR@/standardFdIdealDetConfig_SPB2.xml'>
+  <!ENTITY standardFdSimModuleConfig SYSTEM '@CONFIGDIR@/standardFdSimModuleConfig.xml'>
+  <!ENTITY standardFdRecModuleConfig SYSTEM '@CONFIGDIR@/standardFdRecModuleConfig.xml'>
+  <!ENTITY myConfigFiles './xml'>
+]>
+
+<bootstrap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/bootstrap.xsd'
+           xmlns:xlink="http://www.jemeuso.org/schema/types">
+
+  &standardFdIdealDetConfig;
+  &standardFdIdealDetConfig_SPB2;
+  &standardFdSimModuleConfig;
+  &standardFdRecModuleConfig;
+
+  <centralConfig>
+
+    <configLink
+      id         = "ModuleSequence"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ModuleSequence_laser.xml"/>
+
+    <configLink
+      id         = "TelescopeSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/>
+
+    <configLink
+      id         = "LaserGeneratorNA"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/LaserGenerator.xml"/>
+
+    <configLink
+      id         = "EventGenerator"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/EventGenerator_laser.xml"/>
+
+    <configLink
+      id         = "BackgroundSimulatorCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
+
+    <configLink
+      id         = "ElectronicsSimulatorJG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
+
+    <configLink
+      id         = "TriggerTG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerTG.xml"/>
+
+    <configLink
+      id         = "TriggerSPB2TG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2TG.xml"/>
+
+    <configLink
+      id         = "TriggerSPB2cellsTG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2cellsTG.xml"/>
+
+    <configLink
+      id         = "TriggerSPB2CSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+
+    <configLink
+      id         = "SimRecPlotter"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/SimRecPlotterJG.xml"/>
+
+      <configLink
+        id         = "AxisFinder"
+        type       = "XML"
+        xlink:href = "&myConfigFiles;/AxisFinderJG.xml"/>
+
+    <configLink
+      id         = "SelectEvents"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/SelectEventsJG.xml"/>
+
+     <configLink
+      id         = "SelectTracks"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/SelectTracksJG.xml"/>
+
+
+
+
+  </centralConfig>
+
+  <!--
+      The parameterOverride section allows to modify the content of the
+      default configuration files.
+  -->
+
+  <parameterOverrides>
+<!-- Override config appropriate for light from shower with config for light from laser -->
+    <configLink id="LightAtDiaphragmSimulatorKG">
+      <LightAtDiaphragmSimulatorKG>
+        <fluorDirect> 0 </fluorDirect>
+        <fluorMieScattered> 0 </fluorMieScattered>
+        <fluorRayleighScattered> 0 </fluorRayleighScattered>
+
+        <cherDirect> 0 </cherDirect>
+        <cherMieScattered> 0 </cherMieScattered>
+        <cherRayleighScattered> 0 </cherRayleighScattered>
+
+        <laserMieScattered> 1 </laserMieScattered>
+        <laserRayleighScattered> 1 </laserRayleighScattered>
+
+        <binning> 200 </binning>
+      </LightAtDiaphragmSimulatorKG>
+    </configLink>
+
+<!--Set position of the laser-->
+<configLink id="LaserGeneratorNA">
+  <LaserGeneratorNA>
+    <theta unit="degree"> 120 </theta>
+    <phi unit="degree"> 10.0 </phi>
+    <laserEnergy>
+      <energyMean unit="joule"> XXXXXX </energyMean>   <!-- 5 mJ average -->
+    </laserEnergy>
+  </LaserGeneratorNA>
+</configLink>
+<configLink id="DataWriter">
+            <DataWriter>
+               <FileName> ../SimulatedData/Reco/LASER-XXXXXX.root </FileName>
+            </DataWriter>
+         </configLink>
+
+
+<!--Set position of the laser-->
+<configLink id="EventGenerator">
+  <EventGenerator>
+   <coreRandomization>
+     <centerOfTile> <!-- 33km -->
+       <northing unit="meter"> 4339087 </northing>
+       <easting unit="meter">   352138 </easting>
+       <altitude unit="meter">   15000</altitude>
+       <zone> 12 </zone>
+       <band> N </band>
+     </centerOfTile>
+
+     <sizeOfTile>
+       <deltaNorthing unit="meter"> 0 </deltaNorthing>
+       <deltaEasting unit="1.5*meter"> 0 </deltaEasting>
+     </sizeOfTile>
+   </coreRandomization>
+  </EventGenerator>
+</configLink>
+
+<!--setting Detector properties-->
+    <configLink id="FTelescopeListXMLManager">
+      <telescopeList>
+         <eye id="1">
+         <northing unit="meter"> 4339087 </northing>
+         <easting unit="meter"> 352138 </easting>
+         <altitude unit="meter"> 0 </altitude>
+         <!--northing> 4339087 </northing-->
+         <!--backwallAngle unit = "degree"> 44. </backwallAngle-->
+         <telescopes>
+           <telescope id="1">
+              <northing unit="meter"> 4339087 </northing>
+              <easting unit="meter"> 352138 </easting>
+              <altitude unit="kilometer"> 33 </altitude>
+              <defaultPointing> tilted </defaultPointing>
+              <pointings>
+                <pointing id="tilted">
+                  <opticalAxisPhi unit="degree"> 90.0 </opticalAxisPhi>
+                  <opticalAxisElevation unit="degree"> -90. </opticalAxisElevation>
+                </pointing>
+             </pointings>
+           </telescope>
+         </telescopes>
+         </eye>
+      </telescopeList>
+     </configLink>
+  </parameterOverrides>
+
+</bootstrap>

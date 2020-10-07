@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the  TriggerModule module-->
+
+<TriggerModule  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/TriggerModule.xsd'>
+
+<!-- Path to the threshold file you want to use
+     1GTU: thresh-bckg_pers1GTU.dat
+     2GTU: thresh-bckg_pers2GTU.dat
+     5GTU: thresh-bckg_pers5GTU.dat
+-->
+<FilePath> @SCHEMALOCATION@/TriggerMasks/thresh-bckg_pers2GTU.dat </FilePath>
+
+<!-- Create root file with the triggered track in PDM  [bool: 0=false, 1=true] -->
+<PrintTrigger> 0 </PrintTrigger>
+
+<ContinueWithoutTrigger> 1 </ContinueWithoutTrigger>
+
+</TriggerModule>

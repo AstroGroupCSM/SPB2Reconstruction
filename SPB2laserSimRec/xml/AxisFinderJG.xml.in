@@ -7,21 +7,21 @@
 
 
   <!--   <DataFit>  Coordinates </DataFit>      -->     <!-- uses all the coordinates for the time fit -->
-  <DataFit>  Spots  </DataFit>                   <!-- uses spots for the time fit -->
+  <DataFit>  Coordinates  </DataFit>                   <!-- uses spots for the time fit -->
 
 
   <!--DistanceFit> SourceDistance </DistanceFit-->        <!-- uses t_expc formula with some known source distance (like helicopter distance) -->
-    <DistanceFit>    R0              </DistanceFit>     <!-- uses t_expc formula with R0 -->
+    <DistanceFit>    SourceDistance              </DistanceFit>     <!-- uses t_expc formula with R0 -->
 
 
-  <IsDistanceFixed>  0  </IsDistanceFixed>   <!-- 0 for 3-parameters fit (R0,Psi0,t0) -->
+  <IsDistanceFixed>  1  </IsDistanceFixed>   <!-- 0 for 3-parameters fit (R0,Psi0,t0) -->
   <!-- 1 for 2-parameters fit (Psi0,t0)-->
 
 
   <!-- in case we use GetLaserShotInfo in the sequence, the source distance will be taken from there (Helicopter-Telescope distance),
        otherwise, the value bellow will be considered -->
 
-  <Distance unit="km"> 24.46 </Distance>            <!-- will be used if IsDistanceFixed = 1 -->
+  <Distance unit="km"> 18. </Distance>            <!-- will be used if IsDistanceFixed = 1 -->
 
   <RemoveFarTimeFitSpots> 0 </RemoveFarTimeFitSpots>
 

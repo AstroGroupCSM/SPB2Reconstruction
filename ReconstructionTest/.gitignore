@@ -1,0 +1,10 @@
+*.o 
+*~ 
+*.root
+*.xml 
+JemEusoOffline
+*.DAWN*
+Make-depend
+*.txt
+*.npy
+*.out

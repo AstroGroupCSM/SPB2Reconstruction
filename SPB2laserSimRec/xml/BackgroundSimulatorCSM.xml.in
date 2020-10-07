@@ -14,12 +14,9 @@
 
     <!-- Define if detector is SPB1, because this cause is different due to rotation -->
     <IsSPB1> 0 </IsSPB1>
-    <!-- TiltDependent will change background value depending on tilt angle of the pixel. BaseValue is the value when pointing straigh down, every angle other than this will have a larger background value. Tilt is the angle of tilt, defined as the same way it is in EventGenerator-->
-    <NonUniform> 1 </NonUniform>
-    <TiltDependent> 1 </TiltDependent>
-    <BaseValue> 1.0 </BaseValue>
-    <MakeBlobs> 0.0 </MakeBlobs>
-    <VarriedBackground> 0 </VarriedBackground>
-
+    <!-- FancyFancy is a boolean to vary detector background by the tilt angle, fancy value is the average bg per pixel when looking straight down. Tilt is the angle of tilt, defined as the same way it is in EventGenerator-->
+    
+    <TiltDependent> 0 </TiltDependent>
+    <BaseValue> 1.8 </BaseValue>
 
 </BackgroundSimulatorCSM>

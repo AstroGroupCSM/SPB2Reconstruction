@@ -10,7 +10,7 @@
     <sdIdFormat> 2 2 </sdIdFormat>
   </eventIdentifier>
 
-<!-- If you know the position of your telescope 
+<!-- If you know the position of your telescope
      you can simulate the shower at a fixed position-->
   <!--coreRandomization>
 
@@ -32,11 +32,9 @@
   <coreRandomization>
     <eye> 1 </eye>
     <telescope> 1 </telescope>
-    <maxdist unit="kilometer"> 5 </maxdist>
-    <mindist unit="kilometer"> 5 </mindist>
-    <rMaxEnergyDependent> 0 </rMaxEnergyDependent>
-    <deltaphi unit="deg"> 0 </deltaphi>
-    <altitude unit="meter"> 0 </altitude>
+    <specific>1 </specific>
+    <Radius unit="meter">9000 </Radius>
+    <Angle unit="deg"> 185.0</Angle> 
   </coreRandomization>
 
 

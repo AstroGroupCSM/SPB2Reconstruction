@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the  DataWriter module-->
+
+<DataWriter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/DataWriter.xsd'>
+
+
+<FileName> LaserSimOutput.root </FileName>
+
+
+</DataWriter>

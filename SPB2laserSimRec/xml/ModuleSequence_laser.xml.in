@@ -1,0 +1,36 @@
+<!-- A sequence for an FD simulation -->
+<sequenceFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/ModuleSequence.xsd'>
+
+   <enableTiming/>
+
+   <moduleControl>
+
+    <loop numTimes="100" pushEventToStack="yes">
+
+       <module> LaserGeneratorNA            </module>
+       <module> EventGeneratorOG            </module>
+       <module> FdSimEventCheckerOG         </module>
+       <module> LaserLightSimulatorNA       </module>
+       <module> LightAtDiaphragmSimulatorKG </module>
+       <module> ShowerPhotonGeneratorOG     </module>
+       <module> TelescopeSimulatorJG        </module>
+       <module> ElectronicsSimulatorJG      </module>
+       <module> BackgroundSimulatorCSM      </module>
+       <module> EventBuilderJG              </module>
+       <module> TriggerSPB2CSM       </module>
+       <try>
+	 <module> SelectEventsJG	    </module>
+	 <module> PixelCalibratorJG         </module>
+	 <module> SelectTracksJG            </module>
+	 <module> SDPFinderJG               </module>
+	 <module> AddCoordinatesJG          </module>
+	 <module> AxisFinderJG              </module>
+            </try>
+              <module> DataWriter	            </module>
+
+    </loop>
+
+   </moduleControl>
+
+</sequenceFile>

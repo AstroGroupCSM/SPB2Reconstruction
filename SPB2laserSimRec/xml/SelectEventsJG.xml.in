@@ -4,7 +4,7 @@
 <SelectEvents   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/SelectEventsJG.xsd'>
 
-    <MappingFileName> @XMLSCHEMALOCATION@/SPB2_mapping.txt </MappingFileName>
+    <MappingFileName> @SCHEMALOCATION@/SPB2_mapping.txt </MappingFileName>
 
 
      <TimesSigmaThreshold>  5.  </TimesSigmaThreshold>

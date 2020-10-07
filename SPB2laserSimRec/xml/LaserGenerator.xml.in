@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module LaserGenerator -->
+
+<LaserGeneratorNA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/LaserGenerator.xsd'>
+
+  <theta unit="degree"> 135 </theta>              <!-- theta>90 = upgoing -->
+  <phi unit="degree"> 90.0 </phi>                   <!-- phi> 33 -->
+
+  <laserEnergy>
+    <energyMean unit="joule"> 0.0005 </energyMean>   <!-- 5 mJ average -->
+    <energyRMS unit="perCent"> 5 </energyRMS>       <!-- RMS from probe -->
+    <doSmearing> 1 </doSmearing>                    <!-- smear by RMS [bool] -->
+  </laserEnergy>
+
+  <wavelength unit="nanometer"> 355 </wavelength>
+  <angulardivergence unit="radian"> 4.e-3 </angulardivergence>   <!-- Angular divergence -->
+</LaserGeneratorNA>

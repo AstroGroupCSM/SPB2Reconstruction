@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE EventGenerator [
+<!ENTITY UTMData "<zone> 12 </zone>
+                  <band> S </band>">
+]>
+
+<EventGenerator xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/EventGenerator.xsd'>
+
+
+  <eventIdentifier>
+    <libraryIdentifier> Test </libraryIdentifier>
+    <format> Library_%1%:Run_%2%:Shower_%3%:Use_%4% </format>
+   </eventIdentifier>
+
+
+   <coreRandomization>
+     <centerOfTile> <!-- 33km -->
+      <northing unit="meter"> 4351462 </northing>
+      <easting unit="meter">   335407 </easting>
+      <altitude unit="meter">    1390 </altitude>
+      <zone> 12 </zone>
+      <band> N </band>
+    </centerOfTile>
+
+    <sizeOfTile>
+      <deltaNorthing unit="meter"> 0 </deltaNorthing>
+      <deltaEasting unit="1.5*meter"> 0 </deltaEasting>
+    </sizeOfTile>
+  </coreRandomization>
+
+  <!--coreRandomization>
+      <sphere> 0 </sphere>
+      <eye> 1 </eye>
+      <telescope> 1 </telescope>
+      <maxdist unit="kilometer"> 10 </maxdist>
+      <mindist unit="kilometer"> 10 </mindist>
+      <altitude unit="meter"> 0 </altitude>
+   </coreRandomization-->
+
+
+  <!-- Time stamp of the core impact on ground -->
+  <timeInterval>
+    <timeOrdered>
+      <nEvents> 100 </nEvents>
+      <timeRandomized> yes </timeRandomized>
+    </timeOrdered>
+    <startTime> 2015-09-19T05:30:00.000004 </startTime>
+    <endTime>   2015-09-19T05:30:30.000001 </endTime>
+  </timeInterval>
+  <!--eventTime> 2013-04-01T04:33:12.5 </eventTime-->
+
+
+
+   </EventGenerator>
