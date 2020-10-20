@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="10" pushEventToStack="yes">
+    <loop numTimes="1" pushEventToStack="yes">
 
 	<module> EventFileReaderOG           </module>
   <module> EventGeneratorOG </module>
@@ -15,13 +15,13 @@
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
   <module> TriggerSPB2CSM </module>
- 	<!--module> SelectEventsJG </module>
+ 	<module> SelectEventsJG </module>
   <module> PixelCalibratorJG </module>
   <module> SelectTracksJG </module>
   <module> SDPFinderJG </module>
   <module> AddCoordinatesJG </module>
   <module> AxisFinderJG </module>
-  <module> SimRecPlotterJG </module-->
+  <!--module> SimRecPlotterJG </module-->
   <module> DataWriter </module>
   <!--module>TriggerCSM </module-->
 

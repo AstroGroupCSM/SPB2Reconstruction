@@ -12,7 +12,7 @@
 		CONEX
                 JemEuso -->
 
-<InputFileType> AperturePhotons </InputFileType>
+<InputFileType> JemEusoRoot </InputFileType>
 
 <!-- the list of filenames (space delimited) -->
 

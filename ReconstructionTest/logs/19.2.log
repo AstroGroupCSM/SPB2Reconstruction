@@ -1,0 +1,1659 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<bootstrap xmlns:xlink="http://www.jemeuso.org/schema/types">
+<header>
+<softwareVersion> JemEuso Offline Framework v0r1p0-git_src </softwareVersion>
+<SVNGlobalRevision> v0.1.0-352-gb9b05a8c </SVNGlobalRevision>
+<mismatchedMd5> <!-- the md5 fingerprints for these config files do not match the defaults -->
+  AxisFinderJG
+  BackgroundSimulatorCSM
+  DataWriter
+  ElectronicsSimulatorJG
+  PixelCalibratorJG
+  SelectEventsJG
+  SelectTracksJG
+  TelescopeSimulatorJG
+  TriggerSPB2CSM
+</mismatchedMd5>
+<moduleVersions>
+  <module>
+    <logicalName> AddCoordinatesJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> AxisFinderJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> BackgroundSimulatorCSM </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> DataWriter </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> EventBuilderJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> EventFileReaderOG </logicalName>
+    <lastSVNRevision> 16675 </lastSVNRevision>
+    <lastRevisionDate> 2010-06-01 </lastRevisionDate>
+    <lastEditor> paul </lastEditor>
+  </module>
+  <module>
+    <logicalName> EventGeneratorOG </logicalName>
+    <lastSVNRevision> 22965 </lastSVNRevision>
+    <lastRevisionDate> 2013-03-13 </lastRevisionDate>
+    <lastEditor> paul </lastEditor>
+  </module>
+  <module>
+    <logicalName> FdSimEventCheckerOG </logicalName>
+    <lastSVNRevision> 15249 </lastSVNRevision>
+    <lastRevisionDate> 2009-11-24 </lastRevisionDate>
+    <lastEditor> rulrich </lastEditor>
+  </module>
+  <module>
+    <logicalName> PixelCalibratorJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> SDPFinderJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> SelectEventsJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> SelectTracksJG </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> SignalIdentifierCSM </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+  <module>
+    <logicalName> TriggerSPB2CSM </logicalName>
+    <lastSVNRevision> noInfo </lastSVNRevision>
+    <lastRevisionDate> noInfo </lastRevisionDate>
+    <lastEditor> noInfo </lastEditor>
+  </module>
+</moduleVersions>
+</header>
+<centralConfig>
+ <configLink id="FManagerRegister" type="XML" xlink:href="#FManagerRegister"/>
+ <configLink id="FdChannelMappingManager" type="XML" xlink:href="#FdChannelMappingManager"/>
+ <configLink id="FFixCalibManager" type="XML" xlink:href="#FFixCalibManager"/>
+ <configLink id="AManagerRegister" type="XML" xlink:href="#AManagerRegister"/>
+ <configLink id="Atmosphere" type="XML" xlink:href="#Atmosphere"/>
+ <configLink id="ParametricXMLProfileModel" type="XML" xlink:href="#ParametricXMLProfileModel"/>
+ <configLink id="ParametricXMLMieModel" type="XML" xlink:href="#ParametricXMLMieModel"/>
+ <configLink id="ParametricXMLRayleighModel" type="XML" xlink:href="#ParametricXMLRayleighModel"/>
+ <configLink id="AirflyFluorescenceModel" type="XML" xlink:href="#AirflyFluorescenceModel"/>
+ <configLink id="AnalyticalCherenkovModel" type="XML" xlink:href="#AnalyticalCherenkovModel"/>
+ <configLink id="ParametricXMLOzoneModel" type="XML" xlink:href="#ParametricXMLOzoneModel"/>
+ <configLink id="Earth" type="XML" xlink:href="#Earth"/>
+ <configLink id="RandomEngineRegistry" type="XML" xlink:href="#RandomEngineRegistry"/>
+ <configLink id="FTelescopeListXMLManager" type="XML" xlink:href="#FTelescopeListXMLManager"/>
+ <configLink id="FModelsXMLManager" type="XML" xlink:href="#FModelsXMLManager"/>
+ <configLink id="FdSimEventChecker" type="XML" xlink:href="#FdSimEventChecker"/>
+ <configLink id="BackgroundSimulatorCSM" type="XML" xlink:href="#BackgroundSimulatorCSM"/>
+ <configLink id="DataWriter" type="XML" xlink:href="#DataWriter"/>
+ <configLink id="AddCoordinates" type="XML" xlink:href="#AddCoordinates"/>
+ <configLink id="AxisFinder" type="XML" xlink:href="#AxisFinder"/>
+ <configLink id="TriggerSPB2CSM" type="XML" xlink:href="#TriggerSPB2CSM"/>
+ <configLink id="SelectTracks" type="XML" xlink:href="#SelectTracks"/>
+ <configLink id="PixelCalibrator" type="XML" xlink:href="#PixelCalibrator"/>
+ <configLink id="SelectEvents" type="XML" xlink:href="#SelectEvents"/>
+ <configLink id="ModuleSequence" type="XML" xlink:href="#ModuleSequence"/>
+ <configLink id="EventFileReader" type="XML" xlink:href="#EventFileReader"/>
+ <configLink id="EventGenerator" type="XML" xlink:href="#EventGenerator"/>
+ <configLink id="DataWriter" type="XML" xlink:href="#DataWriter"/>
+ <configLink id="TriggerSPB2CSM" type="XML" xlink:href="#TriggerSPB2CSM"/>
+ <configLink id="PixelCalibrator" type="XML" xlink:href="#PixelCalibrator"/>
+ <configLink id="BackgroundSimulatorCSM" type="XML" xlink:href="#BackgroundSimulatorCSM"/>
+ <configLink id="AxisFinder" type="XML" xlink:href="#AxisFinder"/>
+ <configLink id="SelectEvents" type="XML" xlink:href="#SelectEvents"/>
+ <configLink id="SelectTracks" type="XML" xlink:href="#SelectTracks"/>
+</centralConfig>
+<AManagerRegister>
+  <AtmosphereManagerList>
+  </AtmosphereManagerList>
+</AManagerRegister>
+<AddCoordinates>
+  <AddCoordinates>
+    <MaxDistanceToSDP unit="degree"> 1. </MaxDistanceToSDP>
+  </AddCoordinates>
+</AddCoordinates>
+<AirflyFluorescenceModel>
+  <AirflyFluorescenceModel>
+    <yield337 unit="1/MeV"> 7.07 </yield337>
+    <wavelength unit="nanometer"> 296.2 297.7 302.0 308.0 311.7 313.6 315.9 317.7 326.8 328.5 330.9 333.9 337.1 346.3 350.0 353.7 357.7 366.1 367.2 371.1 375.6 380.5 385.8 387.7 388.5 391.4 394.3 399.8 405.0 414.1 420.0 423.6 427.0 427.8 </wavelength>
+    <relativeIntensity> 5.16 2.77 0.41 1.44 7.24 11.05 39.33 0.46 0.80 3.80 2.15 4.02 100.0 1.74 2.79 21.35 67.41 1.13 0.54 4.97 17.87 27.2 0.50 1.17 0.83 28.0 3.36 8.38 8.07 0.49 1.75 1.04 7.08 4.94 </relativeIntensity>
+    <relativeIntensityError> 0.29 0.13 0.06 0.10 0.27 0.41 1.4 0.06 0.08 0.14 0.12 0.18 0. 0.11 0.11 0.76 2.4 0.08 0.04 0.22 0.63 0.97 0.08 0.06 0.04 1.0 0.15 0.29 0.29 0.07 0.10 0.11 0.28 0.19 </relativeIntensityError>
+    <pPrime unit="100*pascal"> 18.5 17.3 21. 21. 18.7 12.27 11.88 21. 19. 20.7 16.9 15.5 15.89 21. 15.2 12.7 15.39 21. 19. 14.8 12.82 16.51 19. 7.6 3.9 2.94 13.7 13.6 17.8 19. 13.8 3.9 6.38 2.89 </pPrime>
+    <pPrimeErrorUncorrelated unit="100*pascal"> 5.0 4.0 10. 10. 3.8 0.78 0.31 10. 5. 2.6 3.5 1.5 0. 10. 3.7 0.34 0.25 10. 5. 1.9 0.45 0.48 5. 1.59 1.72 0.58 3.30 1.1 1.50 5. 4.0 1.7 0.68 0.64 </pPrimeErrorUncorrelated>
+    <pPrimeErrorCorrelated unit="100*pascal"> 0.8 0.8 1. 1. 0.8 0.64 0.62 1. 1. 0.8 0.76 0.7 0.73 1. 0.7 0.64 0.72 1. 1. 0.7 0.62 0.72 1. 0.5 0.31 0.31 0.7 0.6 0.8 1.0 0.7 0.3 0.43 0.30 </pPrimeErrorCorrelated>
+    <pressure0 unit="100*pascal"> 800 </pressure0>
+    <temperature0 unit="kelvin"> 293 </temperature0>
+    <collisionalCrossSection> eAIRFLYtemp </collisionalCrossSection>
+    <humidity> eAIRFLYhum </humidity>
+  </AirflyFluorescenceModel>
+</AirflyFluorescenceModel>
+<AnalyticalCherenkovModel>
+  <analyticalCherenkovModel>
+    <wavelength unit="nanometer"> 280 289 298 307 316 325 334 343 352 361 370 379 388 397 406 415 424 433 442 451 </wavelength>
+    <parametrization> eNerling </parametrization>
+    <parametrization_angular> eAngNerling </parametrization_angular>
+  </analyticalCherenkovModel>
+</AnalyticalCherenkovModel>
+<Atmosphere>
+  <AtmosphereInterfaceConfig>
+    <RayleighModel> ParametricXML </RayleighModel>
+    <ProfileModel> ParametricXML </ProfileModel>
+    <MieModel> ParametricXML </MieModel>
+    <FluorescenceModel> Airfly </FluorescenceModel>
+    <CherenkovModel> Analytical </CherenkovModel>
+    <OzoneModel> ParametricXML </OzoneModel>
+  </AtmosphereInterfaceConfig>
+</Atmosphere>
+<AxisFinder>
+  <AxisFinder>
+    <DataFit> Spots </DataFit>
+    <DistanceFit> R0 </DistanceFit>
+    <IsDistanceFixed> 0 </IsDistanceFixed>
+    <Distance unit="km"> 24.46 </Distance>
+    <RemoveFarTimeFitSpots> 0 </RemoveFarTimeFitSpots>
+    <PrintLevel> 0 </PrintLevel>
+  </AxisFinder>
+</AxisFinder>
+<BackgroundSimulatorCSM>
+  <BackgroundSimulatorCSM>
+    <ReadFromFile> 0 </ReadFromFile>
+    <Path>  </Path>
+    <IsSPB1> 0 </IsSPB1>
+    <NonUniform> 1 </NonUniform>
+    <TiltDependent> 1 </TiltDependent>
+    <BaseValue> 1.0 </BaseValue>
+    <MakeBlobs> 0.0 </MakeBlobs>
+    <VarriedBackground> 0 </VarriedBackground>
+  </BackgroundSimulatorCSM>
+</BackgroundSimulatorCSM>
+<DataWriter>
+  <DataWriter>
+    <FileName> ../SimulatedData/Reco/19.2.root </FileName>
+    <FileName2> fRecoOutput.root </FileName2>
+    <WritePhotonTrace> 1 </WritePhotonTrace>
+    <WritePeSignalTrace> 1 </WritePeSignalTrace>
+    <SPB2ReSim> 0 </SPB2ReSim>
+    <PlotAll> 0 </PlotAll>
+  </DataWriter>
+</DataWriter>
+<Earth>
+  <EarthInterfaceConfig>
+    <flatEarth> 0 </flatEarth>
+    <height unit="m"> 0 </height>
+    <surface> Water </surface>
+    <reflection> Lambertian </reflection>
+    <specular> 1. </specular>
+    <gausssigma> 0.1 </gausssigma>
+  </EarthInterfaceConfig>
+</Earth>
+<EventFileReader>
+  <EventFileReader>
+    <InputFileType> JemEusoRoot </InputFileType>
+    <InputFilenames> ../SimulatedData/NoBG/19.2-full.root </InputFilenames>
+  </EventFileReader>
+</EventFileReader>
+<EventGenerator>
+  <EventGenerator>
+    <mode> FD </mode>
+    <eventIdentifier>
+      <libraryIdentifier> Test </libraryIdentifier>
+      <format> Library_%1%:Run_%2%:Shower_%3%:Use_%4% </format>
+      <sdIdFormat> 2 2 </sdIdFormat>
+    </eventIdentifier>
+    <coreRandomization>
+      <eye> 1 </eye>
+      <telescope> 1 </telescope>
+      <specific> 1 </specific>
+      <Radius unit="meter"> 9000 </Radius>
+      <Angle unit="deg"> 185.0 </Angle>
+    </coreRandomization>
+    <eventTime> 2020-01-01T04:33:12.5 </eventTime>
+  </EventGenerator>
+</EventGenerator>
+<FFixCalibManager>
+  <FFixCalibConfig>
+    <fixedCalibrationConstant> 5.0 </fixedCalibrationConstant>
+    <perTelescope>  </perTelescope>
+  </FFixCalibConfig>
+</FFixCalibManager>
+<FManagerRegister>
+  <FDetectorManagerList>
+    <manager> FdChannelMappingManager </manager>
+    <manager> FdAlwaysUpManager </manager>
+    <manager> FTelescopeListXMLManager </manager>
+    <manager> FModelsXMLManager </manager>
+    <manager> FFixCalibManager </manager>
+  </FDetectorManagerList>
+</FManagerRegister>
+<FModelsXMLManager>
+  <FDetectorConfig>
+    <telescopeConfig>
+      <standard>
+        <models>
+          <diaphragm id="SPB2">  </diaphragm>
+          <filter id="standard">  </filter>
+          <mirror id="standard">  </mirror>
+          <camera id="SPB2">  </camera>
+          <pixel id="SPB2">  </pixel>
+          <electronics id="SPB2">  </electronics>
+        </models>
+        <eyes>
+          <eye id="1">
+            <telescopes>
+              <telescope id="1">  </telescope>
+            </telescopes>
+          </eye>
+        </eyes>
+      </standard>
+    </telescopeConfig>
+    <telescopeModels>
+      <diaphragm id="jem_euso">
+        <radius unit="meter"> 1.325 </radius>
+        <rcut unit="meter"> 0.95 </rcut>
+        <xcut unit="meter"> 1.325 </xcut>
+      </diaphragm>
+      <diaphragm id="ta_euso">
+        <radius unit="meter"> 0.6 </radius>
+        <rcut unit="meter"> 0.5 </rcut>
+        <xcut unit="meter"> 0.5 </xcut>
+      </diaphragm>
+      <diaphragm id="SPB">
+        <radius unit="meter"> 0.6 </radius>
+        <rcut unit="meter"> 0.5 </rcut>
+        <xcut unit="meter"> 0.5 </xcut>
+      </diaphragm>
+      <diaphragm id="SPB2">
+        <radius unit="meter"> 0.5 </radius>
+        <rcut unit="meter"> 0.5 </rcut>
+        <xcut unit="meter"> 0.5 </xcut>
+      </diaphragm>
+      <diaphragm id="MINI_euso">
+        <radius unit="meter"> 0.125 </radius>
+        <rcut unit="meter"> 0.125 </rcut>
+        <xcut unit="meter"> 0.125 </xcut>
+      </diaphragm>
+      <lenses id="jem_euso">
+        <FrontLensOffset unit="mm"> 80 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 10 </Sz2>
+        <Sz4 unit="mm"> 1189.97 </Sz4>
+        <Sz5 unit="mm"> 1199.97 </Sz5>
+        <Sz6 unit="mm"> 2448.17 </Sz6>
+        <Sz7 unit="mm"> 2458.17 </Sz7>
+        <FSz unit="mm"> 3513.14 </FSz>
+      </lenses>
+      <lenses id="ta_euso">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 8 </Sz2>
+        <Sz4 unit="mm"> 0 </Sz4>
+        <Sz5 unit="mm"> 0 </Sz5>
+        <Sz6 unit="mm"> 1071.58 </Sz6>
+        <Sz7 unit="mm"> 1079.58 </Sz7>
+        <FSz unit="mm"> 1517.89 </FSz>
+      </lenses>
+      <lenses id="ta_euso_screen">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 8 </Sz2>
+        <Sz4 unit="mm"> 0 </Sz4>
+        <Sz5 unit="mm"> 0 </Sz5>
+        <Sz6 unit="mm"> 1071.58 </Sz6>
+        <Sz7 unit="mm"> 1079.58 </Sz7>
+        <FSz unit="mm"> 1517.89 </FSz>
+      </lenses>
+      <lenses id="euso_balloon">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 8 </Sz2>
+        <Sz4 unit="mm"> 0 </Sz4>
+        <Sz5 unit="mm"> 0 </Sz5>
+        <Sz6 unit="mm"> 1071.58 </Sz6>
+        <Sz7 unit="mm"> 1079.58 </Sz7>
+        <FSz unit="mm"> 1517.89 </FSz>
+      </lenses>
+      <lenses id="SPB_euso_3lens">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 8 </Sz2>
+        <Sz4 unit="mm"> 1069.55 </Sz4>
+        <Sz5 unit="mm"> 1077.55 </Sz5>
+        <Sz6 unit="mm"> 1268.83 </Sz6>
+        <Sz7 unit="mm"> 1276.83 </Sz7>
+        <FSz unit="mm"> 1620.72 </FSz>
+      </lenses>
+      <lenses id="SPB_euso_2lens">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 8 </Sz2>
+        <Sz4 unit="mm"> 0 </Sz4>
+        <Sz5 unit="mm"> 0 </Sz5>
+        <Sz6 unit="mm"> 1071.58 </Sz6>
+        <Sz7 unit="mm"> 1079.58 </Sz7>
+        <FSz unit="mm"> 1517.58 </FSz>
+      </lenses>
+      <lenses id="MINI_euso">
+        <FrontLensOffset unit="mm"> 5 </FrontLensOffset>
+        <Sz1 unit="mm"> 0 </Sz1>
+        <Sz2 unit="mm"> 10 </Sz2>
+        <Sz6 unit="mm"> 187.8 </Sz6>
+        <Sz7 unit="mm"> 197.8 </Sz7>
+        <FSz unit="mm"> 300 </FSz>
+      </lenses>
+      <diaphragm id="euso_balloon">
+        <radius unit="meter"> 0.6 </radius>
+        <rcut unit="meter"> 0.5 </rcut>
+        <xcut unit="meter"> 0.5 </xcut>
+      </diaphragm>
+      <pixel id="standard">
+        <qEfficiency>
+          <x unit="nanometer"> 200 210 220 230 240
+	  250 260 270 280 290
+	  300 310 320 330 340
+	  350 360 370 380 390
+	  400 410 420 430 440
+	  450 460 470 480 490
+	  500 510 520 530 </x>
+          <y> 12.73e-2 15.45e-2 18.89e-2 21.28e-2 24.45e-2
+	  27.36e-2 29.66e-2 31.84e-2 33.92e-2 36.25e-2
+	  38.39e-2 39.32e-2 40.55e-2 41.02e-2 40.95e-2
+	  40.80e-2 40.30e-2 39.99e-2 39.22e-2 38.71e-2
+	  37.89e-2 36.72e-2 35.65e-2 34.49e-2 33.06e-2
+	  31.49e-2 29.77e-2 27.73e-2 25.58e-2 23.86e-2
+	  22.36e-2 20.72e-2 18.44e-2 15.36e-2 </y>
+        </qEfficiency>
+        <collEfficiency> 0.8 </collEfficiency>
+      </pixel>
+      <pixel id="SPB2">
+        <qEfficiency>
+          <x unit="nanometer"> 270 280 290 300 310
+	  320 330 340 350 360
+	  370 380 390 400 410
+	  420 430 440 450 460
+	  470 480 490 500 510
+	  520 530 540 550 560 </x>
+          <y> 24.539e-2 28.054e-2 32.555e-2 36.382e-2 39.332e-2
+	  41.339e-2 42.936e-2 44.042e-2 44.049e-2 43.805e-2
+	  43.342e-2 42.614e-2 41.614e-2 40.221e-2 39.000e-2
+	  37.626e-2 36.212e-2 34.592e-2 32.738e-2 30.887e-2
+	  28.749e-2 26.307e-2 23.706e-2 20.761e-2 18.082e-2
+	  15.703e-2 13.665e-2 11.753e-2  9.978e-2  8.500e-2 </y>
+        </qEfficiency>
+        <collEfficiency> 0.74 </collEfficiency>
+      </pixel>
+      <electronics id="standard">
+        <numTraceBins> 128 </numTraceBins>
+        <traceBinWidth unit="nanosecond"> 2500 </traceBinWidth>
+        <FLTBoxCarWidth> 10 </FLTBoxCarWidth>
+        <FLTProlongation> 200 </FLTProlongation>
+        <SLTBinWidth unit="nanosecond"> 1000 </SLTBinWidth>
+        <SLTTriggerBin> 300 </SLTTriggerBin>
+        <gain> 1.754 </gain>
+        <VirtualChannelGainRatio> 32. </VirtualChannelGainRatio>
+        <cutoffFrequency unit="megahertz"> 3.1 </cutoffFrequency>
+        <gainVar> 0.41 </gainVar>
+        <elecNoiseVar> 3.5 </elecNoiseVar>
+        <ADCDynamicRange> 12 </ADCDynamicRange>
+      </electronics>
+      <electronics id="SPB2">
+        <numTraceBins> 128 </numTraceBins>
+        <traceBinWidth unit="nanosecond"> 1000 </traceBinWidth>
+        <FLTBoxCarWidth> 10 </FLTBoxCarWidth>
+        <FLTProlongation> 200 </FLTProlongation>
+        <SLTBinWidth unit="nanosecond"> 1000 </SLTBinWidth>
+        <SLTTriggerBin> 300 </SLTTriggerBin>
+        <gain> 1.754 </gain>
+        <VirtualChannelGainRatio> 32. </VirtualChannelGainRatio>
+        <cutoffFrequency unit="megahertz"> 3.1 </cutoffFrequency>
+        <gainVar> 0.41 </gainVar>
+        <elecNoiseVar> 3.5 </elecNoiseVar>
+        <ADCDynamicRange> 12 </ADCDynamicRange>
+      </electronics>
+      <mirror id="standard">
+        <reflectivity>
+          <x unit="nanometer"> 200
+          280 285 290 295 300 305 310 315
+          320 325 330 335 340 345 350 355
+          360 365 370 375 380 385 390 395
+          400 405 410 415 420 425 430 500
+	  700 </x>
+          <y> 0.83
+          0.83 0.84 0.85 0.86 0.87 0.87 0.88 0.88
+          0.89 0.89 0.90 0.90 0.90 0.90 0.90 0.90
+          0.90 0.90 0.90 0.90 0.90 0.90 0.89 0.89
+          0.89 0.89 0.89 0.88 0.88 0.88 0.88 0.88
+	  0.88 </y>
+        </reflectivity>
+        <sigmaNormal unit="degree"> 0.0 </sigmaNormal>
+        <radius unit="meter"> 3.4 </radius>
+      </mirror>
+      <lenses id="jem_euso">
+        <lens id="1">
+          <radius unit="meter"> 1.325 </radius>
+          <rcut unit="meter"> 0.95 </rcut>
+          <radiusOfCurvature unit="meter"> 3.14357795946 3.14357795946 </radiusOfCurvature>
+          <position unit="mm"> 0. 10. </position>
+          <lens_material id="Mitsubishi_000v4">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 1.325 </radius>
+          <rcut unit="meter"> 0.95 </rcut>
+          <radiusOfCurvature unit="meter"> 23.63901281897 23.63901281897 </radiusOfCurvature>
+          <position unit="mm"> 1189.97282044. 1199.97282044 </position>
+          <lens_material id="Mitsubishi_000v4">  </lens_material>
+        </lens>
+        <lens id="3">
+          <radius unit="meter"> 1.325 </radius>
+          <rcut unit="meter"> 0.95 </rcut>
+          <radiusOfCurvature unit="meter"> -4.48699773078 -4.48699773078 </radiusOfCurvature>
+          <position unit="m"> 2.44817495292 2.44817495292 </position>
+          <lens_material id="Mitsubishi_000v4">  </lens_material>
+        </lens>
+      </lenses>
+      <lenses id="Balloon_EUSO">
+        <lens id="1">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21 1.e6 </radiusOfCurvature>
+          <position unit="mm"> 0. 8. </position>
+          <lens_material id="Mitsubishi_000v4T-40">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> -1.e6 -1.e21 </radiusOfCurvature>
+          <position unit="m"> 1.268832568131 8. </position>
+          <lens_material id="Mitsubishi_000v4T10">  </lens_material>
+        </lens>
+      </lenses>
+      <lenses id="SPB_euso_3lens">
+        <lens id="1">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21 1.e6 </radiusOfCurvature>
+          <position unit="mm"> 0. 8. </position>
+          <lens_material id="Mitsubishi_000v4T-40">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21 1.e21 </radiusOfCurvature>
+          <position unit="m"> 1.06954931388 1.07754931388 </position>
+          <lens_material id="Mitsubishi_000v4T10">  </lens_material>
+        </lens>
+        <lens id="3">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> -1.e6 -1.e21 </radiusOfCurvature>
+          <position unit="m"> 1.268832568131 8. </position>
+          <lens_material id="Mitsubishi_000v4T10">  </lens_material>
+        </lens>
+      </lenses>
+      <lenses id="SPB_euso_2lens">
+        <lens id="1">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21 1.e6 </radiusOfCurvature>
+          <position unit="mm"> 0. 8. </position>
+          <lens_material id="Mitsubishi_000v4T-40">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> -1.e6 -1.e21 </radiusOfCurvature>
+          <position unit="m"> 1.268832568131 8. </position>
+          <lens_material id="Mitsubishi_000v4T10">  </lens_material>
+        </lens>
+      </lenses>
+      <lenses id="TA_EUSO">
+        <lens id="1">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21 1.e6 </radiusOfCurvature>
+          <position unit="mm"> 0. 8. </position>
+          <lens_material id="Mitsubishi_000v4b">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 0.6 </radius>
+          <rcut unit="meter"> 0.5 </rcut>
+          <radiusOfCurvature unit="mm"> -1.e6 -1.e21 </radiusOfCurvature>
+          <position unit="m"> 1.268832568131 8. </position>
+          <lens_material id="Mitsubishi_000v4b">  </lens_material>
+        </lens>
+      </lenses>
+      <lenses id="MINI_euso">
+        <lens id="1">
+          <radius unit="meter"> 0.125 </radius>
+          <rcut unit="meter"> 0.125 </rcut>
+          <radiusOfCurvature unit="mm"> 1.e21  1.e21 </radiusOfCurvature>
+          <position unit="mm"> 0. 10. </position>
+          <lens_material id="Mitsubishi_000v4b">  </lens_material>
+        </lens>
+        <lens id="2">
+          <radius unit="meter"> 0.125 </radius>
+          <rcut unit="meter"> 0.125 </rcut>
+          <radiusOfCurvature unit="mm"> 1e21 1e21 </radiusOfCurvature>
+          <position unit="mm"> 187.8  197.8 </position>
+          <lens_material id="Mitsubishi_000v4b">  </lens_material>
+        </lens>
+      </lenses>
+      <filter id="standard">
+        <transmittance>
+          <x unit="nanometer"> 200
+          280 285 290 295 300 305 310 315
+          320 325 330 335 340 345 350 355
+          360 365 370 375 380 385 390 395
+          400 405 410 415 420 425 430 500
+	  700 </x>
+          <y> 0.0
+          0.00 0.01 0.05 0.14 0.23 0.34 0.46 0.59
+          0.65 0.73 0.77 0.81 0.83 0.84 0.85 0.86
+          0.86 0.85 0.83 0.81 0.77 0.69 0.59 0.42
+          0.26 0.12 0.06 0.02 0.01 0.00 0.00 0.0
+	  0.0 </y>
+        </transmittance>
+        <sigmaNormal unit="degree"> 0.0 </sigmaNormal>
+      </filter>
+      <camera id="jem_euso">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 37.00 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 18 </ccb>
+        <pdm> 137 </pdm>
+      </camera>
+      <camera id="ta_euso">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 12.25 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 1 </ccb>
+        <pdm> 1 </pdm>
+      </camera>
+      <camera id="euso_balloon">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 12.5 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 1 </ccb>
+        <pdm> 1 </pdm>
+      </camera>
+      <camera id="SPB_euso">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 13 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 1 </ccb>
+        <pdm> 1 </pdm>
+      </camera>
+      <camera id="SPB2">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 18 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 1 </ccb>
+        <pdm> 3 </pdm>
+        <maxPDMx> 3 </maxPDMx>
+        <maxPDMy> 1 </maxPDMy>
+      </camera>
+      <camera id="MINI_euso">
+        <radiusFocal unit="meter"> 2.505 </radiusFocal>
+        <eta unit="degree"> 3.8 </eta>
+        <fieldOfView unit="degree"> 26 </fieldOfView>
+        <pixelRows> 22 </pixelRows>
+        <pixelColumns> 20 </pixelColumns>
+        <pixelSolidAngle unit="1e-6*sr"> 578.133 575.137     576 575.724  576.59 575.698 576.722 575.238 577.687 575.316
+        577.413  575.77 575.703 574.346  577.36 575.091 577.441 574.688 576.387 575.649
+        577.442  575.59 580.175 579.984 579.865 579.264 580.745 578.587 580.957 578.661
+        580.158 578.015 580.927   578.8 580.538 579.633 580.724 578.995 579.897 578.679
+        580.47 579.872 580.054 579.279 583.464 583.218 584.159 582.032 583.997 581.901
+        583.698  581.66 583.566 582.707  583.83 582.362 583.344 582.373 583.245 583.165
+        584.39 582.719 584.349 582.234 584.117 582.718 586.434 584.797 586.071 584.802
+        585.362 584.479 585.341 585.215 586.704 585.373 586.104 586.112 586.219 585.261
+        585.885 585.059 585.381 584.702 586.313 585.896 586.189 584.661 588.032 587.322
+        588.438 587.956 589.293 587.519 588.734 587.627 588.569 586.624  587.54 587.173
+        587.817 586.715 587.798 587.359 587.891 587.492 589.159 587.893 589.468 586.917
+        590.315 588.627 590.617 588.875 590.635   590.1 589.916 588.708  591.22 589.745
+        591.777 588.568 590.506 588.435 589.991 591.197 590.309 588.313 590.223 589.443
+        590.004  589.99 591.402 591.615 592.511 590.054 592.362 590.107 593.094 590.716
+        590.032 590.467 592.293 591.009 591.074 590.462 592.039 590.832 592.106 590.365
+        592.334 590.759 591.491 591.918 593.729 591.926 592.055 592.129 592.682 592.057
+        593.336 592.508 592.268  591.14 593.025 591.741 592.764 592.936 592.898  592.37
+        592.54 592.862 593.009 591.824 592.355 591.884 593.638 592.725 594.449 593.443
+        592.976  593.56 593.656 592.957 593.784 593.387 593.364 593.374 593.794 593.606
+        593.396  593.29 593.654 593.878  593.18 593.996 594.064 592.845 593.691 593.283
+        593.467 594.731 595.145 593.896 592.166 593.228 593.323 592.331 594.073  592.38
+        593.464 594.615 593.101 592.865 594.175  593.49 593.492  593.12 593.131 593.867
+        593.774 593.359 593.292 594.327 593.307 593.717 594.437 593.243 592.966  593.96
+        592.898 594.102 592.766 594.453 592.527  593.16 592.825 593.134 592.813 592.782
+        593.457   592.6 592.255 593.237 592.746 593.115 593.736 592.742 592.095 593.071
+        591.688 593.025 593.481 592.848 592.282 591.909 591.925 593.098 593.065 592.007
+        593.722 593.248 592.156 593.184 592.752 594.317 592.765 592.136 590.401 591.513
+        592.249 592.358 591.779 592.009 591.419 591.645 591.634 592.663 592.052 591.569
+        591.531  591.84 591.275 593.768 590.756 592.094 589.808 590.759 590.465 590.753
+        590.796 590.036 590.339 589.854 590.919 590.818 590.429 590.383 591.572 592.506
+        590.422 591.886 589.709 591.361 590.847 591.181 590.772 591.565 588.266 590.623
+        587.532 590.141 588.566 589.704 588.727 589.676 588.106 589.629 588.937 589.775
+        587.977 589.394  588.62 588.877 587.581 590.321  588.38 589.825 588.312 589.514
+        587.974 587.382  586.33 587.311 586.444 587.529 585.462  585.74 585.539 587.304
+        586.33 586.781  585.49 587.372 586.107 587.258 585.621 586.882 586.066 587.904
+        585.132 586.391 583.702 584.368 583.331 584.132 582.644 584.977 583.967 583.906
+        583.645 584.931 584.273 585.006 583.228  585.46 582.511 584.551 582.597 585.664
+        584.298 584.625 584.697 584.884 580.864 582.468  580.22 582.287 581.304 582.056
+        581.182 581.862 581.461 581.862 581.626 582.345 580.595 582.875 579.828 582.755
+        580.519 582.472 580.754 581.466 580.685 582.693 576.689 579.172 578.228 579.325
+        576.707 578.197  576.76 579.126 576.934  579.22 577.823 578.994 576.726 579.095
+        576.767 579.297 576.603  579.64  576.26 579.424 576.849 579.554 574.382 574.508
+        573.693 574.834  573.38 574.484 573.119 575.398 573.055 575.108 573.575 576.233
+        573.154 575.462 573.033 575.379 573.108  573.98 572.567 576.072 573.803  575.89 </pixelSolidAngle>
+        <ccb> 1 </ccb>
+        <pdm> 1 </pdm>
+      </camera>
+    </telescopeModels>
+  </FDetectorConfig>
+</FModelsXMLManager>
+<FTelescopeListXMLManager>
+  <telescopeList>
+    <eye id="1">
+      <name> SPB2 </name>
+      <northing unit="meter"> 4351462 </northing>
+      <easting unit="meter"> 335405 </easting>
+      <altitude unit="kilometer"> 33 </altitude>
+      <zone> 12 </zone>
+      <band> N </band>
+      <backwallAngle unit="degree"> 0.0 </backwallAngle>
+      <MHzCorrectionTimes> 1 2 </MHzCorrectionTimes>
+      <MHzCorrectionFactors> 0. 0. </MHzCorrectionFactors>
+      <telescopes>
+        <telescope id="1">
+          <defaultPointing> tilted </defaultPointing>
+          <pointings>
+            <pointing id="downward">
+              <opticalAxisPhi unit="degree"> 0. </opticalAxisPhi>
+              <opticalAxisElevation unit="degree"> -90 </opticalAxisElevation>
+            </pointing>
+            <pointing id="tilted">
+              <opticalAxisPhi unit="degree"> 90. </opticalAxisPhi>
+              <opticalAxisElevation unit="degree"> -90. </opticalAxisElevation>
+            </pointing>
+          </pointings>
+          <northing unit="meter"> 4351462 </northing>
+          <easting unit="meter"> 335405 </easting>
+          <altitude unit="kilometer"> 33 </altitude>
+          <zone> 12 </zone>
+          <band> N </band>
+          <commission> 2001-04-09T06:00:00 </commission>
+          <decommission> 2030-01-01T12:00:00 </decommission>
+          <relativeResponseLambda unit="nanometer"> 280 289 298 307 316 325 334 343 352 361 370 379 388 397 406 415 424 </relativeResponseLambda>
+          <relativeResponseValue> 0.0 0.0 0.003 0.0165 0.0412 0.0687 0.0945 0.1084 0.1187 0.1245 0.1263 0.1224 0.1026 0.0639 0.0248 0.005 0.0 </relativeResponseValue>
+        </telescope>
+      </telescopes>
+    </eye>
+    <referenceLambda unit="nanometer"> 375 </referenceLambda>
+  </telescopeList>
+</FTelescopeListXMLManager>
+<FdChannelMappingManager>
+  <FdChannelMappingManager>
+    <period>
+      <eye> 1 </eye>
+      <telescope> 1 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2008-09-23T00:00:00Z </end>
+      <mapping>
+        <pixel id="287">
+          <channel> 309 </channel>
+        </pixel>
+        <pixel id="288">
+          <channel> 310 </channel>
+        </pixel>
+        <pixel id="289">
+          <channel> 311 </channel>
+        </pixel>
+        <pixel id="290">
+          <channel> 312 </channel>
+        </pixel>
+        <pixel id="291">
+          <channel> 313 </channel>
+        </pixel>
+        <pixel id="292">
+          <channel> 314 </channel>
+        </pixel>
+        <pixel id="293">
+          <channel> 315 </channel>
+        </pixel>
+        <pixel id="294">
+          <channel> 316 </channel>
+        </pixel>
+        <pixel id="295">
+          <channel> 317 </channel>
+        </pixel>
+        <pixel id="296">
+          <channel> 318 </channel>
+        </pixel>
+        <pixel id="297">
+          <channel> 319 </channel>
+        </pixel>
+        <pixel id="309">
+          <channel> 287 </channel>
+        </pixel>
+        <pixel id="310">
+          <channel> 288 </channel>
+        </pixel>
+        <pixel id="311">
+          <channel> 289 </channel>
+        </pixel>
+        <pixel id="312">
+          <channel> 290 </channel>
+        </pixel>
+        <pixel id="313">
+          <channel> 291 </channel>
+        </pixel>
+        <pixel id="314">
+          <channel> 292 </channel>
+        </pixel>
+        <pixel id="315">
+          <channel> 293 </channel>
+        </pixel>
+        <pixel id="316">
+          <channel> 294 </channel>
+        </pixel>
+        <pixel id="317">
+          <channel> 295 </channel>
+        </pixel>
+        <pixel id="318">
+          <channel> 296 </channel>
+        </pixel>
+        <pixel id="319">
+          <channel> 297 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 2 </eye>
+      <telescope> 4 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2005-10-18T04:33:12Z </end>
+      <mapping>
+        <pixel id="100">
+          <channel> 122 </channel>
+        </pixel>
+        <pixel id="101">
+          <channel> 123 </channel>
+        </pixel>
+        <pixel id="102">
+          <channel> 124 </channel>
+        </pixel>
+        <pixel id="103">
+          <channel> 125 </channel>
+        </pixel>
+        <pixel id="104">
+          <channel> 126 </channel>
+        </pixel>
+        <pixel id="105">
+          <channel> 127 </channel>
+        </pixel>
+        <pixel id="106">
+          <channel> 128 </channel>
+        </pixel>
+        <pixel id="107">
+          <channel> 129 </channel>
+        </pixel>
+        <pixel id="108">
+          <channel> 130 </channel>
+        </pixel>
+        <pixel id="109">
+          <channel> 131 </channel>
+        </pixel>
+        <pixel id="110">
+          <channel> 132 </channel>
+        </pixel>
+        <pixel id="122">
+          <channel> 100 </channel>
+        </pixel>
+        <pixel id="123">
+          <channel> 101 </channel>
+        </pixel>
+        <pixel id="124">
+          <channel> 102 </channel>
+        </pixel>
+        <pixel id="125">
+          <channel> 103 </channel>
+        </pixel>
+        <pixel id="126">
+          <channel> 104 </channel>
+        </pixel>
+        <pixel id="127">
+          <channel> 105 </channel>
+        </pixel>
+        <pixel id="128">
+          <channel> 106 </channel>
+        </pixel>
+        <pixel id="129">
+          <channel> 107 </channel>
+        </pixel>
+        <pixel id="130">
+          <channel> 108 </channel>
+        </pixel>
+        <pixel id="131">
+          <channel> 109 </channel>
+        </pixel>
+        <pixel id="132">
+          <channel> 110 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 2 </eye>
+      <telescope> 3 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2005-10-18T04:33:12Z </end>
+      <mapping>
+        <pixel id="45">
+          <channel> 56 </channel>
+        </pixel>
+        <pixel id="46">
+          <channel> 57 </channel>
+        </pixel>
+        <pixel id="47">
+          <channel> 58 </channel>
+        </pixel>
+        <pixel id="48">
+          <channel> 59 </channel>
+        </pixel>
+        <pixel id="49">
+          <channel> 60 </channel>
+        </pixel>
+        <pixel id="50">
+          <channel> 61 </channel>
+        </pixel>
+        <pixel id="51">
+          <channel> 62 </channel>
+        </pixel>
+        <pixel id="52">
+          <channel> 63 </channel>
+        </pixel>
+        <pixel id="53">
+          <channel> 64 </channel>
+        </pixel>
+        <pixel id="54">
+          <channel> 65 </channel>
+        </pixel>
+        <pixel id="55">
+          <channel> 66 </channel>
+        </pixel>
+        <pixel id="56">
+          <channel> 45 </channel>
+        </pixel>
+        <pixel id="57">
+          <channel> 46 </channel>
+        </pixel>
+        <pixel id="58">
+          <channel> 47 </channel>
+        </pixel>
+        <pixel id="59">
+          <channel> 48 </channel>
+        </pixel>
+        <pixel id="60">
+          <channel> 49 </channel>
+        </pixel>
+        <pixel id="61">
+          <channel> 50 </channel>
+        </pixel>
+        <pixel id="62">
+          <channel> 51 </channel>
+        </pixel>
+        <pixel id="63">
+          <channel> 52 </channel>
+        </pixel>
+        <pixel id="64">
+          <channel> 53 </channel>
+        </pixel>
+        <pixel id="65">
+          <channel> 54 </channel>
+        </pixel>
+        <pixel id="66">
+          <channel> 55 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 3 </eye>
+      <telescope> 3 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2009-09-16T00:00:00Z </end>
+      <mapping>
+        <pixel id="66">
+          <channel> 88 </channel>
+        </pixel>
+        <pixel id="65">
+          <channel> 87 </channel>
+        </pixel>
+        <pixel id="64">
+          <channel> 86 </channel>
+        </pixel>
+        <pixel id="63">
+          <channel> 85 </channel>
+        </pixel>
+        <pixel id="62">
+          <channel> 84 </channel>
+        </pixel>
+        <pixel id="61">
+          <channel> 83 </channel>
+        </pixel>
+        <pixel id="60">
+          <channel> 82 </channel>
+        </pixel>
+        <pixel id="59">
+          <channel> 81 </channel>
+        </pixel>
+        <pixel id="58">
+          <channel> 80 </channel>
+        </pixel>
+        <pixel id="57">
+          <channel> 79 </channel>
+        </pixel>
+        <pixel id="56">
+          <channel> 78 </channel>
+        </pixel>
+        <pixel id="88">
+          <channel> 66 </channel>
+        </pixel>
+        <pixel id="87">
+          <channel> 65 </channel>
+        </pixel>
+        <pixel id="86">
+          <channel> 64 </channel>
+        </pixel>
+        <pixel id="85">
+          <channel> 63 </channel>
+        </pixel>
+        <pixel id="84">
+          <channel> 62 </channel>
+        </pixel>
+        <pixel id="83">
+          <channel> 61 </channel>
+        </pixel>
+        <pixel id="82">
+          <channel> 60 </channel>
+        </pixel>
+        <pixel id="81">
+          <channel> 59 </channel>
+        </pixel>
+        <pixel id="80">
+          <channel> 58 </channel>
+        </pixel>
+        <pixel id="79">
+          <channel> 57 </channel>
+        </pixel>
+        <pixel id="78">
+          <channel> 56 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 3 </eye>
+      <telescope> 1 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2010-01-08T00:00:00Z </end>
+      <mapping>
+        <pixel id="161">
+          <channel> 162 </channel>
+        </pixel>
+        <pixel id="162">
+          <channel> 163 </channel>
+        </pixel>
+        <pixel id="163">
+          <channel> 161 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 3 </eye>
+      <telescope> 2 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2010-01-08T00:00:00Z </end>
+      <mapping>
+        <pixel id="340">
+          <channel> 341 </channel>
+        </pixel>
+        <pixel id="341">
+          <channel> 340 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 3 </eye>
+      <telescope> 3 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2010-01-08T00:00:00Z </end>
+      <mapping>
+        <pixel id="383">
+          <channel> 384 </channel>
+        </pixel>
+        <pixel id="384">
+          <channel> 383 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 4 </eye>
+      <telescope> 1 </telescope>
+      <begin> 2000-01-01T04:33:12Z </begin>
+      <end> 2007-02-07T00:00:00Z </end>
+      <mapping>
+        <pixel id="66">
+          <channel> 88 </channel>
+        </pixel>
+        <pixel id="65">
+          <channel> 87 </channel>
+        </pixel>
+        <pixel id="64">
+          <channel> 86 </channel>
+        </pixel>
+        <pixel id="63">
+          <channel> 85 </channel>
+        </pixel>
+        <pixel id="62">
+          <channel> 84 </channel>
+        </pixel>
+        <pixel id="61">
+          <channel> 83 </channel>
+        </pixel>
+        <pixel id="60">
+          <channel> 82 </channel>
+        </pixel>
+        <pixel id="59">
+          <channel> 81 </channel>
+        </pixel>
+        <pixel id="58">
+          <channel> 80 </channel>
+        </pixel>
+        <pixel id="57">
+          <channel> 79 </channel>
+        </pixel>
+        <pixel id="56">
+          <channel> 78 </channel>
+        </pixel>
+        <pixel id="88">
+          <channel> 66 </channel>
+        </pixel>
+        <pixel id="87">
+          <channel> 65 </channel>
+        </pixel>
+        <pixel id="86">
+          <channel> 64 </channel>
+        </pixel>
+        <pixel id="85">
+          <channel> 63 </channel>
+        </pixel>
+        <pixel id="84">
+          <channel> 62 </channel>
+        </pixel>
+        <pixel id="83">
+          <channel> 61 </channel>
+        </pixel>
+        <pixel id="82">
+          <channel> 60 </channel>
+        </pixel>
+        <pixel id="81">
+          <channel> 59 </channel>
+        </pixel>
+        <pixel id="80">
+          <channel> 58 </channel>
+        </pixel>
+        <pixel id="79">
+          <channel> 57 </channel>
+        </pixel>
+        <pixel id="78">
+          <channel> 56 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 5 </eye>
+      <telescope> 1 </telescope>
+      <begin> 2008-01-01T04:33:12Z </begin>
+      <end> 2009-11-24T00:00:00Z </end>
+      <mapping>
+        <pixel id="188">
+          <channel> 254 </channel>
+        </pixel>
+        <pixel id="189">
+          <channel> 255 </channel>
+        </pixel>
+        <pixel id="190">
+          <channel> 256 </channel>
+        </pixel>
+        <pixel id="191">
+          <channel> 257 </channel>
+        </pixel>
+        <pixel id="192">
+          <channel> 258 </channel>
+        </pixel>
+        <pixel id="193">
+          <channel> 259 </channel>
+        </pixel>
+        <pixel id="194">
+          <channel> 260 </channel>
+        </pixel>
+        <pixel id="195">
+          <channel> 261 </channel>
+        </pixel>
+        <pixel id="196">
+          <channel> 262 </channel>
+        </pixel>
+        <pixel id="197">
+          <channel> 263 </channel>
+        </pixel>
+        <pixel id="198">
+          <channel> 264 </channel>
+        </pixel>
+        <pixel id="254">
+          <channel> 188 </channel>
+        </pixel>
+        <pixel id="255">
+          <channel> 189 </channel>
+        </pixel>
+        <pixel id="256">
+          <channel> 190 </channel>
+        </pixel>
+        <pixel id="257">
+          <channel> 191 </channel>
+        </pixel>
+        <pixel id="258">
+          <channel> 192 </channel>
+        </pixel>
+        <pixel id="259">
+          <channel> 193 </channel>
+        </pixel>
+        <pixel id="260">
+          <channel> 194 </channel>
+        </pixel>
+        <pixel id="261">
+          <channel> 195 </channel>
+        </pixel>
+        <pixel id="262">
+          <channel> 196 </channel>
+        </pixel>
+        <pixel id="263">
+          <channel> 197 </channel>
+        </pixel>
+        <pixel id="264">
+          <channel> 198 </channel>
+        </pixel>
+        <pixel id="210">
+          <channel> 232 </channel>
+        </pixel>
+        <pixel id="211">
+          <channel> 233 </channel>
+        </pixel>
+        <pixel id="212">
+          <channel> 234 </channel>
+        </pixel>
+        <pixel id="213">
+          <channel> 235 </channel>
+        </pixel>
+        <pixel id="214">
+          <channel> 236 </channel>
+        </pixel>
+        <pixel id="215">
+          <channel> 237 </channel>
+        </pixel>
+        <pixel id="216">
+          <channel> 238 </channel>
+        </pixel>
+        <pixel id="217">
+          <channel> 239 </channel>
+        </pixel>
+        <pixel id="218">
+          <channel> 240 </channel>
+        </pixel>
+        <pixel id="219">
+          <channel> 241 </channel>
+        </pixel>
+        <pixel id="220">
+          <channel> 242 </channel>
+        </pixel>
+        <pixel id="232">
+          <channel> 210 </channel>
+        </pixel>
+        <pixel id="233">
+          <channel> 211 </channel>
+        </pixel>
+        <pixel id="234">
+          <channel> 212 </channel>
+        </pixel>
+        <pixel id="235">
+          <channel> 213 </channel>
+        </pixel>
+        <pixel id="236">
+          <channel> 214 </channel>
+        </pixel>
+        <pixel id="237">
+          <channel> 215 </channel>
+        </pixel>
+        <pixel id="238">
+          <channel> 216 </channel>
+        </pixel>
+        <pixel id="239">
+          <channel> 217 </channel>
+        </pixel>
+        <pixel id="240">
+          <channel> 218 </channel>
+        </pixel>
+        <pixel id="241">
+          <channel> 219 </channel>
+        </pixel>
+        <pixel id="242">
+          <channel> 220 </channel>
+        </pixel>
+      </mapping>
+    </period>
+    <period>
+      <eye> 5 </eye>
+      <telescope> 1 </telescope>
+      <begin> 2008-01-01T04:33:12Z </begin>
+      <end> 2010-01-08T00:00:00Z </end>
+      <mapping>
+        <pixel id="227">
+          <channel> 230 </channel>
+        </pixel>
+        <pixel id="230">
+          <channel> 227 </channel>
+        </pixel>
+        <pixel id="250">
+          <channel> 251 </channel>
+        </pixel>
+        <pixel id="251">
+          <channel> 250 </channel>
+        </pixel>
+      </mapping>
+    </period>
+  </FdChannelMappingManager>
+</FdChannelMappingManager>
+<FdSimEventChecker>
+  <FdSimEventChecker>
+    <upTime> 1 </upTime>
+    <geometry> 1 </geometry>
+    <fastSkip> 0 </fastSkip>
+  </FdSimEventChecker>
+</FdSimEventChecker>
+<ModuleSequence>
+  <sequenceFile>
+    <enableTiming>  </enableTiming>
+    <moduleControl>
+      <loop numTimes="1" pushEventToStack="yes">
+        <module> EventFileReaderOG </module>
+        <module> EventGeneratorOG </module>
+        <module> FdSimEventCheckerOG </module>
+        <module> SignalIdentifierCSM </module>
+        <module> BackgroundSimulatorCSM </module>
+        <module> EventBuilderJG </module>
+        <module> TriggerSPB2CSM </module>
+        <module> SelectEventsJG </module>
+        <module> PixelCalibratorJG </module>
+        <module> SelectTracksJG </module>
+        <module> SDPFinderJG </module>
+        <module> AddCoordinatesJG </module>
+        <module> AxisFinderJG </module>
+        <module> DataWriter </module>
+      </loop>
+    </moduleControl>
+  </sequenceFile>
+</ModuleSequence>
+<ParametricXMLMieModel>
+  <ParametricXMLMieModel>
+    <aerosolProfile>
+      <attLength unit="meter"> 52645. </attLength>
+      <attLengthError unit="meter"> 500 </attLengthError>
+      <refWavelength unit="nanometer"> 355. </refWavelength>
+      <mixHeight unit="meter"> 0. </mixHeight>
+      <mixHeightError unit="meter"> 0. </mixHeightError>
+      <scaleHeight unit="meter"> 2889. </scaleHeight>
+      <scaleHeightError unit="meter"> 100 </scaleHeightError>
+    </aerosolProfile>
+    <phaseFunction>
+      <f> 0.4 </f>
+      <fError> 0.1 </fError>
+      <g> 0.6 </g>
+      <gError> 0.1 </gError>
+    </phaseFunction>
+    <wavelengthDependence>
+      <gamma> 0.7 </gamma>
+      <gammaError> 0.5 </gammaError>
+    </wavelengthDependence>
+  </ParametricXMLMieModel>
+</ParametricXMLMieModel>
+<ParametricXMLOzoneModel>
+  <ParametricXMLOzoneModel>
+    <height unit="meter"> 25 495 965 1435 1905 2375 2845 3315 3785 4255 4725 5195 5665 6135 6605 7075 7545 8015 8485 8955 9425 9895 10365 10835 11305 11775 12245 12715 13185 13655 14125 14595 15065 15535 16005 16475 16945 17415 17885 18355 18825 19295 19765 20235 20705 21175 21645 22115 22585 23055 23525 23995 24465 24935 25405 25875 26345 26815 27285 27755 28225 28695 29165 29635 30105 30575 31045 31515 31985 32455 32925 33395 33865 34335 34805 35275 35745 36215 36685 37155 37625 38095 38565 39035 39285 39535 39785 40035 40285 40535 40785 41035 41124.7 </height>
+    <ozonepressure unit="milli*pascal"> 1.84017 2.48287 2.62644 2.60208 2.58989 2.77538 2.98053 3.06828 3.00701 2.91526 2.79925 2.6537 2.50965 2.3561 2.18955 2.06945 1.96639 1.85647 1.71226 1.59867 1.50814 1.39766 1.3293 1.27504 1.22772 1.17529 1.14354 1.15284 1.16952 1.18803 1.22295 1.26792 1.32243 1.3974 1.5699 1.78673 2.05237 2.42098 3.03025 3.63292 4.38523 5.34178 6.2458 7.1163 8.02406 8.8623 9.62066 10.4191 11.1582 11.7185 12.2382 12.7251 13.0657 13.3185 13.4857 13.5605 13.562 13.5015 13.2992 13.0577 12.7414 12.3158 11.8393 11.3288 10.7582 10.1226 9.54226 8.9672 8.33776 7.77115 7.25683 6.7526 6.28332 5.85984 5.35092 4.90115 4.57013 4.34483 4.00333 3.34417 3.07756 2.65913 4.23786 2.29833 1.57127 1.35775 1.14422 0.9307 0.717175 0.50365 0.290126 0.076601 0 </ozonepressure>
+  </ParametricXMLOzoneModel>
+</ParametricXMLOzoneModel>
+<ParametricXMLProfileModel>
+  <ParametricProfileModel>
+    <height unit="meter"> 0.0 1000.0 2000.0 3000.0 4000.0 5000.0 6000.0 7000.0 8000.0 9000.0 10000.0 11000.0 12000.0 13000.0 14000.0 15000.0 16000.0 17000.0 18000.0 19000.0 20000.0 21000.0 22000.0 23000.0 24000.0 25000.0 26000.0 27000.0 28000.0 29000.0 30000.0 32000.0 47000.0 51000.0 71000.0 100000.0 450000.0 </height>
+    <density unit="g/cm/cm/cm"> 1.23E-03 1.11E-03 1.01E-03 9.09E-04 8.19E-04 7.36E-04 6.60E-04 5.90E-04 5.25E-04 4.66E-04 4.13E-04 3.64E-04 3.11E-04 2.66E-04 2.27E-04 1.94E-04 1.65E-04 1.41E-04 1.21E-04 1.03E-04 8.80E-05 7.49E-05 6.37E-05 5.43E-05 4.63E-05 3.95E-05 3.37E-05 2.88E-05 2.46E-05 2.10E-05 1.80E-05 1.32E-05 1.43E-06 8.61E-07 6.42E-08 1.00E-09 1.00E-15 </density>
+    <pressure unit="100*pascal"> 1013.25 898.7 795.0 701.1 616.4 540.2 471.8 410.6 356.0 307.4 264.4 226.3 193.3 165.1 141.0 120.4 102.9 87.87 75.05 64.10 54.75 46.78 40.0 34.22 29.30 25.11 21.53 18.47 15.86 13.63 11.72 8.68 1.11 0.67 0.04 1.0E-3 1.0E-6 </pressure>
+    <temperature unit="kelvin"> 288.15 281.65 275.15 268.65 262.15 255.65 249.15 242.65 236.15 229.65 223.15 216.65 216.65 216.65 216.65 216.65 216.65 216.65 216.65 216.65 216.65 217.65 218.65 219.65 220.65 221.65 222.65 223.65 224.65 225.65 226.65 228.00 270.65 270.65 214.65 186.87 990.00 </temperature>
+    <humidity unit="perCent"> 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. </humidity>
+  </ParametricProfileModel>
+</ParametricXMLProfileModel>
+<ParametricXMLRayleighModel>
+  <ParametricXMLRayleighModel>
+    <RhoN> 0.03 </RhoN>
+  </ParametricXMLRayleighModel>
+</ParametricXMLRayleighModel>
+<PixelCalibrator>
+  <PixelCalibrator>
+    <UsePixelCalib> 1 </UsePixelCalib>
+    <PixelCalibFileName> SPB2_PerfectUniform_PixelCal.dat </PixelCalibFileName>
+  </PixelCalibrator>
+</PixelCalibrator>
+<RandomEngineRegistry>
+  <RandomEngineRegistry>
+    <DetectorSeed> 0 </DetectorSeed>
+    <PhysicsSeed> 0 </PhysicsSeed>
+  </RandomEngineRegistry>
+</RandomEngineRegistry>
+<SelectEvents>
+  <SelectEvents>
+    <MappingFileName> /home/gfil/offline/install/share/jemeuso-offline/config/SPB2_mapping.txt </MappingFileName>
+    <TimesSigmaThreshold> 5. </TimesSigmaThreshold>
+    <MinNumberOfPixelsInTrack> 30 </MinNumberOfPixelsInTrack>
+    <CleaningRadiusForSpot> 3. </CleaningRadiusForSpot>
+    <MinNumberOfPixelsForSpotCleaning> 3 </MinNumberOfPixelsForSpotCleaning>
+    <MaxGTUWindow> 10 </MaxGTUWindow>
+  </SelectEvents>
+</SelectEvents>
+<SelectTracks>
+  <SelectTracks>
+    <MappingFileName> /home/gfil/offline/install/share/jemeuso-offline/config/SPB2_mapping.txt </MappingFileName>
+    <SelectorAlgorithm> LinearTimeFit </SelectorAlgorithm>
+    <TimesSigmaThreshold> 5 </TimesSigmaThreshold>
+    <MinNumberOfPixelsInTrack> 30 </MinNumberOfPixelsInTrack>
+    <MaxPixelSpreading> 3 </MaxPixelSpreading>
+    <RejectLocalizedTrack> 0 </RejectLocalizedTrack>
+    <CleanSpots>
+      <CleaningRadius> 2 </CleaningRadius>
+      <MinNumberOfPixels> 1 </MinNumberOfPixels>
+    </CleanSpots>
+    <CleanIntegratedTrack>
+      <CleaningRadius> 7 </CleaningRadius>
+      <MinNumberOfPixels> 5 </MinNumberOfPixels>
+    </CleanIntegratedTrack>
+  </SelectTracks>
+</SelectTracks>
+<TriggerSPB2CSM>
+  <TriggerSPB2CSM>
+    <nHot> 2 </nHot>
+    <nActive> 34 </nActive>
+    <nSigma> 5.0 </nSigma>
+    <LengthTrigger> 20 </LengthTrigger>
+    <Verbosity> 1 </Verbosity>
+    <SignalOnly> 1 </SignalOnly>
+    <ReadThresholdsFromFile> 1 </ReadThresholdsFromFile>
+    <ThresholdFile> /home/gfil/offline/install/share/jemeuso-offline/config/ThresholdFiles/SPB2ThresholdFile.dat </ThresholdFile>
+    <LengthThreshold> 16384 </LengthThreshold>
+  </TriggerSPB2CSM>
+</TriggerSPB2CSM>
+</bootstrap>

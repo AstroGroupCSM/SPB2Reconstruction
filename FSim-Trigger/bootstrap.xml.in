@@ -101,7 +101,7 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-		 <InputFilenames>../SimulatedData/fSimOutputs/XXXXXX-full.root </InputFilenames>
+		 <InputFilenames>../SimulatedData/NoBG/XXXXXX-full.root </InputFilenames>
          </EventFileReader>
   </configLink>
   <configLink id="PythonOutput">
