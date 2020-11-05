@@ -31,6 +31,11 @@
        id         = "TriggerSPB2CSM"
        type       = "XML"
        xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+       <configLink
+        id         = "PythonOutput"
+        type       = "XML"
+        xlink:href = "&myConfigFiles;/PythonOutput.xml"/>
+
 
 
 
@@ -46,7 +51,7 @@
 
     <configLink id="EventFileReader">
          <EventFileReader>
-		 <InputFilenames>SPB1.root </InputFilenames>
+		 <InputFilenames>miniEUSO3.root </InputFilenames>
          </EventFileReader>
   </configLink>
 

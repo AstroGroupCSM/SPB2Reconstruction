@@ -58,6 +58,7 @@ def read_preds(predfile):
 
 
 def calc_metrics(x):
+
     tn = x[0, 0]
     fn = x[1, 0]
     fp = x[0, 1]
@@ -322,10 +323,3 @@ if __name__ == '__main__':
             plot_combined_confusion_matrices(pred_files, mode, args)
             print('Plotting combined prediction confidences...')
             plot_combined_confidences(pred_files, mode, args)
-
-
-
-
-
-
-

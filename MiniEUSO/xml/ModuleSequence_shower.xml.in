@@ -7,9 +7,11 @@
    <moduleControl>
 
     <loop numTimes="unbounded" pushEventToStack="yes">
-    <module> EventFileReaderOG           </module>
-  	<module> EventBuilderJG              </module>
-    <module> TriggerSPB2CSM </module>
+
+	<module> EventFileReaderOG           </module>
+	<module> EventBuilderJG              </module>
+  <module> TriggerSPB2CSM </module>
+  <module> PythonOutput </module>
 
 
     </loop>

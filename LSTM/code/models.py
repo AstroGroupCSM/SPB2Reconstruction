@@ -198,8 +198,8 @@ class MyResConvBlock(nn.Module):
         self.third_res_layer = int(self.n_conv_layers * 0.666)
 
         self.channels = self.args.conv_channels
-        self.input_x_dim = 48
-        self.input_y_dim = 144
+        self.input_x_dim = 24
+        self.input_y_dim = 24
 
         self.curr_x_dim = self.input_x_dim
         self.curr_y_dim = self.input_y_dim

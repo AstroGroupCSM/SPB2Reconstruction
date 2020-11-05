@@ -101,7 +101,7 @@ class Runner(object):
                 print('Loading model from checkpoint...')
             map_location = {'cuda:{}'.format(0): 'cuda:{}'.format(gpu_id) for gpu_id in args.gpus}
             state_dict = torch.load(ckpt_file, map_location=map_location)
-            self.model.load_state_dict(state_dict)  # , strict=False
+            self.model.load_state_dict(state_dict,strict=False)  # , strict=False
 
         if self.rank == 0:
             print('Loading dataset...')
@@ -369,6 +369,7 @@ class Runner(object):
             # avg_acc = np.mean(accuracies)
             all_preds = [0 if logit[0] > logit[1] else 1 for logit in all_logits]
             mat = confusion_matrix(all_labels, all_preds)
+            print(mat)
             tpr, tnr, fnr, fpr, acc = calc_metrics(mat)
             if self.summary_writer is not None:
                 self.summary_writer.add_scalar('metrics/{}/{}'.format(mode, 'tpr'), tpr, epoch)

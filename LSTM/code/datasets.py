@@ -80,16 +80,19 @@ class PhysicsDataset(Dataset):
             with open(v2_filename, 'r') as f:
                 for line in f:
                     line = line.strip()
-                    if 'Noise' in line:
+                    if 'noise' in line:
                         self.items.append(os.path.join(self.basedir, 'v2', line))
-
-            v1_filename = os.path.join(self.basedir, 'v1', 'train_files.txt')
-            with open(v1_filename, 'r') as f:
-                for line in f:
-                    line = line.strip()
-                    if 'Signal' in line:
+                    if 'signal' in line:
                         line = line.split(os.path.sep)[-2:]
-                        self.items.append(os.path.join(self.basedir, 'v1', line[0], line[1]))
+                        self.items.append(os.path.join(self.basedir, 'v2', line[0], line[1]))
+            #v1_filename = os.path.join(self.basedir, 'v1', 'train_files.txt')
+            #with open(v1_filename, 'r') as f:
+            #    for line in f:
+            #        line = line.strip()
+            #        if 'Signal' in line:
+            #            line = line.split(os.path.sep)[-2:]
+            #            self.items.append(os.path.join(self.basedir, 'v1', line[0], line[1]))
+
         elif self.mode == 'dev':
             v2_filename = os.path.join(self.basedir, 'v2', 'dev_files.txt')
             with open(v2_filename, 'r') as f:
@@ -106,8 +109,8 @@ class PhysicsDataset(Dataset):
                     else:
                         self.items.append(os.path.join(self.basedir, 'v2', line))
 
-        self.noise_files = [f for f in self.items if 'Noise' in f]
-        self.signal_files = [f for f in self.items if 'Signal' in f]
+        self.noise_files = [f for f in self.items if 'noise' in f]
+        self.signal_files = [f for f in self.items if 'signal' in f]
 
         # print('self.noise_files: {}'.format(self.noise_files))
         # print('self.signal_files: {}'.format(self.signal_files))
@@ -208,7 +211,7 @@ class PhysicsDataset(Dataset):
 
         # item_data = np.load(item_file)
         item_data_raw = item_data[:, :, :]
-        item_label = np.array([0 if 'Noise' in item_file else 1])
+        item_label = np.array([0 if 'noise' in item_file else 1])
 
         if self.do_frame_swap and self.CURR_EPOCH >= self.epoch_to_start_frame_swaps and self.supersample:
             # swap_data = np.load(swap_file)
@@ -265,7 +268,7 @@ def read_data_files(file_list, max_val_cutoff=-1):
             frame_data = data_mat[t, :, :].reshape(x, y)
             frame_max = frame_data.max()
             if frame_max >= max_val_cutoff:
-                data.append([frame_data, 0 if 'Noise' in file else 1])
+                data.append([frame_data, 0 if 'noise' in file else 1])
 
     return data
 
@@ -300,16 +303,26 @@ class PhysicsFramesDataset(Dataset):
             with open(v2_filename, 'r') as f:
                 for line in f:
                     line = line.strip()
-                    if 'Noise' in line:
+                    if 'noise' in line:
                         self.items.append(os.path.join(self.basedir, 'v2', line))
-
-            v1_filename = os.path.join(self.basedir, 'v1', 'train_files.txt')
-            with open(v1_filename, 'r') as f:
+                    if 'signal' in line:
+                        self.items.append(os.path.join(self.basedir, 'v2', line))
+        elif self.mode == 'eval' or self.mode == 'test' :
+            v2_filename = os.path.join(self.basedir, 'v2', 'test_files.txt')
+            with open(v2_filename, 'r') as f:
                 for line in f:
                     line = line.strip()
-                    if 'Signal' in line:
-                        line = line.split(os.path.sep)[-2:]
-                        self.items.append(os.path.join(self.basedir, 'v1', line[0], line[1]))
+                    if 'noise' in line:
+                        self.items.append(os.path.join(self.basedir, 'v2', line))
+                    if 'signal' in line:
+                        self.items.append(os.path.join(self.basedir, 'v2', line))
+            #v1_filename = os.path.join(self.basedir, 'v1', 'train_files.txt')
+            #with open(v1_filename, 'r') as f:
+            #    for line in f:
+            #        line = line.strip()
+            #        if 'Signal' in line:
+            #            line = line.split(os.path.sep)[-2:]
+            #            self.items.append(os.path.join(self.basedir, 'v1', line[0], line[1]))
         elif self.mode == 'dev':
             v2_filename = os.path.join(self.basedir, 'v2', 'dev_files.txt')
             with open(v2_filename, 'r') as f:
@@ -317,7 +330,7 @@ class PhysicsFramesDataset(Dataset):
                     line = line.strip()
                     if self.only_high_signal:
                         type_dir, base_filename = os.path.split(line)
-                        if type_dir == 'Noise':
+                        if type_dir == 'noise':
                             self.items.append(os.path.join(self.basedir, 'v2', line))
                         else:
                             item_id = int(base_filename[:-4].split('-')[1])
@@ -326,8 +339,8 @@ class PhysicsFramesDataset(Dataset):
                     else:
                         self.items.append(os.path.join(self.basedir, 'v2', line))
 
-        self.noise_files = [f for f in self.items if 'Noise' in f]
-        self.signal_files = [f for f in self.items if 'Signal' in f]
+        self.noise_files = [f for f in self.items if 'noise' in f]
+        self.signal_files = [f for f in self.items if 'signal' in f]
 
         if self.undersample is not None:
             smpl_idx_noise = int(len(self.noise_files) * self.undersample)
@@ -339,7 +352,7 @@ class PhysicsFramesDataset(Dataset):
 
         self.n_noise_files = len(self.noise_files)
         self.n_signal_files = len(self.signal_files)
-
+        print(self.mode)
         self.label_weights = [1 / self.n_noise_files, 1 / self.n_signal_files]
         self.length = self.n_noise_files + self.n_signal_files
 
@@ -460,7 +473,7 @@ class PhysicsFramesDataset(Dataset):
         # item_data = np.load(item_file)
         # item_data_raw = item_data[:, :, :]
         seq_len = item_data.shape[0]
-        item_label = torch.zeros(seq_len, dtype=torch.long) if 'Noise' in item_file \
+        item_label = torch.zeros(seq_len, dtype=torch.long) if 'noise' in item_file \
             else torch.ones(seq_len, dtype=torch.long)
         item_data = torch.from_numpy(item_data)
 
@@ -482,6 +495,3 @@ class PhysicsFramesDataset(Dataset):
                'item_transforms': item_transforms}
 
         return out
-
-
-

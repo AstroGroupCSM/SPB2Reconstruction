@@ -26,11 +26,12 @@ echo "Piping output to $PIPE_FILE..."
 
 cd code
 
-nohup python3 run_model.py --data "$DATA_DIR" \
+/usr/bin/time -v nohup python3 run_model.py --data "$DATA_DIR" \
                            --out "../out" \
-                           --train True \
-                           --eval True \
-                           --epochs 20 \
+                           --train False \
+                           --eval False \
+                           --test True \
+                           --epochs 1 \
                            --model_type CNN \
                            --rnn_dim 64 \
                            --batch_size "$BATCH_SIZE" \
@@ -39,7 +40,7 @@ nohup python3 run_model.py --data "$DATA_DIR" \
                            --supersample True \
                            --normalize_data True \
                            --weight_xent_loss False \
-                           --n_conv_layers 4 \
+                           --n_conv_layers 5 \
                            --conv_channels 3 \
                            --schedule_weight_xent_loss False \
                            --schedule_weight_xent_loss_epoch_start 15 \
@@ -52,4 +53,6 @@ nohup python3 run_model.py --data "$DATA_DIR" \
                            --do_frame_swaps False \
                            --epoch_to_start_frame_swaps 3 \
                            --pct_frames_to_swap 0.15 \
+                           --ckpt_file "/home/gfil/SPB2Reconstruction/LSTM/out/TriggerData/models/model_10e.pt" \
+                           --on_cpu True \
                            --port "19343" > "$PIPE_FILE" &
