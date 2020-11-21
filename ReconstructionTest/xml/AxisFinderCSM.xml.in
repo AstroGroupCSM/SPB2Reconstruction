@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of the AxisFinder module-->
+
+<AxisFinderCSM  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+             xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/AxisFinderCSM.xsd'> 
+
+  <!--using all angles, or average; average = Spots, all = Coordinates -->
+         <DataFit>    Coordinates  </DataFit>
+
+  <!--set Telescope tilt in degree; default is 0° -->
+         <TelescopeTilt> 0 </TelescopeTilt>
+
+  <!--set Telescope Config; TA or not -->
+         <IsTA> 0 </IsTA>
+
+  <!--number of free parameter used in timing fit; 3: R_0,T_0,Psi_0
+                                                   2: T_0, Psi_0   
+                                                   1: Psi_0         -->
+         <NumberOfParameter> 3   </NumberOfParameter>
+
+  <!--time error for each pixel -->
+         <sigmaGTU> 0.5 </sigmaGTU>
+
+  <!-- Maximum sigmas away of each pixel t_i to be allowed in the time fit-->
+         <sigmasLimit> 7 </sigmasLimit>
+
+         <PrintLevel>   1   </PrintLevel>
+
+
+
+</AxisFinderCSM>

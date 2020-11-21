@@ -1,0 +1,29 @@
+<!-- A sequence for an FD simulation -->
+<sequenceFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/ModuleSequence.xsd'>
+
+   <enableTiming/>
+
+   <moduleControl>
+
+    <loop numTimes="2" pushEventToStack="yes">
+
+       <module> EventFileReaderOG           </module>
+       <module> EventGeneratorOG            </module>
+       <module> FdSimEventCheckerOG         </module>
+       <module> ShowerLightSimulatorKG      </module>
+       <module> LightAtDiaphragmSimulatorKG </module>
+       <module> ShowerPhotonGeneratorOG     </module>
+       <!--module> GroundReflectionSimulatorJG </module-->
+       <module> UserModule                  </module>
+       <module> TelescopeSimulatorJG        </module>
+       <module> ElectronicsSimulatorJG      </module>
+       <module> EventBuilderJG              </module>
+       <module> DataWriter	            </module>
+
+
+    </loop>
+
+   </moduleControl>
+
+</sequenceFile>

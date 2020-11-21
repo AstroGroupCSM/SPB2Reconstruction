@@ -7,19 +7,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation='@SCHEMALOCATION@/EventFileReader.xsd'>
 
-<!-- file type  JemEusoRoot
+<!-- file type  Offline native
+                FDAS
                 CORSIKA
 		CONEX
-                JemEuso -->
+                AIRES -->
 
-<InputFileType> JemEusoRoot </InputFileType>
+<InputFileType> CONEX </InputFileType>
 
 <!-- the list of filenames (space delimited) -->
 
 <InputFilenames>
-
-shower.root
-
+../SimulatedData/n10000E1975zrand.root
 
 </InputFilenames>
 

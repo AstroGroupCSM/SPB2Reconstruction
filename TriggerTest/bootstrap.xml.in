@@ -23,7 +23,7 @@
     <configLink
       id         = "ModuleSequence"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/ModuleSequence_ApertureStart.xml"/>
+      xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
 
     <configLink
       id         = "EventFileReader"
@@ -33,51 +33,61 @@
       id         = "EventGenerator"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventGenerator_shower.xml"/>
-    <configLink
+    <!--configLink
       id         = "DataWriter"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/DataWriter.xml"/>
+      xlink:href = "&myConfigFiles;/DataWriter.xml"/-->
 
 
      <configLink
       id         = "TriggerSPB2CSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+      <configLink
+       id         = "PythonOutput"
+       type       = "XML"
+       xlink:href = "&myConfigFiles;/PythonOutput.xml"/>
+
+      <!--configLink
+       id         = "DataWriter"
+       type       = "XML"
+       xlink:href = "&myConfigFiles;/DataWriter.xml"/>
+
+<configLink
+      id         = "TriggerSPB2cells3x3TG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
 
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/>
+      xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/-->
      <configLink
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-      <configLink
-       id         = "PixelCalibrator"
-       type       = "XML"
-       xlink:href = "&myConfigFiles;/PixelCalibratorJG.xml"/>
 
  <configLink
-         id         = "BackgroundSimulatorCSM"
-               type       = "XML"
-               xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
+	       id         = "BackgroundSimulatorCSM"
+	             type       = "XML"
+		           xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
 
-  <configLink
-        id         = "AxisFinder"
+  <!--configLink
+        id         = "AxisFinderJG"
        type       = "XML"
      xlink:href = "&myConfigFiles;/AxisFinderJG.xml"/>
      <configLink
-           id         = "SelectEvents"
+           id         = "SelectEventsJG"
           type       = "XML"
         xlink:href = "&myConfigFiles;/SelectEventsJG.xml"/>
         <configLink
-              id         = "SelectTracks"
+              id         = "SelectTracksJG"
              type       = "XML"
            xlink:href = "&myConfigFiles;/SelectTracksJG.xml"/>
 
 
-
+  -->
 
   </centralConfig>
 
@@ -89,19 +99,16 @@
 
   <parameterOverrides>
 
-    <configLink id="DataWriter">
-            <DataWriter>
-               <FileName> StartingPE.root </FileName>
-               <FileName2>StartingPhotons.root </FileName2>
-            </DataWriter>
-         </configLink>
-         <configLink id="EventFileReader">
-           <EventFileReader>
-            <InputFileType> CONEX</InputFileType>
-           <InputFilenames>shower.root </InputFilenames>
+    <configLink id="EventFileReader">
+         <EventFileReader>
+		 <InputFilenames>../SimulatedData/NoBG/19.1-full.root </InputFilenames>
          </EventFileReader>
-       </configLink>
-
+  </configLink>
+  <!--configLink id="PythonOutput">
+    <PythonOutput>
+      <outputDir> ./XXXXXX/ </outputDir>
+    </PythonOutput>
+  </configLink-->
 
 
 
@@ -112,25 +119,6 @@
            <PhysicsSeed> 14 </PhysicsSeed>
        </RandomEngineRegistry>
     </configLink>
-    <configLink id="FTelescopeListXMLManager">
-          <telescopeList>
-             <eye id="1">
-             <altitude unit="kilometer"> 33 </altitude>
-             <telescopes>
-               <telescope id="1">
-                  <altitude unit="kilometer"> 33 </altitude>
-                  <defaultPointing> tilted </defaultPointing> <!-- change this to tilted to use the pointing direction specified below (-90) downwards -->
-                  <pointings>
-                    <pointing id="tilted">
-                      <opticalAxisPhi unit="degree"> 90. </opticalAxisPhi>
-                      <opticalAxisElevation unit="degree"> -90. </opticalAxisElevation>
-                    </pointing>
-                 </pointings>
-               </telescope>
-             </telescopes>
-             </eye>
-          </telescopeList>
-         </configLink>
 
 
 

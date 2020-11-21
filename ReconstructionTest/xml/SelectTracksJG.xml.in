@@ -24,7 +24,7 @@
 
 
    <CleanIntegratedTrack>
-        <CleaningRadius>       7      </CleaningRadius>
+        <CleaningRadius>       15      </CleaningRadius>
         <MinNumberOfPixels>    5      </MinNumberOfPixels>
    </CleanIntegratedTrack>
 

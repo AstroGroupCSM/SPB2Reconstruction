@@ -39,7 +39,7 @@ nohup python3 run_model.py --data "$DATA_DIR" \
                            --supersample True \
                            --normalize_data True \
                            --weight_xent_loss False \
-                           --n_conv_layers 4 \
+                           --n_conv_layers 5 \
                            --conv_channels 3 \
                            --schedule_weight_xent_loss False \
                            --schedule_weight_xent_loss_epoch_start 15 \

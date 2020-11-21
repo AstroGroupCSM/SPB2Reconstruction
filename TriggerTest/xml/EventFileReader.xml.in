@@ -18,7 +18,8 @@
 
 <InputFilenames>
 
-shower.root
+fSimFile.root
+
 
 
 </InputFilenames>

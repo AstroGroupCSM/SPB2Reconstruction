@@ -23,12 +23,20 @@
     <configLink
       id         = "ModuleSequence"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/ModuleSequence_shower.xml"/>
+      xlink:href = "&myConfigFiles;/ModuleSequence_PEStart.xml"/>
 
     <configLink
       id         = "EventFileReader"
       type       = "XML"
       xlink:href = "&myConfigFiles;/EventFileReader.xml"/>
+      <configLink
+        id         = "SelectTracks"
+        type       = "XML"
+        xlink:href = "&myConfigFiles;/SelectTracksJG.xml"/>
+        <configLink
+          id         = "SelectEvents"
+          type       = "XML"
+          xlink:href = "&myConfigFiles;/SelectEventsJG.xml"/>
     <configLink
       id         = "EventGenerator"
       type       = "XML"
@@ -38,13 +46,28 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/DataWriter.xml"/>
 
+    <!--configLink
+      id         = "TriggerTG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerTG.xml"/-->
 
      <configLink
       id         = "TriggerSPB2CSM"
       type       = "XML"
       xlink:href = "&myConfigFiles;/TriggerSPB2CSM.xml"/>
+<!--configLink
+      id         = "TriggerSPB2cells3x3TG"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/TriggerSPB2cells3x3TG.xml"/>
 
-
+     <configLink
+      id         = "BackgroundSubtractorCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/BackgroundSubtractor.xml"/>
+     <configLink
+      id         = "PrioritizerCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/Prioritizer.xml"/-->
      <configLink
       id         = "TelescopeSimulatorJG"
       type       = "XML"
@@ -53,24 +76,14 @@
       id         = "ElectronicsSimulatorJG"
       type       = "XML"
       xlink:href = "&myConfigFiles;/ElectronicsSimulatorJG.xml"/>
-
+     <configLink
+      id         = "AxisFinderCSM"
+      type       = "XML"
+      xlink:href = "&myConfigFiles;/AxisFinderCSM.xml"/>
  <configLink
 	       id         = "BackgroundSimulatorCSM"
 	             type       = "XML"
 		           xlink:href = "&myConfigFiles;/BackgroundSimulatorCSM.xml"/>
-
-  <configLink
-        id         = "AxisFinderJG"
-       type       = "XML"
-     xlink:href = "&myConfigFiles;/AxisFinderJG.xml"/>
-     <configLink
-           id         = "SelectEventsJG"
-          type       = "XML"
-        xlink:href = "&myConfigFiles;/SelectEventsJG.xml"/>
-        <configLink
-              id         = "SelectTracksJG"
-             type       = "XML"
-           xlink:href = "&myConfigFiles;/SelectTracksJG.xml"/>
 
 
 
@@ -85,13 +98,24 @@
 
   <parameterOverrides>
 
+    <configLink id="EventFileReader">
+         <EventFileReader>
+		 <InputFilenames>APerfectShowerPETrace.root </InputFilenames>
+         </EventFileReader>
+  </configLink>
+  <configLink id="DataWriter">
+    <DataWriter>
+      <FileName> APerfectReco.root </FileName>
+    </DataWriter>
+  </configLink>
+
 
 
    <!--change this to 0 0 for real random, leave this to always have the same random number-->
     <configLink id="RandomEngineRegistry">
        <RandomEngineRegistry>
-           <DetectorSeed> 12 </DetectorSeed>
-           <PhysicsSeed> 13 </PhysicsSeed>
+           <DetectorSeed> 0 </DetectorSeed>
+           <PhysicsSeed> 0</PhysicsSeed>
        </RandomEngineRegistry>
     </configLink>
 

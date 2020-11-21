@@ -6,7 +6,7 @@
 
    <moduleControl>
 
-    <loop numTimes="100" pushEventToStack="yes">
+    <loop numTimes="99" pushEventToStack="yes">
 
 	<module> EventFileReaderOG           </module>
         <module> EventGeneratorOG </module>
@@ -15,7 +15,7 @@
 	<module> BackgroundSimulatorCSM      </module>
 	<module> EventBuilderJG              </module>
   <module> TriggerSPB2CSM </module>
-  <!--module> PythonOutput </module-->
+  <module> PythonOutput </module>
 
 
     </loop>
