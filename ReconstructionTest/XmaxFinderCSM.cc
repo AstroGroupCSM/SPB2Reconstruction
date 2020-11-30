@@ -3,6 +3,7 @@
 using namespace fwk;
 using namespace std;
 using namespace utl;
+using namespace atm;
 namespace XmaxFinderCSM {
 
 
@@ -39,6 +40,20 @@ XmaxFinderCSM::Run(evt::Event& event)
   scale_height=850000.0 ;
   fevt::Telescope& telescope = event.GetFEvent().GetEye(1).GetTelescope(1);
 
+  det::Detector& detector = det::Detector::GetInstance();
+    const Atmosphere& atmo = detector.GetAtmosphere();
+
+  bool flatEarth = false;
+  ProfileResult const * slantDepthVsDistance = 0;
+  ProfileResult const * depthProfile = 0;
+  try {
+    slantDepthVsDistance = &atmo.EvaluateSlantDepthVsDistance();
+  } catch (InclinedAtmosphericProfile::InclinedAtmosphereModelException& e) {
+    WARNING("using flat earth!");
+    flatEarth = true;
+    depthProfile = &atmo.EvaluateDepthVsHeight();
+  }
+
 
   fevt::CoordinateDataCollection coords = telescope.GetRecData().GetCoordinatesRecData().GetCoordinates();
 
@@ -58,7 +73,7 @@ XmaxFinderCSM::Run(evt::Event& event)
 //  fSignal = telescope.GetRecData().GetCoordinatesRecData().GetCoordinatesWeight();
 //  fPsii = telescope.GetRecData().GetCoordinatesRecData().GetSpotsPsiAngles();
 
-  det::Detector& detector = det::Detector::GetInstance();
+  //det::Detector& detector = det::Detector::GetInstance();
   const fdet::FDetector& detFD = detector.GetFDetector();
   CoordinateSystemPtr telCS = detFD.GetEye(1).GetTelescope(1).GetTelescopeCoordinateSystem();
 
@@ -99,8 +114,9 @@ XmaxFinderCSM::Run(evt::Event& event)
   //  if (fPsi0>fPsii[i])dl = -1*fR0*abs(tan(fPsi0-fPsii[i]));
     //if (fPsi0<fPsii[i]) dl = fR0*abs(tan(fPsi0-fPsii[i]));
     dz = dl*cos(fTheta);
+    double testt=slantDepthVsDistance->Y( fCorePosReco[2]-1*dl);
     hi.push_back(33000.0-fCorePosReco[2]-dz);
-    cout<<Ri[i]<<'\t'<<hi[i]<<'\t'<<fCorePosReco[2]<<endl;
+    cout<<Ri[i]<<'\t'<<hi[i]<<'\t'<<testt<<endl;
   }
 
 
@@ -119,8 +135,8 @@ for (int i=0;i<fSignal.size();i++)
   double maxX=*max_element(X.begin(),X.end());
   double minX=*min_element(X.begin(),X.end());
   double dEdXMax=*max_element(dEdX.begin(),dEdX.end());
-  TH1F* h = new TH1F("a","a",10,600.0,1200.0);
-  TH1F* h2 = new TH1F("b","b",10,600.0,1200.0);
+  TH1F* h = new TH1F("a","a",10,700.0,1100.0);
+  TH1F* h2 = new TH1F("b","b",10,700.0,1100.0);
 
 
   for (int i=0;i<dEdX.size();i++)

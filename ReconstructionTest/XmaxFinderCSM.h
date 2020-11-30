@@ -24,6 +24,11 @@
 #include <fdet/Eye.h>
 #include <fdet/Telescope.h>
 
+#include <atm/Atmosphere.h>
+#include <atm/ProfileResult.h>
+#include <atm/InclinedAtmosphericProfile.h>
+
+
 #include <utl/PhysicalConstants.h>
 #include "TF1.h"
 #include "TH1.h"
