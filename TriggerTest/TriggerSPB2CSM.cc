@@ -127,7 +127,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
     for (int ipmt=0; ipmt<36; ipmt++){
       for(icell=0;icell<16;icell++){
 	       int xLoc= (ipmt/12)*8+(((ipmt%12)/2)%2)*4  + icell%4;
-	       int yLoc= pmtMapperY(ipmt%12)*4  + (4-(icell/4));
+	       int yLoc= pmtMapperY(ipmt%12)*4  + ((icell/4));
 	       for (int igtu=0;igtu<128;igtu++){
            int threshold = 13;//int((sqrt(sumCells[ipdm][ipmt][icell]/float(lenThreshold)) *nSigma) +sumCells[ipdm][ipmt][icell]/float(lenThreshold)) ;
            if(valCells[ipdm][ipmt][icell][igtu]>threshold){
@@ -145,11 +145,14 @@ TriggerSPB2CSM::Run(evt::Event& event)
       for (int iLocX=1;iLocX<23;iLocX++){// Look at whole camera (1 PDM) skipping
 	       for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
            int HotNeighborsCount =0;
+           if(HotOrNot[iLocX][iLocY][igtu] !=0)
+           cout<<iLocX<<'\t'<<iLocY<<'\t'<<igtu<<'\t'<<ipdm<<'\t'<<HotNeighborsCount<<endl;
 	         for (int ix=-1;ix<2;ix++){ //Look at the MacroPixels to  left and right
  	            for(int iy=-1;iy<2;iy++){// And look at the MacroPixels above and below
 	               for (int it=-1;it<2;it++){ //Look at the GTU before and after
 		                 if(HotOrNot[iLocX+ix][iLocY+iy][igtu+it] !=0) { // Check if the adjacent MacroPixel is "hot"
 		                   HotNeighborsCount++;//Count the hot neighbors
+                       //cout<<iLocX+ix<<'\t'<<iLocY+iy<<'\t'<<igtu+it<<endl;
 		                 }
 	               }
 	            }

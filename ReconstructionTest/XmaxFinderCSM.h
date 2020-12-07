@@ -27,8 +27,10 @@
 #include <atm/Atmosphere.h>
 #include <atm/ProfileResult.h>
 #include <atm/InclinedAtmosphericProfile.h>
+#include <utl/ReferenceEllipsoid.h>
 
 
+#include <fwk/CentralConfig.h>
 #include <utl/PhysicalConstants.h>
 #include "TF1.h"
 #include "TH1.h"
@@ -59,20 +61,18 @@ namespace XmaxFinderCSM {
     double fPhi;
     double rho_0;
     double dz;
+    double dy;
+    double dx;
+    double z;
+    double y;
+    double x;
     double dl;
-    double scale_height;
-    double hd;
-    double dist;
     double fCorePosReco[3];
-    double slope[3];
-  std::vector<double>   fTi;
   std::vector<double>   fPsii;
   std::vector<double>   fSignal;
-  std::vector<double>   hi;
   std::vector<double>   Ri;
   std::vector<double>   dE;
   std::vector<double>   X;
-  std::vector<double>   dEdX;
     REGISTER_MODULE("XmaxFinder",XmaxFinderCSM);
   };
 }

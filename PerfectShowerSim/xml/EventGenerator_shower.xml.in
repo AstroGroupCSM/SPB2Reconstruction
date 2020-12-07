@@ -32,7 +32,7 @@
   <coreRandomization>
     <specific>1 </specific>
     <Radius unit="meter">10000 </Radius>
-    <Angle unit="deg"> 272.0</Angle>	   
+    <Angle unit="deg"> 305.0</Angle>	   
     <eye> 1 </eye>
     <telescope> 1 </telescope>
 <!--<maxdist unit="kilometer"> 5 </maxdist>

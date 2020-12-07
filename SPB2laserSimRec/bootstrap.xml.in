@@ -30,10 +30,10 @@
       type       = "XML"
       xlink:href = "&myConfigFiles;/TelescopeSimulatorJG.xml"/>
 
-    <configLink
+    <!--configLink
       id         = "LaserGeneratorNA"
       type       = "XML"
-      xlink:href = "&myConfigFiles;/LaserGenerator.xml"/>
+      xlink:href = "&myConfigFiles;/LaserGenerator.xml"/-->
 
     <configLink
       id         = "EventGenerator"
@@ -120,18 +120,18 @@
     </configLink>
 
 <!--Set position of the laser-->
-<configLink id="LaserGeneratorNA">
+<!--configLink id="LaserGeneratorNA">
   <LaserGeneratorNA>
     <theta unit="degree"> 120 </theta>
     <phi unit="degree"> 10.0 </phi>
     <laserEnergy>
-      <energyMean unit="joule"> XXXXXX </energyMean>   <!-- 5 mJ average -->
+      <energyMean unit="joule"> XXXXXX </energyMean>
     </laserEnergy>
   </LaserGeneratorNA>
-</configLink>
+</configLink-->
 <configLink id="DataWriter">
             <DataWriter>
-               <FileName> ../SimulatedData/Reco/LASER-XXXXXX.root </FileName>
+               <FileName> ../SimulatedData/Reco/LASER-Test.root </FileName>
             </DataWriter>
          </configLink>
 

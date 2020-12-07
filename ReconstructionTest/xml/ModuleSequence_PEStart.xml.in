@@ -23,7 +23,7 @@
   <module> AxisFinderCSM </module>
   <module> SimRecPlotterJG </module>
   <module> XmaxFinder </module>
-  <module> DataWriter </module>
+  <!--module> DataWriter </module-->
   <!--module>TriggerCSM </module-->
 
 

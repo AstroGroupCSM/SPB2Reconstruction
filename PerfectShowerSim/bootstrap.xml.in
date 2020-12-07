@@ -56,7 +56,7 @@
        <configLink id="DataWriter">
            <DataWriter>
 	      <FileName> APerfectShowerPETrace.root </FileName>
-	      <SPB2ReSim> 1</SPB2ReSim>
+	      <SPB2ReSim> 0</SPB2ReSim>
               <FileName2>APerfectShowerAPs.root </FileName2>
            </DataWriter>
         </configLink>
