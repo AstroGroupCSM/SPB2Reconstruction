@@ -146,7 +146,7 @@ TriggerSPB2CSM::Run(evt::Event& event)
 	       for (int iLocY=1;iLocY<23;iLocY++){ //top, bottom, rightmost, leftmost pixels
            int HotNeighborsCount =0;
            if(HotOrNot[iLocX][iLocY][igtu] !=0)
-           cout<<iLocX<<'\t'<<iLocY<<'\t'<<igtu<<'\t'<<ipdm<<'\t'<<HotNeighborsCount<<endl;
+          // cout<<iLocX<<'\t'<<iLocY<<'\t'<<igtu<<'\t'<<ipdm<<'\t'<<HotNeighborsCount<<endl;
 	         for (int ix=-1;ix<2;ix++){ //Look at the MacroPixels to  left and right
  	            for(int iy=-1;iy<2;iy++){// And look at the MacroPixels above and below
 	               for (int it=-1;it<2;it++){ //Look at the GTU before and after

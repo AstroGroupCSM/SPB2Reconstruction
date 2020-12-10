@@ -22,8 +22,8 @@
   <module> AddCoordinatesJG </module>
   <module> AxisFinderCSM </module>
   <module> SimRecPlotterJG </module>
-  <module> XmaxFinder </module>
-  <!--module> DataWriter </module-->
+  <module> XmaxFinderCSM </module>
+  <module> DataWriter </module>
   <!--module>TriggerCSM </module-->
 
 
