@@ -12,7 +12,7 @@
      Default is turned off-->
 <WritePhotonTrace>   1	</WritePhotonTrace>
 <WritePeSignalTrace> 1	</WritePeSignalTrace>
-<SPB2ReSim> 1 </SPB2ReSim>
+<!--SPB2ReSim> 1 </SPB2ReSim-->
 
 <!-- Plot Photon in FoV vs. GTU, pe vs GTU and the integrated track. All are only for the shower itself NO background -->
 <PlotAll> 0</PlotAll>

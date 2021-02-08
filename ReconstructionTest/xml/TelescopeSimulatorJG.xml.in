@@ -51,7 +51,7 @@
     <PSFdiameter unit="mm"> 5.	   </PSFdiameter>
     <opticalEfficiency>	    0.68   </opticalEfficiency>
     <!-- radius of FS: 860mm SPB2 -->
-    <radiusFS unit="mm">  860.     </radiusFS>
+    <!--radiusFS unit="mm">  860.     </radiusFS-->
     <Obstruction> 0.18 </Obstruction>
 
     <BiFocalUse> yes </BiFocalUse>
